@@ -1,0 +1,247 @@
+#################################################################
+###  Generated with the experimental alpha version of the TTL exporter of WebVOWL (version 1.1.3)  http://visualdataweb.de/webvowl/   ###
+#################################################################
+
+@prefix : 		<http://emmc.info/emmo-material> .
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/#> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix : 		<http://www.semanticweb.org/owl/owlapi/turtle#> .
+@base 			<http://emmc.info/emmo-material> .
+
+<http://emmc.info/emmo-material> rdf:type owl:Ontology ;
+                                 dc:title "undefined"@en;
+                                 dc:description "undefined"@en;
+                                 owl:versionInfo "The European Materials Modelling OntologynnVersion 0.9.9"@en . 
+#################################################################
+
+###  Class Definitions (Number of Classes) 40 ###
+#  --------------------------- Class  0------------------------- 
+<http://emmc.info/emmo-material/EMMO_385b8f6e_43ac_4596_ad76_ac322c68b7ca> rdf:type owl:Class; 
+                                                                           owl:disjointUnionOf (                                                                                                                                                    <http://emmc.info/emmo-material/EMMO_72d53756_7fb1_46ed_980f_83f47efbe105> 
+                                                                                                                                                    <http://emmc.info/emmo-material/EMMO_8043d3c6_a4c1_4089_ba34_9744e28e5b3d> 
+) ;
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-core#EMMO_0f795e3e_c602_4577_9a43_d5a231aa1360> ;
+                                                                           rdfs:label "EMMO_385b8f6e_43ac_4596_ad76_ac322c68b7ca"@IRI-based; 
+                                                                           rdfs:label "massive"@en . 
+#  --------------------------- Class  1------------------------- 
+<http://emmc.info/emmo-material/EMMO_5c4aff3c_c30c_4507_86d5_b4df41eb9f2f> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-direct#EMMO_36c79456_e29c_400d_8bd3_0eedddb82652> ;
+                                                                           rdfs:label "EMMO_5c4aff3c_c30c_4507_86d5_b4df41eb9f2f"@IRI-based; 
+                                                                           rdfs:label "atomic"@en . 
+#  --------------------------- Class  2------------------------- 
+<http://emmc.info/emmo-material/EMMO_174cf221_9d16_427c_abea_e217a948969b> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-direct#EMMO_36c79456_e29c_400d_8bd3_0eedddb82652> ;
+                                                                           rdfs:label "EMMO_174cf221_9d16_427c_abea_e217a948969b"@IRI-based; 
+                                                                           rdfs:label "mesoscopic"@en . 
+#  --------------------------- Class  3------------------------- 
+http://org.semanticweb.owlapi/error#Error4 rdf:type owl:Class; 
+                                           rdfs:label "Error4"@IRI-based . 
+#  --------------------------- Class  4------------------------- 
+http://org.semanticweb.owlapi/error#Error5 rdf:type owl:Class; 
+                                           rdfs:label "Error5"@IRI-based . 
+#  --------------------------- Class  5------------------------- 
+http://org.semanticweb.owlapi/error#Error6 rdf:type owl:Class; 
+                                           rdfs:label "Error6"@IRI-based . 
+#  --------------------------- Class  6------------------------- 
+http://org.semanticweb.owlapi/error#Error7 rdf:type owl:Class; 
+                                           rdfs:label "Error7"@IRI-based . 
+#  --------------------------- Class  7------------------------- 
+http://org.semanticweb.owlapi/error#Error1 rdf:type owl:Class; 
+                                           rdfs:label "Error1"@IRI-based . 
+#  --------------------------- Class  8------------------------- 
+<http://emmc.info/emmo-material/EMMO_eb3c61f0_3983_4346_a0c6_e7f6b90a67a8> rdf:type owl:Class; 
+                                                                           rdfs:label "EMMO_eb3c61f0_3983_4346_a0c6_e7f6b90a67a8"@IRI-based; 
+                                                                           rdfs:label "graviton"@en . 
+#  --------------------------- Class  9------------------------- 
+<http://emmc.info/emmo-material/EMMO_4588526f_8553_4f4d_aa73_a483e88d599b> rdf:type owl:Class; 
+                                                                           rdfs:label "EMMO_4588526f_8553_4f4d_aa73_a483e88d599b"@IRI-based; 
+                                                                           rdfs:label "neutral_atom"@en . 
+#  --------------------------- Class  10------------------------- 
+<http://emmc.info/emmo-material/EMMO_e5488299_8dab_4ebb_900a_26d2abed8396> rdf:type owl:Class; 
+                                                                           owl:disjointUnionOf (                                                                                                                                                    <http://emmc.info/emmo-material/EMMO_25f8b804_9a0b_4387_a3e7_b35bce5365ee> 
+                                                                                                                                                    <http://emmc.info/emmo-material/EMMO_eb3c61f0_3983_4346_a0c6_e7f6b90a67a8> 
+                                                                                                                                                    <http://emmc.info/emmo-material/EMMO_7db59e56_f68b_48b7_ae99_891c35ae5c3b> 
+) ;
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-core#EMMO_0f795e3e_c602_4577_9a43_d5a231aa1360> ;
+                                                                           rdfs:label "EMMO_e5488299_8dab_4ebb_900a_26d2abed8396"@IRI-based; 
+                                                                           rdfs:label "massless"@en . 
+#  --------------------------- Class  11------------------------- 
+<http://emmc.info/emmo-material/EMMO_df808271_df91_4f27_ba59_fa423c51896c> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ; 
+                                                                                             owl:onProperty <http://emmc.info/emmo-direct#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe>;
+                                                                                             owl:someValuesFrom <http://emmc.info/emmo-material/EMMO_72d53756_7fb1_46ed_980f_83f47efbe105>
+                                                                                           ];
+                                                                           rdfs:label "EMMO_df808271_df91_4f27_ba59_fa423c51896c"@IRI-based; 
+                                                                           rdfs:label "neutron"@en . 
+#  --------------------------- Class  12------------------------- 
+http://org.semanticweb.owlapi/error#Error2 rdf:type owl:Class; 
+                                           rdfs:label "Error2"@IRI-based . 
+#  --------------------------- Class  13------------------------- 
+http://org.semanticweb.owlapi/error#Error3 rdf:type owl:Class; 
+                                           rdfs:label "Error3"@IRI-based . 
+#  --------------------------- Class  14------------------------- 
+<http://emmc.info/emmo-material/EMMO_3c218fbe_60c9_4597_8bcf_41eb1773af1f> rdf:type owl:intersectionOf; 
+                                                                           rdfs:label "EMMO_3c218fbe_60c9_4597_8bcf_41eb1773af1f"@IRI-based; 
+                                                                           rdfs:label "vacuum"@en . 
+#  --------------------------- Class  15------------------------- 
+<http://emmc.info/emmo-material/EMMO_db03061b_db31_4132_a47a_6a634846578b> rdf:type owl:Class; 
+                                                                           rdfs:comment "The ion_atom is the basic part of a pure ionic bonded compound i.e. without eclectron sharing," ;
+                                                                           rdfs:label "EMMO_db03061b_db31_4132_a47a_6a634846578b"@IRI-based; 
+                                                                           rdfs:label "ion_atom"@en . 
+#  --------------------------- Class  16------------------------- 
+http://org.semanticweb.owlapi/error#Error8 rdf:type owl:Class; 
+                                           rdfs:label "Error8"@IRI-based . 
+#  --------------------------- Class  17------------------------- 
+<http://emmc.info/emmo-material/EMMO_87ac88ff_8379_4f5a_8c7b_424a8fff1ee8> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_8b0923ab_b500_477b_9ce9_8b3a3e4dc4f2> ;
+                                                                           rdfs:label "EMMO_87ac88ff_8379_4f5a_8c7b_424a8fff1ee8"@IRI-based; 
+                                                                           rdfs:label "fluid"@en . 
+#  --------------------------- Class  18------------------------- 
+<http://emmc.info/emmo-material/EMMO_8b0923ab_b500_477b_9ce9_8b3a3e4dc4f2> rdf:type owl:Class; 
+                                                                           rdfs:comment "A continuum is made of a sufficient number of parts that it continues to exists as continuum individual even after the loss of one of them i.e. a continuum is a redundant." ;
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-direct#EMMO_36c79456_e29c_400d_8bd3_0eedddb82652> ;
+                                                                           rdfs:label "EMMO_8b0923ab_b500_477b_9ce9_8b3a3e4dc4f2"@IRI-based; 
+                                                                           rdfs:label "continuum"@en . 
+#  --------------------------- Class  19------------------------- 
+http://org.semanticweb.owlapi/error#Error9 rdf:type owl:Class; 
+                                           rdfs:label "Error9"@IRI-based . 
+#  --------------------------- Class  20------------------------- 
+<http://emmc.info/emmo-material/EMMO_3397f270_dfc1_4500_8f6f_4d0d85ac5f71> rdf:type owl:Class; 
+                                                                           rdfs:comment "This definition states that this object is a non-periodic set of atoms or a set with a finite periodicity.nnRemoving an atom from the state will result in another type of atom_based state.nne.g. you cannot remove H from H20 without changing the molecule type (essential). However, you can remove a C from a nanotube (redundant). C60 fullerene is a molecule, since it has a finite periodicity and is made of a well defined number of atoms (essential). A C nanotube is not a molecule, since it has an infinite periodicity (redundant)." ;
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error1 ;
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error3 ;
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error2 ;
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error4 ;
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_174cf221_9d16_427c_abea_e217a948969b> ;
+                                                                           rdfs:label "EMMO_3397f270_dfc1_4500_8f6f_4d0d85ac5f71"@IRI-based; 
+                                                                           rdfs:label "molecule"@en . 
+#  --------------------------- Class  21------------------------- 
+<http://emmc.info/emmo-material/EMMO_eb77076b_a104_42ac_a065_798b2d2809ad> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error8 ;
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error7 ;
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error6 ;
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error5 ;
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_5c4aff3c_c30c_4507_86d5_b4df41eb9f2f> ;
+                                                                           rdfs:label "EMMO_eb77076b_a104_42ac_a065_798b2d2809ad"@IRI-based; 
+                                                                           rdfs:label "atom"@en . 
+#  --------------------------- Class  22------------------------- 
+<http://emmc.info/emmo-direct#EMMO_36c79456_e29c_400d_8bd3_0eedddb82652> rdf:type owl:Class; 
+                                                                         rdfs:label "EMMO_36c79456_e29c_400d_8bd3_0eedddb82652"@IRI-based . 
+#  --------------------------- Class  23------------------------- 
+<http://emmc.info/emmo-material/EMMO_72d53756_7fb1_46ed_980f_83f47efbe105> rdf:type owl:Class; 
+                                                                           rdfs:label "EMMO_72d53756_7fb1_46ed_980f_83f47efbe105"@IRI-based; 
+                                                                           rdfs:label "quark"@en . 
+#  --------------------------- Class  24------------------------- 
+<http://emmc.info/emmo-material/EMMO_7db59e56_f68b_48b7_ae99_891c35ae5c3b> rdf:type owl:Class; 
+                                                                           rdfs:label "EMMO_7db59e56_f68b_48b7_ae99_891c35ae5c3b"@IRI-based; 
+                                                                           rdfs:label "gluon"@en . 
+#  --------------------------- Class  25------------------------- 
+<http://emmc.info/emmo-material/EMMO_7d66bde4_b68d_41cc_b5fc_6fd98c5e2ff0> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-direct#EMMO_36c79456_e29c_400d_8bd3_0eedddb82652> ;
+                                                                           rdfs:label "EMMO_7d66bde4_b68d_41cc_b5fc_6fd98c5e2ff0"@IRI-based; 
+                                                                           rdfs:label "subatomic"@en . 
+#  --------------------------- Class  26------------------------- 
+<http://emmc.info/emmo-material/EMMO_1067b97a_84f8_4d22_8ace_b842b8ce355c> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_7d66bde4_b68d_41cc_b5fc_6fd98c5e2ff0> ;
+                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ; 
+                                                                                             owl:onProperty <http://emmc.info/emmo-direct#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe>;
+                                                                                             owl:someValuesFrom <http://emmc.info/emmo-material/EMMO_8043d3c6_a4c1_4089_ba34_9744e28e5b3d>
+                                                                                           ];
+                                                                           rdfs:label "EMMO_1067b97a_84f8_4d22_8ace_b842b8ce355c"@IRI-based; 
+                                                                           rdfs:label "electron_cloud"@en . 
+#  --------------------------- Class  27------------------------- 
+<http://emmc.info/emmo-material/EMMO_25f8b804_9a0b_4387_a3e7_b35bce5365ee> rdf:type owl:Class; 
+                                                                           rdfs:label "EMMO_25f8b804_9a0b_4387_a3e7_b35bce5365ee"@IRI-based; 
+                                                                           rdfs:label "photon"@en . 
+#  --------------------------- Class  28------------------------- 
+<http://emmc.info/emmo-material/EMMO_50781fd9_a9e4_46ad_b7be_4500371d188d> rdf:type owl:Class; 
+                                                                           owl:disjointUnionOf (                                                                                                                                                    <http://emmc.info/emmo-material/EMMO_8f87e700_99a8_4427_8ffb_e493de05c217> 
+                                                                                                                                                    <http://emmc.info/emmo-material/EMMO_df808271_df91_4f27_ba59_fa423c51896c> 
+) ;
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_7d66bde4_b68d_41cc_b5fc_6fd98c5e2ff0> ;
+                                                                           rdfs:label "EMMO_50781fd9_a9e4_46ad_b7be_4500371d188d"@IRI-based; 
+                                                                           rdfs:label "nucleon"@en . 
+#  --------------------------- Class  29------------------------- 
+<http://emmc.info/emmo-material/EMMO_70dac51e_bddd_48c2_8a98_7d8395e91fc2> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ; 
+                                                                                             owl:onProperty <http://emmc.info/emmo-core#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f>;
+                                                                                             owl:someValuesFrom <http://emmc.info/emmo-material/EMMO_e5488299_8dab_4ebb_900a_26d2abed8396>
+                                                                                           ];
+                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ; 
+                                                                                             owl:onProperty <http://emmc.info/emmo-core#EMMO_85fc27bc_5e42_4baa_bf85_5a2dc4a26a1f>;
+                                                                                             owl:allValuesFrom <http://emmc.info/emmo-material/EMMO_70dac51e_bddd_48c2_8a98_7d8395e91fc2>
+                                                                                           ];
+                                                                           rdfs:label "EMMO_70dac51e_bddd_48c2_8a98_7d8395e91fc2"@IRI-based; 
+                                                                           rdfs:label "field"@en . 
+#  --------------------------- Class  30------------------------- 
+http://org.semanticweb.owlapi/error#Error10 rdf:type owl:Class; 
+                                            rdfs:label "Error10"@IRI-based . 
+#  --------------------------- Class  31------------------------- 
+<http://emmc.info/emmo-material/EMMO_2fd3f574_5e93_47fe_afca_ed80b0a21ab4> rdf:type owl:Class; 
+                                                                           rdfs:comment "A standalone atom can be bonded with other atoms by intermolecular forces (i.e. dipole–dipole, London dispersion force, hydrogen bonding), since this bonds does not involve electron sharing." ;
+                                                                           owl:disjointUnionOf (                                                                                                                                                    <http://emmc.info/emmo-material/EMMO_4588526f_8553_4f4d_aa73_a483e88d599b> 
+                                                                                                                                                    <http://emmc.info/emmo-material/EMMO_db03061b_db31_4132_a47a_6a634846578b> 
+) ;
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_eb77076b_a104_42ac_a065_798b2d2809ad> ;
+                                                                           rdfs:label "EMMO_2fd3f574_5e93_47fe_afca_ed80b0a21ab4"@IRI-based; 
+                                                                           rdfs:label "standalone_atom"@en . 
+#  --------------------------- Class  32------------------------- 
+<http://emmc.info/emmo-core#EMMO_c5ddfdba_c074_4aa4_ad6b_1ac4942d300d> rdf:type owl:Class; 
+                                                                       rdfs:label "EMMO_c5ddfdba_c074_4aa4_ad6b_1ac4942d300d"@IRI-based . 
+#  --------------------------- Class  33------------------------- 
+<http://emmc.info/emmo-core#EMMO_0f795e3e_c602_4577_9a43_d5a231aa1360> rdf:type owl:Class; 
+                                                                       owl:disjointUnionOf (                                                                                                                                            <http://emmc.info/emmo-material/EMMO_385b8f6e_43ac_4596_ad76_ac322c68b7ca> 
+                                                                                                                                            <http://emmc.info/emmo-material/EMMO_e5488299_8dab_4ebb_900a_26d2abed8396> 
+) ;
+                                                                       rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_7d66bde4_b68d_41cc_b5fc_6fd98c5e2ff0> ;
+                                                                       rdfs:label "EMMO_0f795e3e_c602_4577_9a43_d5a231aa1360"@IRI-based . 
+#  --------------------------- Class  34------------------------- 
+<http://emmc.info/emmo-material/EMMO_8303a247_f9d9_4616_bdcd_f5cbd7b298e3> rdf:type owl:Class; 
+                                                                           rdfs:comment "A real bond between atoms is always something hybrid between covalent, metallic and ionic.nnIn general, metallic and ionic bonds have atoms sharing electrons." ;
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_eb77076b_a104_42ac_a065_798b2d2809ad> ;
+                                                                           rdfs:label "EMMO_8303a247_f9d9_4616_bdcd_f5cbd7b298e3"@IRI-based; 
+                                                                           rdfs:label "e-bonded_atom"@en . 
+#  --------------------------- Class  35------------------------- 
+<http://emmc.info/emmo-material/EMMO_a2b006f2_bbfd_4dba_bcaa_3fca20cd6be1> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_8b0923ab_b500_477b_9ce9_8b3a3e4dc4f2> ;
+                                                                           rdfs:label "EMMO_a2b006f2_bbfd_4dba_bcaa_3fca20cd6be1"@IRI-based; 
+                                                                           rdfs:label "solid"@en . 
+#  --------------------------- Class  36------------------------- 
+<http://emmc.info/emmo-material/EMMO_5b2222df_4da6_442f_8244_96e9e45887d1> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ; 
+                                                                                             owl:onProperty <http://emmc.info/emmo-core#EMMO_85fc27bc_5e42_4baa_bf85_5a2dc4a26a1f>;
+                                                                                             owl:allValuesFrom <http://emmc.info/emmo-material/EMMO_5b2222df_4da6_442f_8244_96e9e45887d1>
+                                                                                           ];
+                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ; 
+                                                                                             owl:onProperty <http://emmc.info/emmo-core#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f>;
+                                                                                             owl:someValuesFrom <http://emmc.info/emmo-material/EMMO_385b8f6e_43ac_4596_ad76_ac322c68b7ca>
+                                                                                           ];
+                                                                           rdfs:label "EMMO_5b2222df_4da6_442f_8244_96e9e45887d1"@IRI-based; 
+                                                                           rdfs:label "matter"@en . 
+#  --------------------------- Class  37------------------------- 
+<http://emmc.info/emmo-material/EMMO_8f87e700_99a8_4427_8ffb_e493de05c217> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ; 
+                                                                                             owl:onProperty <http://emmc.info/emmo-direct#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe>;
+                                                                                             owl:someValuesFrom <http://emmc.info/emmo-material/EMMO_72d53756_7fb1_46ed_980f_83f47efbe105>
+                                                                                           ];
+                                                                           rdfs:label "EMMO_8f87e700_99a8_4427_8ffb_e493de05c217"@IRI-based; 
+                                                                           rdfs:label "proton"@en . 
+#  --------------------------- Class  38------------------------- 
+<http://emmc.info/emmo-material/EMMO_8043d3c6_a4c1_4089_ba34_9744e28e5b3d> rdf:type owl:Class; 
+                                                                           rdfs:label "EMMO_8043d3c6_a4c1_4089_ba34_9744e28e5b3d"@IRI-based; 
+                                                                           rdfs:label "electron"@en . 
+#  --------------------------- Class  39------------------------- 
+<http://emmc.info/emmo-material/EMMO_f835f4d4_c665_403d_ab25_dca5cc74be52> rdf:type owl:Class; 
+                                                                           rdfs:subClassOf <http://emmc.info/emmo-material/EMMO_7d66bde4_b68d_41cc_b5fc_6fd98c5e2ff0> ;
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error9 ;
+                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ; 
+                                                                                             owl:onProperty <http://emmc.info/emmo-direct#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe>;
+                                                                                             owl:someValuesFrom <http://emmc.info/emmo-material/EMMO_50781fd9_a9e4_46ad_b7be_4500371d188d>
+                                                                                           ];
+                                                                           rdfs:subClassOf http://org.semanticweb.owlapi/error#Error10 ;
+                                                                           rdfs:label "EMMO_f835f4d4_c665_403d_ab25_dca5cc74be52"@IRI-based; 
+                                                                           rdfs:label "nucleus"@en . 
