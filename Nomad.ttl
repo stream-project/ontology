@@ -24,9 +24,9 @@
 @prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
 @prefix wot: 		<http://xmlns.com/wot/0.1/> .
 @prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix skos:       <http://www.w3.org/2004/02/skos/core#>
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
 @prefix oboe:       <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#> .
-@prefix dul:        <http://www.loa-cnr.it/ontologies/DUL.owl#>
+@prefix dul:        <http://www.loa-cnr.it/ontologies/DUL.owl#> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
 

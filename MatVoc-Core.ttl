@@ -2,24 +2,25 @@
 ###                    Created by Javad Chamanara             ###
 #################################################################
 
-@prefix : 		<http://stream-ontology.com/matvoc-core/> .
+@prefix : 		    <http://stream-ontology.com/matvoc-core/> .
 @prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdfs: 	    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: 		<http://www.w3.org/2002/07/owl#> .
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
 @prefix dc: 		<http://purl.org/dc/elements/1.1/> .
 @prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
-@prefix oboe: 	<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#> .
+@prefix oboe: 	    <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#> .
 @prefix wot: 		<http://xmlns.com/wot/0.1/> .
-@prefix swrlb: 	<http://www.w3.org/2003/11/swrlb#> .
-@prefix swrl: 	<http://www.w3.org/2003/11/swrl#> .
-@prefix dul:         <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix swrlb: 	    <http://www.w3.org/2003/11/swrlb#> .
+@prefix swrl: 	    <http://www.w3.org/2003/11/swrl#> .
+@prefix dul:        <http://www.loa-cnr.it/ontologies/DUL.owl#> .
 @prefix cc: 		<http://creativecommons.org/ns#> .
 @prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix foaf: 	<http://xmlns.com/foaf/0.1/> .
+@prefix foaf: 	    <http://xmlns.com/foaf/0.1/> .
 @prefix owl2xml: 	<http://www.w3.org/2006/12/owl2-xml#> .
+@prefix emmo:       <http://stream-ontology.com/matvoc-emmo> .
 @prefix mvc: 		<http://stream-ontology.com/matvoc-core/> .
-@base 			<http://stream-ontology.com/matvoc-core/> .
+@base 			    <http://stream-ontology.com/matvoc-core/> .
 
 <http://stream-ontology.com/matvoc-core/> rdf:type owl:Ontology ;
     dc:title "Materials Vocabulary: MatVoc-Core"@en; 
@@ -51,6 +52,9 @@
     rdfs:comment "A single, unique, and identifiable execution of an experiment or simulation under defined terms and settings."@en ;
     rdfs:label "Run"@IRI-based; 
     rdfs:label "Run"@en .
+
+# Add triples to say emmo:Item is a/sub of oboe:Entity to allow observations to apply to the characteristics  of EMMO's items.
+emmo:Item owl:equivalentClass oboe:Entity .
 
 :Observer rdf:type owl:Class; 
     rdfs:subClassOf foaf:Agent ;
@@ -175,7 +179,6 @@
     rdfs:domain :Observer;
     rdfs:range oboe:Observation . 
 
-# Add triples to say emmo:Item is a/sub of oboe:Entity to allow observations to apply to the characteristics  of EMMO's items.
 :hasTag rdf:type owl:ObjectProperty ;
     rdfs:comment "The has tag property gives allows the measurements to have classification, grouping, or thematic tags." ;
     rdfs:label "hasTag"@IRI-based; 
