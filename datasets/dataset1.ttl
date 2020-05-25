@@ -1,0 +1,129 @@
+
+@prefix nomad:      <http://https://nomad-coe.eu/ontology#> .
+@prefix matvoc:     <http://stream-ontology.com/matvoc#> .
+@prefix mvc: 		<http://stream-ontology.com/matvoc-core/> .
+
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix wot: 		<http://xmlns.com/wot/0.1/> .
+@prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix oboe:       <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#> .
+@prefix dul:        <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix data:       <https://nomad-coe.eu/data/> .
+@prefix metadata:   <https://nomad-coe.eu/metadata/> .
+@base 		        <https://nomad-coe.eu/> . 
+
+# Almost all of the statements are modeled as blank nodes to avoid IRI clash.
+# only the dataset and the metadata resources have IRIs
+
+
+_:sim1 a mvc:Simulation ;
+    mvc:hasRun _:run1 .
+
+_:run1 a mvc:Run ;
+    mvc:resultsIn data:X123T12 .
+
+#<https://nomad-coe.eu/data/X123T12> a mvc:Dataset ; # the datset ID, DOI, or anything to identify the dataset in the namespace
+data:X123T12 a mvc:Dataset ;
+    mvc:hasMetadata metadata:X123T12 ;
+    oboe:hasMeasurement _:m1 ;
+    oboe:hasMeasurement _:m2 .
+
+_:m1 a oboe:Measurement ;
+    oboe:hasValue _:mv11 ;
+    oboe:hasValue _:mv12 .
+
+_:mv11 a oboe:MeasuredValue ;
+    mvc:hasRawValue "12"^^xsd:integer  .
+
+_:mv12 a oboe:MeasuredValue ;
+    mvc:hasRawValue "DE"^^xsd:string .
+
+_:m2 a oboe:Measurement ;
+    oboe:hasValue _:mv21 ;
+    oboe:hasValue _:mv22 .
+
+_:mv21 a oboe:MeasuredValue ;
+    mvc:hasRawValue "14"^^xsd:integer .
+    
+_:mv22 a oboe:MeasuredValue ;
+    mvc:hasRawValue "US"^^xsd:string .
+
+metadata:X123T12  a dcat:Dataset .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################
+data:X123T12 a mvc:Dataset ;
+    mvc:hasMetadata [
+        a dcat:Dataset #metadata will be described here
+    ] ;
+    oboe:hasMeasurement [
+        a oboe:Measurement ;
+            oboe:hasValue [ 
+                a oboe:MeasuredValue ;
+                    mvc:hasRawValue "12"^^xsd:integer
+            ] ;
+            oboe:hasValue [
+                a oboe:MeasuredValue ;
+                    mvc:hasRawValue "DE"^^xsd:string
+            ]
+    ] ;
+    oboe:hasMeasurement [
+        a oboe:Measurement ;
+            oboe:hasValue [
+                a oboe:MeasuredValue ;
+                    mvc:hasRawValue "14"^^xsd:integer
+            ] ;
+            oboe:hasValue [
+                a oboe:MeasuredValue ;
+                    mvc:hasRawValue "US"^^xsd:string
+            ]
+    ] .
+

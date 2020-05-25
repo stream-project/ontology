@@ -1,0 +1,51 @@
+#################################################################
+###                    Created by Javad Chamanara             ###
+#################################################################
+
+@prefix :           <http://stream-ontology.com/matvoc-entities> .
+
+@prefix mvc:        <http://stream-ontology.com/matvoc-core#> .
+@prefix matvoc:     <http://stream-ontology.com/matvoc#> .
+
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix wot: 		<http://xmlns.com/wot/0.1/> .
+@prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix oboe:       <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#> .
+@prefix dul:        <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix ontodt:     <http://ontodm.com/OntoDT#> .
+
+@prefix mven:       <http://stream-ontology.com/matvoc-entities#> .
+@base 		        <http://stream-ontology.com/matvoc-entities> .
+
+<http://stream-ontology.com/matvoc-entities> rdf:type owl:Ontology ;
+    dc:title "Materials Vocabulary - Entities"@en; 
+    dc:description "The ... RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."@en . 
+
+
+#################################################################
+###                     Class Definitions                     ###
+
+
+###                 End of Class Definitions                  ###
+#################################################################
+
+#################################################################
+###               Object Property Definitions                 ###
+
+###            End of Object Property Definitions             ###
+
+#################################################################
+
+#################################################################
+###                Data Property Definitions                  ###
+
+###            End of Data Property Definitions               ###
+
+#################################################################

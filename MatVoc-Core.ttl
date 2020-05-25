@@ -48,13 +48,13 @@
 
 :Run rdf:type owl:Class; 
     #owl:equivalentClass psl:Flow ;
-    rdfs:comment "A single, unique, and identifiable exection of an experiment or simulation under defined terms and settings."@en ;
+    rdfs:comment "A single, unique, and identifiable execution of an experiment or simulation under defined terms and settings."@en ;
     rdfs:label "Run"@IRI-based; 
     rdfs:label "Run"@en .
 
 :Observer rdf:type owl:Class; 
     rdfs:subClassOf foaf:Agent ;
-    rdfs:comment "An agent that can observe an observation"@en ;
+    rdfs:comment "An agent that can observe an observation. It can be a human, device, sensor, or software."@en ;
     rdfs:label "Observer"@IRI-based; 
     rdfs:label "Observer"@en .
 
@@ -78,7 +78,7 @@
 
 :Configuration rdf:type owl:Class; 
     rdfs:subClassOf :Term ;
-    rdfs:comment "A specific setting or arrangement of the observers, entities, and/or charcteristics. This can be e.g., an atom topology in a smulation in NOMAD."@en ;
+    rdfs:comment "A specific setting or arrangement of the observers, entities, and/or charcteristics. This can be e.g., an atom topology in a smulation."@en ;
     rdfs:label "Configuration"@IRI-based; 
     rdfs:label "Configuration"@en .
 
@@ -175,6 +175,7 @@
     rdfs:domain :Observer;
     rdfs:range oboe:Observation . 
 
+# Add triples to say emmo:Item is a/sub of oboe:Entity to allow observations to apply to the characteristics  of EMMO's items.
 :hasTag rdf:type owl:ObjectProperty ;
     rdfs:comment "The has tag property gives allows the measurements to have classification, grouping, or thematic tags." ;
     rdfs:label "hasTag"@IRI-based; 
