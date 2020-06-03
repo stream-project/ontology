@@ -148,7 +148,7 @@ emmo:Item owl:equivalentClass oboe:Entity .
     #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a measurement. Hence, I relaxed determining the domain.
     rdfs:domain :Run;
     rdfs:domain oboe:Observation;
-    rdfs:domain obobe:Measurement;
+    rdfs:domain oboe:Measurement;
     rdfs:range oboe:Protocol .         
 
 :hasMethod rdf:type owl:ObjectProperty ;
@@ -158,7 +158,7 @@ emmo:Item owl:equivalentClass oboe:Entity .
     #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a measurement. Hence, I relaxed determining the domain.
     rdfs:domain :Run;
     rdfs:domain oboe:Observation;
-    rdfs:domain obobe:Measurement;
+    rdfs:domain oboe:Measurement;
     rdfs:range :Method .             
 
 :restrictedBy rdf:type owl:ObjectProperty ;
@@ -168,7 +168,7 @@ emmo:Item owl:equivalentClass oboe:Entity .
     #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a measurement. Hence, I relaxed determining the domain.
     rdfs:domain :Run;
     rdfs:domain oboe:Observation;
-    rdfs:domain obobe:Measurement;
+    rdfs:domain oboe:Measurement;
     rdfs:range :Term .     
 
 :resultsIn rdf:type owl:ObjectProperty ;
