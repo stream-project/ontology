@@ -26,7 +26,7 @@
 
 <http://stream-ontology.com/matvoc-entities> rdf:type owl:Ontology ;
     dc:title "Materials Vocabulary - Entities"@en; 
-    dc:description "The ... RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."@en . 
+    dc:description "The RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to describe the observable entities in the context of the MatVoc ontology. Domain ontologies can further define their own entities."@en . 
 
 
 #################################################################
