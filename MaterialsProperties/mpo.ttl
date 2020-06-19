@@ -1,0 +1,1398 @@
+################################################################
+### The Materials Properties Ontology introduces materials
+### properties and their relations important in the 
+### computational materials sciences like electronic band 
+### structure or atomic forces, but also more complex ones.
+### Author: Maja-Olivia Lenz
+### Based on: EMMO, Core, Structure
+################################################################
+
+@prefix : <https://nomad-coe.eu/ontology/properties#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://nomad-coe.eu/ontology/properties> .
+
+<https://nomad-coe.eu/ontology/properties> rdf:type owl:Ontology ;
+                                            owl:imports <http://emmo.info/emmo/1.0.0-alpha2> ,
+                                                        <https://nomad-coe.eu/ontology/core> ,
+                                                        <https://nomad-coe.eu/ontology/structure> ;
+                                            rdfs:label "Materials Properies Ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://emmo.info/emmo/top/annotations#EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b
+<http://emmo.info/emmo/top/annotations#EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/top/annotations#EMMO_6dd685dd_1895_46e4_b227_be9f7d643c25
+<http://emmo.info/emmo/top/annotations#EMMO_6dd685dd_1895_46e4_b227_be9f7d643c25> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/top/annotations#EMMO_c84c6752_6d64_48cc_9500_e54a3c34898d
+<http://emmo.info/emmo/top/annotations#EMMO_c84c6752_6d64_48cc_9500_e54a3c34898d> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#minQualifiedCardinality
+owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296
+<http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0
+<http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569
+<http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204
+<http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe
+<http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d
+<http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/top/mereotopology#EMMO_8c898653_1118_4682_9bbf_6cc334d16a99
+<http://emmo.info/emmo/top/mereotopology#EMMO_8c898653_1118_4682_9bbf_6cc334d16a99> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/top/mereotopology#EMMO_d893d373_b579_4867_841e_1c2b31a8d2c6
+<http://emmo.info/emmo/top/mereotopology#EMMO_d893d373_b579_4867_841e_1c2b31a8d2c6> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21
+<http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455
+<http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#hasInput
+<https://nomad-coe.eu/ontology/core#hasInput> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#hasOutput
+<https://nomad-coe.eu/ontology/core#hasOutput> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/properties#dependsOn
+:dependsOn rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasDominantOverlapWith
+:hasDominantOverlapWith rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_d893d373_b579_4867_841e_1c2b31a8d2c6> .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasEnergyBandCenter
+:hasEnergyBandCenter rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasMeanValue .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasImaginaryPart
+:hasImaginaryPart rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                  rdfs:domain <https://nomad-coe.eu/ontology/core#ComplexNumber> ;
+                  rdfs:range <https://nomad-coe.eu/ontology/core#ImaginaryPart> .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasMeanValue
+:hasMeanValue rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasStatistics .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasProjection
+:hasProjection rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_8c898653_1118_4682_9bbf_6cc334d16a99> .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasRealPart
+:hasRealPart rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+             rdfs:domain <https://nomad-coe.eu/ontology/core#ComplexNumber> ;
+             rdfs:range <https://nomad-coe.eu/ontology/core#RealPart> .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasStatistics
+:hasStatistics rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> .
+
+
+###  https://nomad-coe.eu/ontology/properties#isDerivedFrom
+:isDerivedFrom rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+###  https://nomad-coe.eu/ontology/properties#isFunctionOf
+:isFunctionOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+###  https://nomad-coe.eu/ontology/properties#isInverseProportionalTo
+:isInverseProportionalTo rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+###  https://nomad-coe.eu/ontology/properties#isProportionalTo
+:isProportionalTo rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42
+<http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> rdf:type owl:DatatypeProperty .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasBandIndex
+:hasBandIndex rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:range xsd:integer .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasBandOccupation
+:hasBandOccupation rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:double .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasIndexValue
+:hasIndexValue rdf:type owl:DatatypeProperty .
+
+
+###  https://nomad-coe.eu/ontology/properties#hasSpinUp
+:hasSpinUp rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment """True: Spin Up
+False: Spin Down""" .
+
+
+###  https://nomad-coe.eu/ontology/properties#isMaximum
+:isMaximum rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:range xsd:boolean .
+
+
+###  https://nomad-coe.eu/ontology/properties#isMinimum
+:isMinimum rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emmo.info/emmo/middle/holistic#EMMO_49804605_c0fe_4538_abda_f70ba1dc8a5d
+<http://emmo.info/emmo/middle/holistic#EMMO_49804605_c0fe_4538_abda_f70ba1dc8a5d> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/isq#EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef
+<http://emmo.info/emmo/middle/isq#EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://emmo.info/emmo/middle/math#EMMO_06658d8d_dcde_4fc9_aae1_17f71c0bcdec> ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                                                                                               owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                   owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0> ;
+                                                                                                                   owl:allValuesFrom <http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486>
+                                                                                                                 ]
+                                                                                             ] .
+
+
+###  http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064
+<http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2
+<http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/isq#EMMO_3227b821_26a5_4c7c_9c01_5c24483e0bd0
+<http://emmo.info/emmo/middle/isq#EMMO_3227b821_26a5_4c7c_9c01_5c24483e0bd0> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/isq#EMMO_4f5c7c54_1c63_4d17_b12b_ea0792c2b187
+<http://emmo.info/emmo/middle/isq#EMMO_4f5c7c54_1c63_4d17_b12b_ea0792c2b187> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/isq#EMMO_53bd0c90_41c3_46e2_8779_cd2a80f7e18b
+<http://emmo.info/emmo/middle/isq#EMMO_53bd0c90_41c3_46e2_8779_cd2a80f7e18b> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/isq#EMMO_77e9dc31_5b19_463e_b000_44c6e79f98aa
+<http://emmo.info/emmo/middle/isq#EMMO_77e9dc31_5b19_463e_b000_44c6e79f98aa> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/isq#EMMO_852b4ab8_fc29_4749_a8c7_b92d4fca7d5a
+<http://emmo.info/emmo/middle/isq#EMMO_852b4ab8_fc29_4749_a8c7_b92d4fca7d5a> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/manufacturing#EMMO_a4d66059_5dd3_4b90_b4cb_10960559441b
+<http://emmo.info/emmo/middle/manufacturing#EMMO_a4d66059_5dd3_4b90_b4cb_10960559441b> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/materials#EMMO_a2b006f2_bbfd_4dba_bcaa_3fca20cd6be1
+<http://emmo.info/emmo/middle/materials#EMMO_a2b006f2_bbfd_4dba_bcaa_3fca20cd6be1> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                                                                                                     owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#AtomInSolid>
+                                                                                                   ] .
+
+
+###  http://emmo.info/emmo/middle/materials#EMMO_eb77076b_a104_42ac_a065_798b2d2809ad
+<http://emmo.info/emmo/middle/materials#EMMO_eb77076b_a104_42ac_a065_798b2d2809ad> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/math#EMMO_06658d8d_dcde_4fc9_aae1_17f71c0bcdec
+<http://emmo.info/emmo/middle/math#EMMO_06658d8d_dcde_4fc9_aae1_17f71c0bcdec> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486
+<http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/math#EMMO_54ee6b5e_5261_44a8_86eb_5717e7fdb9d0
+<http://emmo.info/emmo/middle/math#EMMO_54ee6b5e_5261_44a8_86eb_5717e7fdb9d0> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/math#EMMO_5be83f9c_a4ba_4b9a_be1a_5bfc6e891231
+<http://emmo.info/emmo/middle/math#EMMO_5be83f9c_a4ba_4b9a_be1a_5bfc6e891231> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/metrology#EMMO_02c0621e_a527_4790_8a0f_2bb51973c819
+<http://emmo.info/emmo/middle/metrology#EMMO_02c0621e_a527_4790_8a0f_2bb51973c819> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/metrology#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc
+<http://emmo.info/emmo/middle/metrology#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/metrology#EMMO_dd4a7f3e_ef56_466c_ac1a_d2716b5f87ec
+<http://emmo.info/emmo/middle/metrology#EMMO_dd4a7f3e_ef56_466c_ac1a_d2716b5f87ec> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/perceptual#EMMO_0ef4ff4a_5458_4f2a_b51f_4689d472a3f2
+<http://emmo.info/emmo/middle/perceptual#EMMO_0ef4ff4a_5458_4f2a_b51f_4689d472a3f2> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/physicalistic#EMMO_25f8b804_9a0b_4387_a3e7_b35bce5365ee
+<http://emmo.info/emmo/middle/physicalistic#EMMO_25f8b804_9a0b_4387_a3e7_b35bce5365ee> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                                                         owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_852b4ab8_fc29_4749_a8c7_b92d4fca7d5a>
+                                                                                                       ] .
+
+
+###  http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94
+<http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/properties#EMMO_909415d1_7c43_4d5e_bbeb_7e1910159f66
+<http://emmo.info/emmo/middle/properties#EMMO_909415d1_7c43_4d5e_bbeb_7e1910159f66> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/properties#EMMO_d0200cf1_e4f4_45ae_873f_b9359daea3cd
+<http://emmo.info/emmo/middle/properties#EMMO_d0200cf1_e4f4_45ae_873f_b9359daea3cd> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/properties#EMMO_d8aa8e1f_b650_416d_88a0_5118de945456
+<http://emmo.info/emmo/middle/properties#EMMO_d8aa8e1f_b650_416d_88a0_5118de945456> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2
+<http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/siunits#EMMO_60b78cc3_6011_4134_95ab_956f56d4bdc1
+<http://emmo.info/emmo/middle/siunits#EMMO_60b78cc3_6011_4134_95ab_956f56d4bdc1> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/top/math#EMMO_2b1303e8_d4c3_453b_9918_76f1d009543f
+<http://emmo.info/emmo/top/math#EMMO_2b1303e8_d4c3_453b_9918_76f1d009543f> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/top/math#EMMO_46d5643b_9706_4b67_8bea_ed77d6026539
+<http://emmo.info/emmo/top/math#EMMO_46d5643b_9706_4b67_8bea_ed77d6026539> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/top/math#EMMO_8de14a59_660b_454f_aff8_76a07ce185f4
+<http://emmo.info/emmo/top/math#EMMO_8de14a59_660b_454f_aff8_76a07ce185f4> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/top/math#EMMO_a365b3c1_7bde_41d7_a15b_2820762e85f4
+<http://emmo.info/emmo/top/math#EMMO_a365b3c1_7bde_41d7_a15b_2820762e85f4> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/top/physical#EMMO_0f795e3e_c602_4577_9a43_d5a231aa1360
+<http://emmo.info/emmo/top/physical#EMMO_0f795e3e_c602_4577_9a43_d5a231aa1360> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                                                 owl:someValuesFrom :Spin
+                                                                                               ] .
+
+
+###  http://emmo.info/emmo/top/semiotics#EMMO_0cd58641_824c_4851_907f_f4c3be76630c
+<http://emmo.info/emmo/top/semiotics#EMMO_0cd58641_824c_4851_907f_f4c3be76630c> rdf:type owl:Class .
+
+
+###  http://emmo.info/middle/units-extension#EMMO_5eedba4d_105b_44d8_b1bc_e33606276ea2
+<http://emmo.info/middle/units-extension#EMMO_5eedba4d_105b_44d8_b1bc_e33606276ea2> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/core#ComplexNumber
+<https://nomad-coe.eu/ontology/core#ComplexNumber> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/core#Difference
+<https://nomad-coe.eu/ontology/core#Difference> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/core#ImaginaryNumber
+<https://nomad-coe.eu/ontology/core#ImaginaryNumber> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://emmo.info/emmo/middle/math#EMMO_5be83f9c_a4ba_4b9a_be1a_5bfc6e891231> .
+
+
+###  https://nomad-coe.eu/ontology/core#ImaginaryPart
+<https://nomad-coe.eu/ontology/core#ImaginaryPart> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/core#Minuend
+<https://nomad-coe.eu/ontology/core#Minuend> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/core#RealPart
+<https://nomad-coe.eu/ontology/core#RealPart> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/core#SubtractionOperation
+<https://nomad-coe.eu/ontology/core#SubtractionOperation> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/core#Subtrahend
+<https://nomad-coe.eu/ontology/core#Subtrahend> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/core#TimeDerivation
+<https://nomad-coe.eu/ontology/core#TimeDerivation> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/core#TimeIndependentSchroedingerEquation
+<https://nomad-coe.eu/ontology/core#TimeIndependentSchroedingerEquation> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/properties#AbsorptionCoefficient
+:AbsorptionCoefficient rdf:type owl:Class ;
+                       rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064> ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isFunctionOf ;
+                                         owl:someValuesFrom :PhotonEnergy
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296> ;
+                                         owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                                             owl:allValuesFrom :PerLengthDimension
+                                                           ]
+                                       ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#Acceleration
+:Acceleration rdf:type owl:Class ;
+              rdfs:subClassOf <http://emmo.info/emmo/middle/math#EMMO_06658d8d_dcde_4fc9_aae1_17f71c0bcdec> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf <https://nomad-coe.eu/ontology/core#hasOutput>
+                                               ] ;
+                                owl:someValuesFrom [ owl:intersectionOf ( <https://nomad-coe.eu/ontology/core#TimeDerivation>
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                                                            owl:someValuesFrom :Velocity
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ]
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296> ;
+                                owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                                    owl:allValuesFrom :LengthPerSquareTimeDimension
+                                                  ]
+                              ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#AtomicMass
+:AtomicMass rdf:type owl:Class ;
+            rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_60b78cc3_6011_4134_95ab_956f56d4bdc1> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                              owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_77e9dc31_5b19_463e_b000_44c6e79f98aa>
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                              owl:hasValue "u"
+                            ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#BandEnergy
+:BandEnergy rdf:type owl:Class ;
+            rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
+                              owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#kPoint>
+                            ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#BandGap
+:BandGap rdf:type owl:Class ;
+         rdfs:subClassOf :EnergyDifference ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty [ owl:inverseOf <https://nomad-coe.eu/ontology/core#hasOutput>
+                                          ] ;
+                           owl:someValuesFrom [ owl:intersectionOf ( <https://nomad-coe.eu/ontology/core#SubtractionOperation>
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                                                       owl:someValuesFrom [ owl:intersectionOf ( <https://nomad-coe.eu/ontology/core#Minuend>
+                                                                                                                 :BandEnergy
+                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                   owl:onProperty :isMinimum ;
+                                                                                                                   owl:hasValue "true"^^xsd:boolean
+                                                                                                                 ]
+                                                                                                               ) ;
+                                                                                            rdf:type owl:Class
+                                                                                          ]
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                                                       owl:someValuesFrom [ owl:intersectionOf ( <https://nomad-coe.eu/ontology/core#Subtrahend>
+                                                                                                                 :BandEnergy
+                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                   owl:onProperty :isMaximum ;
+                                                                                                                   owl:hasValue "true"^^xsd:boolean
+                                                                                                                 ]
+                                                                                                               ) ;
+                                                                                            rdf:type owl:Class
+                                                                                          ]
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ]
+                         ] ;
+         rdfs:comment "Band gaps are essentially leftover ranges of energy in the band structure not covered by any band, a result of the finite widths of the energy bands." ;
+         rdfs:label "BandGap" .
+
+
+###  https://nomad-coe.eu/ontology/properties#BandIndex
+:BandIndex rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/properties#BandOccupation
+:BandOccupation rdf:type owl:Class ;
+                rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_02c0621e_a527_4790_8a0f_2bb51973c819> .
+
+
+###  https://nomad-coe.eu/ontology/properties#BandStructure
+:BandStructure rdf:type owl:Class ;
+               rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_02c0621e_a527_4790_8a0f_2bb51973c819> ,
+                               <http://emmo.info/emmo/middle/properties#EMMO_d0200cf1_e4f4_45ae_873f_b9359daea3cd> ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                                 owl:someValuesFrom :EnergyBand
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                                 owl:someValuesFrom :FermiEnergy
+                               ] ;
+               rdfs:comment "The band structure is a commonly used concept in materials science to illustrate the energy levels of e.g. electrons in solids (electronic band structure)." ;
+               rdfs:label "BandStructure" .
+
+
+###  https://nomad-coe.eu/ontology/properties#ComplexRefractiveIndex
+:ComplexRefractiveIndex rdf:type owl:Class ;
+                        rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064> ,
+                                        <https://nomad-coe.eu/ontology/core#ComplexNumber> ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImaginaryPart ;
+                                          owl:someValuesFrom :ExtinctionCoefficient
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasRealPart ;
+                                          owl:someValuesFrom <http://emmo.info/middle/units-extension#EMMO_5eedba4d_105b_44d8_b1bc_e33606276ea2>
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296> ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                                              owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_3227b821_26a5_4c7c_9c01_5c24483e0bd0>
+                                                            ]
+                                        ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#ConductionBand
+:ConductionBand rdf:type owl:Class ;
+                rdfs:subClassOf :EnergyBand ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                                  owl:someValuesFrom :ConductionBandMinimum
+                                ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#ConductionBandMinimum
+:ConductionBandMinimum rdf:type owl:Class ;
+                       rdfs:subClassOf :BandEnergy ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isMinimum ;
+                                         owl:hasValue "true"^^xsd:boolean
+                                       ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#CorrelationEnergy
+:CorrelationEnergy rdf:type owl:Class ;
+                   rdfs:subClassOf :EnergyComponent .
+
+
+###  https://nomad-coe.eu/ontology/properties#CubicLengthDimension
+:CubicLengthDimension rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                            owl:hasValue "T0 L+3 M0 I0 Θ0 N0 J0"
+                                          ] ;
+                      rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc> .
+
+
+###  https://nomad-coe.eu/ontology/properties#CubicMetre
+:CubicMetre rdf:type owl:Class ;
+            rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                              owl:someValuesFrom :CubicLengthDimension
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                              owl:hasValue "m^3"
+                            ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#DensityOfStates
+:DensityOfStates rdf:type owl:Class ;
+                 rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_02c0621e_a527_4790_8a0f_2bb51973c819> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                                   owl:someValuesFrom :NumberOfStates
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isDerivedFrom ;
+                                   owl:someValuesFrom :BandStructure
+                                 ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#Doping
+:Doping rdf:type owl:Class ;
+        rdfs:subClassOf <http://emmo.info/emmo/middle/manufacturing#EMMO_a4d66059_5dd3_4b90_b4cb_10960559441b> ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                          owl:someValuesFrom <http://emmo.info/emmo/middle/materials#EMMO_eb77076b_a104_42ac_a065_798b2d2809ad>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                          owl:someValuesFrom <http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <https://nomad-coe.eu/ontology/core#hasOutput> ;
+                          owl:someValuesFrom <http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                        ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#DriftVelocity
+:DriftVelocity rdf:type owl:Class ;
+               rdfs:subClassOf :Velocity ;
+               <http://emmo.info/emmo/top/annotations#EMMO_c84c6752_6d64_48cc_9500_e54a3c34898d> "https://en.wikipedia.org/wiki/Drift_velocity" ;
+               rdfs:comment "In physics a drift velocity is the average velocity attained by charged particles, such as electrons, in a material due to an electric field." ;
+               rdfs:label "DriftVelocity" .
+
+
+###  https://nomad-coe.eu/ontology/properties#EffectiveMass
+:EffectiveMass rdf:type owl:Class ;
+               rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_ed4af7ae_63a2_497e_bb88_2309619ea405> ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isDerivedFrom ;
+                                 owl:someValuesFrom :EnergyBand
+                               ] ;
+               rdfs:comment """In solid state physics, the effective mass is often used to model the motion of electrons and holes in crystals as free particles in vacuum.
+
+At the highest energies of the valence band in many semiconductors (Ge, Si, GaAs, ...), and the lowest energies of the conduction band in some semiconductors (GaAs, ...), the band structure E(k) can be locally approximated as
+E(k) = E_0 + \\hbar^2 k^2 / ( 2 m* )""" .
+
+
+###  https://nomad-coe.eu/ontology/properties#ElectricalConductivityClassification
+:ElectricalConductivityClassification rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://emmo.info/emmo/middle/properties#EMMO_909415d1_7c43_4d5e_bbeb_7e1910159f66> ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :dependsOn ;
+                                                        owl:someValuesFrom :VCBandGap
+                                                      ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#ElectricalMobility
+:ElectricalMobility rdf:type owl:Class ;
+                    rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064> ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :isInverseProportionalTo ;
+                                      owl:someValuesFrom :EffectiveMass
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty [ owl:inverseOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                                     ] ;
+                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://emmo.info/emmo/middle/physicalistic#EMMO_8043d3c6_a4c1_4089_ba34_9744e28e5b3d>
+                                                                         :Hole
+                                                                       )
+                                                         ]
+                                    ] ;
+                    <http://emmo.info/emmo/top/annotations#EMMO_c84c6752_6d64_48cc_9500_e54a3c34898d> "https://en.wikipedia.org/wiki/Electrical_mobility" ;
+                    rdfs:comment "Electrical mobility is the ability of charged particles (such as electrons or protons) to move through a medium in response to an electric field that is pulling them." ;
+                    rdfs:label "ElectricalMobility" .
+
+
+###  https://nomad-coe.eu/ontology/properties#ElectronMobility
+:ElectronMobility rdf:type owl:Class ;
+                  rdfs:subClassOf :ElectricalMobility .
+
+
+###  https://nomad-coe.eu/ontology/properties#ElectronicBandStructure
+:ElectronicBandStructure rdf:type owl:Class ;
+                         rdfs:subClassOf :BandStructure .
+
+
+###  https://nomad-coe.eu/ontology/properties#EnergyBand
+:EnergyBand rdf:type owl:Class ;
+            rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_02c0621e_a527_4790_8a0f_2bb51973c819> ,
+                            <http://emmo.info/emmo/middle/perceptual#EMMO_0ef4ff4a_5458_4f2a_b51f_4689d472a3f2> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                              owl:someValuesFrom :OrbitalCharacter
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                              owl:someValuesFrom :BandEnergy
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasEnergyBandCenter ;
+                              owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :isFunctionOf ;
+                              owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#kPoint>
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasBandIndex ;
+                              owl:someValuesFrom xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasBandOccupation ;
+                              owl:someValuesFrom xsd:double
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasSpinUp ;
+                              owl:someValuesFrom xsd:boolean
+                            ] ;
+            rdfs:comment """The energy of adjacent levels/orbitals in a solid are so close together that they can be considered as a continuum, an energy band.
+
+BandEnergies in a BandStructure having the same BandIndex belong to the same EnergyBand.""" ;
+            rdfs:label "EnergyBand" .
+
+
+###  https://nomad-coe.eu/ontology/properties#EnergyComponent
+:EnergyComponent rdf:type owl:Class ;
+                 rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> .
+
+
+###  https://nomad-coe.eu/ontology/properties#EnergyDifference
+:EnergyDifference rdf:type owl:Class ;
+                  rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> ,
+                                  <https://nomad-coe.eu/ontology/core#Difference> .
+
+
+###  https://nomad-coe.eu/ontology/properties#ExchangeEnergy
+:ExchangeEnergy rdf:type owl:Class ;
+                rdfs:subClassOf :EnergyComponent .
+
+
+###  https://nomad-coe.eu/ontology/properties#ExtinctionCoefficient
+:ExtinctionCoefficient rdf:type owl:Class ;
+                       rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064> ,
+                                       <https://nomad-coe.eu/ontology/core#ImaginaryPart> ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296> ;
+                                         owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                                             owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_3227b821_26a5_4c7c_9c01_5c24483e0bd0>
+                                                           ]
+                                       ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#ExtrinsicSemiconductor
+:ExtrinsicSemiconductor rdf:type owl:Class ;
+                        rdfs:subClassOf :Semiconductor ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty [ owl:inverseOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                                         ] ;
+                                          owl:someValuesFrom [ owl:intersectionOf ( <http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty [ owl:inverseOf <https://nomad-coe.eu/ontology/core#hasOutput>
+                                                                                                     ] ;
+                                                                                      owl:someValuesFrom :SemiconductorDoping
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ]
+                                        ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#FermiEnergy
+:FermiEnergy rdf:type owl:Class ;
+             rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> ;
+             <http://emmo.info/emmo/top/annotations#EMMO_c84c6752_6d64_48cc_9500_e54a3c34898d> "https://en.wikipedia.org/wiki/Fermi_energy" ;
+             rdfs:comment "The Fermi energy separates the occupied from the unoccupied energy levels in a system in its ground state at absolute zero." ;
+             rdfs:label "FermiEnergy" .
+
+
+###  https://nomad-coe.eu/ontology/properties#Hole
+:Hole rdf:type owl:Class ;
+      rdfs:subClassOf :QuasiParticle ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                        owl:someValuesFrom :DriftVelocity
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                        owl:someValuesFrom :EffectiveMass
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                        owl:someValuesFrom :HoleMobility
+                      ] ;
+      rdfs:comment "A hole is a quasiparticle that exists due to the absence of an electron. It is therefore positively charged." ;
+      rdfs:label "Hole" .
+
+
+###  https://nomad-coe.eu/ontology/properties#HoleMobility
+:HoleMobility rdf:type owl:Class ;
+              rdfs:subClassOf :ElectricalMobility .
+
+
+###  https://nomad-coe.eu/ontology/properties#Insulator
+:Insulator rdf:type owl:Class ;
+           rdfs:subClassOf :ElectricalConductivityClassification .
+
+
+###  https://nomad-coe.eu/ontology/properties#IntrinsicSemiconductor
+:IntrinsicSemiconductor rdf:type owl:Class ;
+                        rdfs:subClassOf :Semiconductor .
+
+
+###  https://nomad-coe.eu/ontology/properties#JouleMetre6
+:JouleMetre6 rdf:type owl:Class ;
+             rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                               owl:someValuesFrom :Mass8LengthPerSquareTimeDimension
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                               owl:hasValue "Jm^6"
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#JoulePerKelvin
+:JoulePerKelvin rdf:type owl:Class ;
+                rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                  owl:someValuesFrom :MassSquareLengthPerSquareTimeTemperatureDimension
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                  owl:hasValue "J/K"
+                                ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#KineticEnergy
+:KineticEnergy rdf:type owl:Class ;
+               rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> ;
+               rdfs:comment "The kinetic energy of an object is the energy it has due to its motion." ;
+               rdfs:label "KineticEnergy" .
+
+
+###  https://nomad-coe.eu/ontology/properties#LengthPerSquareTimeDimension
+:LengthPerSquareTimeDimension rdf:type owl:Class ;
+                              rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc> .
+
+
+###  https://nomad-coe.eu/ontology/properties#Mass8LengthPerSquareTimeDimension
+:Mass8LengthPerSquareTimeDimension rdf:type owl:Class ;
+                                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                                         owl:hasValue "T-2 L+8 M+1 I0 Θ0 N0 J0"
+                                                       ] ;
+                                   rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc> .
+
+
+###  https://nomad-coe.eu/ontology/properties#MassSquareLengthPerSquareTimeTemperatureDimension
+:MassSquareLengthPerSquareTimeTemperatureDimension rdf:type owl:Class ;
+                                                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                                                         owl:hasValue "T-2 L+2 M+1 I0 Θ-1 N0 J0"
+                                                                       ] ;
+                                                   rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc> .
+
+
+###  https://nomad-coe.eu/ontology/properties#Metal
+:Metal rdf:type owl:Class ;
+       rdfs:subClassOf :ElectricalConductivityClassification .
+
+
+###  https://nomad-coe.eu/ontology/properties#MetrePerSecond
+:MetrePerSecond rdf:type owl:Class ;
+                rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                  owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_4f5c7c54_1c63_4d17_b12b_ea0792c2b187>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                  owl:hasValue "m/s"
+                                ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#NumberOfStates
+:NumberOfStates rdf:type owl:Class ;
+                rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_02c0621e_a527_4790_8a0f_2bb51973c819> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
+                                  owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
+                                  owl:someValuesFrom :Spin
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                  owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_3227b821_26a5_4c7c_9c01_5c24483e0bd0>
+                                ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#OrbitalCharacter
+:OrbitalCharacter rdf:type owl:Class ;
+                  rdfs:subClassOf <http://emmo.info/emmo/middle/properties#EMMO_d8aa8e1f_b650_416d_88a0_5118de945456> ;
+                  rdfs:comment "OrbitalCharacter is a property of an energy band that stems from an orbital that has a dominant overlap with some atomic orbital. This way the orbital despite being a mixed orbital has a dominant character."@en ;
+                  rdfs:label "OrbitalCharacter"@en .
+
+
+###  https://nomad-coe.eu/ontology/properties#PartialDensityOfStates
+:PartialDensityOfStates rdf:type owl:Class ;
+                        rdfs:subClassOf :DensityOfStates .
+
+
+###  https://nomad-coe.eu/ontology/properties#PerLengthDimension
+:PerLengthDimension rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                          owl:hasValue "T0 L-1 M0 I0 Θ0 N0 J0"
+                                        ] ;
+                    rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc> .
+
+
+###  https://nomad-coe.eu/ontology/properties#PerMetre
+:PerMetre rdf:type owl:Class ;
+          rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                            owl:someValuesFrom :PerLengthDimension
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                            owl:hasValue "m^(-1)"
+                          ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#PerSquareLengthDimension
+:PerSquareLengthDimension rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                                owl:hasValue "T0 L-2 M0 I0 Θ0 N0 J0"
+                                              ] ;
+                          rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc> .
+
+
+###  https://nomad-coe.eu/ontology/properties#PerSquareMetre
+:PerSquareMetre rdf:type owl:Class ;
+                rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                  owl:someValuesFrom :PerSquareLengthDimension
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                  owl:hasValue "m^(-2)"
+                                ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#PhotonEnergy
+:PhotonEnergy rdf:type owl:Class ;
+              rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :dependsOn ;
+                                owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_852b4ab8_fc29_4749_a8c7_b92d4fca7d5a>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                               ] ;
+                                owl:someValuesFrom <http://emmo.info/emmo/middle/physicalistic#EMMO_25f8b804_9a0b_4387_a3e7_b35bce5365ee>
+                              ] ;
+              rdfs:comment "Photon energy is the energy carried by a single photon." .
+
+
+###  https://nomad-coe.eu/ontology/properties#PotentialEnergy
+:PotentialEnergy rdf:type owl:Class ;
+                 rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> ;
+                 rdfs:comment "In physics, potential energy is the energy held by an object because of its position relative to other objects, stresses within itself, its electric charge, or other factors." ;
+                 rdfs:label "PotentialEnergy" .
+
+
+###  https://nomad-coe.eu/ontology/properties#ProjectedDensityOfStates
+:ProjectedDensityOfStates rdf:type owl:Class ;
+                          rdfs:subClassOf :DensityOfStates ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                            owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#AtomicOrbital>
+                                          ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#QuasiParticle
+:QuasiParticle rdf:type owl:Class ;
+               rdfs:subClassOf <http://emmo.info/emmo/middle/physicalistic#EMMO_98ada9d8_f1c8_4f13_99b5_d890f5354152> .
+
+
+###  https://nomad-coe.eu/ontology/properties#RefractiveIndex
+:RefractiveIndex rdf:type owl:Class ;
+                 rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064> ,
+                                 <https://nomad-coe.eu/ontology/core#RealPart> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296> ;
+                                   owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                                       owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_3227b821_26a5_4c7c_9c01_5c24483e0bd0>
+                                                     ]
+                                 ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#RelativePermittivity
+:RelativePermittivity rdf:type owl:Class ;
+                      rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064> ,
+                                      <https://nomad-coe.eu/ontology/core#ComplexNumber> ;
+                      <http://emmo.info/emmo/top/annotations#EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b> "Dielectric Constant (deprecated)" .
+
+
+###  https://nomad-coe.eu/ontology/properties#Semiconductor
+:Semiconductor rdf:type owl:Class ;
+               rdfs:subClassOf :ElectricalConductivityClassification .
+
+
+###  https://nomad-coe.eu/ontology/properties#SemiconductorDoping
+:SemiconductorDoping rdf:type owl:Class ;
+                     rdfs:subClassOf :Doping ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                       owl:someValuesFrom [ owl:intersectionOf ( <http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                                   owl:someValuesFrom :IntrinsicSemiconductor
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://nomad-coe.eu/ontology/core#hasOutput> ;
+                                       owl:someValuesFrom [ owl:intersectionOf ( <http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94>
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                                   owl:someValuesFrom :ExtrinsicSemiconductor
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ]
+                                     ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#Semimetal
+:Semimetal rdf:type owl:Class ;
+           rdfs:subClassOf :ElectricalConductivityClassification .
+
+
+###  https://nomad-coe.eu/ontology/properties#Spin
+:Spin rdf:type owl:Class ;
+      rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_dd4a7f3e_ef56_466c_ac1a_d2716b5f87ec> ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSpinUp ;
+                        owl:someValuesFrom xsd:boolean
+                      ] ;
+      <http://emmo.info/emmo/top/annotations#EMMO_c84c6752_6d64_48cc_9500_e54a3c34898d> "https://en.wikipedia.org/wiki/Spin_(physics)"@en ;
+      rdfs:comment "In quantum mechanics and particle physics, spin is an intrinsic form of angular momentum carried by elementary particles, composite particles (hadrons), and atomic nuclei" ;
+      rdfs:label "Spin" .
+
+
+###  https://nomad-coe.eu/ontology/properties#SquareLengthDimension
+:SquareLengthDimension rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                             owl:hasValue "T0 L+2 M0 I0 Θ0 N0 J0"
+                                           ] ;
+                       rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc> .
+
+
+###  https://nomad-coe.eu/ontology/properties#SquareMetre
+:SquareMetre rdf:type owl:Class ;
+             rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                               owl:someValuesFrom :SquareLengthDimension
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                               owl:hasValue "m^2"
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#Strain
+:Strain rdf:type owl:Class ;
+        rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064> ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :dependsOn ;
+                          owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#Position>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296> ;
+                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                              owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                              owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_3227b821_26a5_4c7c_9c01_5c24483e0bd0>
+                                            ]
+                        ] ;
+        rdfs:comment "Description of deformation in terms of relative displacement of particles in a body" .
+
+
+###  https://nomad-coe.eu/ontology/properties#Stress
+:Stress rdf:type owl:Class ;
+        rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_2946d40b_24a1_47fa_8176_e3f79bb45064> ,
+                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :isDerivedFrom ;
+                                                 owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
+                                               ]
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :isDerivedFrom ;
+                                                 owl:someValuesFrom :Strain
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296> ;
+                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                              owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                              owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_53bd0c90_41c3_46e2_8779_cd2a80f7e18b>
+                                            ]
+                        ] ;
+        <http://emmo.info/emmo/top/annotations#EMMO_6dd685dd_1895_46e4_b227_be9f7d643c25> "http://dbpedia.org/page/Stress_(mechanics)" .
+
+
+###  https://nomad-coe.eu/ontology/properties#TotalDensityOfStates
+:TotalDensityOfStates rdf:type owl:Class ;
+                      rdfs:subClassOf :DensityOfStates ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasProjection ;
+                                        owl:someValuesFrom :ProjectedDensityOfStates
+                                      ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#VCBandGap
+:VCBandGap rdf:type owl:Class ;
+           rdfs:subClassOf :BandGap ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isDerivedFrom ;
+                             owl:someValuesFrom :ConductionBandMinimum
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isDerivedFrom ;
+                             owl:someValuesFrom :ValenceBandMaximum
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty [ owl:inverseOf <https://nomad-coe.eu/ontology/core#hasOutput>
+                                            ] ;
+                             owl:someValuesFrom [ owl:intersectionOf ( <https://nomad-coe.eu/ontology/core#SubtractionOperation>
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                                                                                owl:someValuesFrom [ owl:intersectionOf ( <https://nomad-coe.eu/ontology/core#Minuend>
+                                                                                                                                          :ConductionBandMinimum
+                                                                                                                                        ) ;
+                                                                                                                     rdf:type owl:Class
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                                                                                owl:someValuesFrom [ owl:intersectionOf ( <https://nomad-coe.eu/ontology/core#Subtrahend>
+                                                                                                                                          :ValenceBandMaximum
+                                                                                                                                        ) ;
+                                                                                                                     rdf:type owl:Class
+                                                                                                                   ]
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ]
+                           ] ;
+           rdfs:comment "The valence-conduction band gap is the most prominent band gap that is often only called band gap. It is the band gap between the valence band (maximum) and the conduction band (minimum)." ;
+           rdfs:label "VCBandGap" .
+
+
+###  https://nomad-coe.eu/ontology/properties#ValenceBand
+:ValenceBand rdf:type owl:Class ;
+             rdfs:subClassOf :EnergyBand ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                               owl:someValuesFrom :ValenceBandMaximum
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#ValenceBandMaximum
+:ValenceBandMaximum rdf:type owl:Class ;
+                    rdfs:subClassOf :BandEnergy ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :isMaximum ;
+                                      owl:hasValue "true"^^xsd:boolean
+                                    ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#VanderWaalsEnergy
+:VanderWaalsEnergy rdf:type owl:Class ;
+                   rdfs:subClassOf :EnergyComponent .
+
+
+###  https://nomad-coe.eu/ontology/properties#Velocity
+:Velocity rdf:type owl:Class ;
+          rdfs:subClassOf <http://emmo.info/emmo/middle/math#EMMO_06658d8d_dcde_4fc9_aae1_17f71c0bcdec> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf <https://nomad-coe.eu/ontology/core#hasOutput>
+                                           ] ;
+                            owl:someValuesFrom [ owl:intersectionOf ( <https://nomad-coe.eu/ontology/core#TimeDerivation>
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                                                        owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#Position>
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_67fc0a36_8dcb_4ffa_9a43_31074efa3296> ;
+                            owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://emmo.info/emmo/middle/metrology#EMMO_bed1d005_b04e_4a90_94cf_02bc678a8569> ;
+                                                owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_4f5c7c54_1c63_4d17_b12b_ea0792c2b187>
+                                              ]
+                          ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#VibrationalBandStructure
+:VibrationalBandStructure rdf:type owl:Class ;
+                          rdfs:subClassOf :BandStructure .
+
+
+###  https://nomad-coe.eu/ontology/properties#dBandCenter
+:dBandCenter rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty [ owl:inverseOf <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe>
+                                                                         ] ;
+                                                          owl:someValuesFrom [ owl:intersectionOf ( :EnergyBand
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                                                      owl:someValuesFrom :dOrbitalCharacter
+                                                                                                    ]
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty :hasEnergyBandCenter ;
+                                                                                                      owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
+                                                                                                    ]
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ]
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :EnergyDifference ;
+             rdfs:comment "The d-band center is the center of the energy band with dOrbital character. It is an often used feature in catalysis, e.g. to determine the bonding strength between metal and adsorbate. (Higher d-band center leads to stronger binding.)"@en ;
+             rdfs:label "dBandCenter"@en .
+
+
+###  https://nomad-coe.eu/ontology/properties#dOrbitalCharacter
+:dOrbitalCharacter rdf:type owl:Class ;
+                   rdfs:subClassOf :OrbitalCharacter .
+
+
+###  https://nomad-coe.eu/ontology/properties#fOrbitalCharacter
+:fOrbitalCharacter rdf:type owl:Class ;
+                   rdfs:subClassOf :OrbitalCharacter .
+
+
+###  https://nomad-coe.eu/ontology/properties#nTypeSemiconductor
+:nTypeSemiconductor rdf:type owl:Class ;
+                    rdfs:subClassOf :ExtrinsicSemiconductor .
+
+
+###  https://nomad-coe.eu/ontology/properties#pOrbitalCharacter
+:pOrbitalCharacter rdf:type owl:Class ;
+                   rdfs:subClassOf :OrbitalCharacter .
+
+
+###  https://nomad-coe.eu/ontology/properties#pTypeSemiconductor
+:pTypeSemiconductor rdf:type owl:Class ;
+                    rdfs:subClassOf :ExtrinsicSemiconductor .
+
+
+###  https://nomad-coe.eu/ontology/properties#sOrbitalCharacter
+:sOrbitalCharacter rdf:type owl:Class ;
+                   rdfs:subClassOf :OrbitalCharacter .
+
+
+###  https://nomad-coe.eu/ontology/structure#AtomInSolid
+<https://nomad-coe.eu/ontology/structure#AtomInSolid> rdf:type owl:Class ;
+                                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                        owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef>
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                        owl:someValuesFrom :Velocity
+                                                                      ] .
+
+
+###  https://nomad-coe.eu/ontology/structure#AtomicOrbital
+<https://nomad-coe.eu/ontology/structure#AtomicOrbital> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/structure#Crystal
+<https://nomad-coe.eu/ontology/structure#Crystal> rdf:type owl:Class ;
+                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                    owl:someValuesFrom :BandStructure
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                    owl:someValuesFrom :DensityOfStates
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                    owl:someValuesFrom :ElectricalConductivityClassification
+                                                                  ] .
+
+
+###  https://nomad-coe.eu/ontology/structure#CrystalUnitCell
+<https://nomad-coe.eu/ontology/structure#CrystalUnitCell> rdf:type owl:Class ;
+                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                            owl:someValuesFrom :Stress
+                                                                          ] .
+
+
+###  https://nomad-coe.eu/ontology/structure#ElectronInSolid
+<https://nomad-coe.eu/ontology/structure#ElectronInSolid> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                            owl:someValuesFrom :DriftVelocity
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                            owl:someValuesFrom :EffectiveMass
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                            owl:someValuesFrom :ElectronMobility
+                                                                          ] .
+
+
+###  https://nomad-coe.eu/ontology/structure#Orbital
+<https://nomad-coe.eu/ontology/structure#Orbital> rdf:type owl:Class ;
+                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                    owl:someValuesFrom :OrbitalCharacter
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                    owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                         owl:unionOf ( <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
+                                                                                                       :EnergyBand
+                                                                                                     )
+                                                                                       ]
+                                                                  ] .
+
+
+###  https://nomad-coe.eu/ontology/structure#Position
+<https://nomad-coe.eu/ontology/structure#Position> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/structure#dOrbital
+<https://nomad-coe.eu/ontology/structure#dOrbital> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/structure#fOrbital
+<https://nomad-coe.eu/ontology/structure#fOrbital> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/structure#kPoint
+<https://nomad-coe.eu/ontology/structure#kPoint> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/structure#pOrbital
+<https://nomad-coe.eu/ontology/structure#pOrbital> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/structure#sOrbital
+<https://nomad-coe.eu/ontology/structure#sOrbital> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://nomad-coe.eu/ontology/properties#SpinDown
+:SpinDown rdf:type owl:NamedIndividual .
+
+
+###  https://nomad-coe.eu/ontology/properties#SpinUp
+:SpinUp rdf:type owl:NamedIndividual .
+
+
+[ owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
+] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
