@@ -30,6 +30,7 @@
 
 #################################################################
 ###                     Class Definitions                     ###
+# https://en.wikipedia.org/wiki/Process_ontology
 
 :Study rdf:type owl:Class; 
     #owl:equivalentClass dul:Process ; # needs more investigation for possible laternatives, PSL, ...
@@ -196,7 +197,7 @@ emmo:Item owl:equivalentClass oboe:Entity .
     rdfs:comment "The has tag property gives allows the measurements to have classification, grouping, or thematic tags." ;
     rdfs:label "hasTag"@IRI-based; 
     rdfs:label "has tag"@en; 
-    rdfs:domain oboe:measurement;
+    rdfs:domain oboe:Measurement;
     rdfs:range skos:Concept . 
 
 :hasMetadata rdf:type owl:ObjectProperty ;
