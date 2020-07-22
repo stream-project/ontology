@@ -15,12 +15,10 @@ pipeline {
         }
         stage('Test2') {
             agent {
-                docker { image 'kurt/raptor:1.4'
-                    args '--entrypoint=""'}
+                docker { image 'tboonx/oops_caller'}
             }
             steps {
-                sh 'chmod 777 /prepareFile.sh && touch /builds/root/test/MatVoc-Core.xml && touch /builds/root/test/MatVoc-Core_correct.xml && /prepareFile.sh'
-                sh 'curl -X POST -H "Content-Type: text/xml" http://oops-ws.oeg-upm.net/rest --data @/builds/root/test/MatVoc-Core_correct.xml'
+                sh 'MatVoc-Core'
             }
         }
     }
