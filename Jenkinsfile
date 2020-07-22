@@ -10,7 +10,7 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -hal'
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o turtle -s owl,rdfs'
-                sh 'cat /tmp/results/_builds_root_test_MatVoc-Core.ttl.aggregatedTestCaseResult.ttl #Show results'
+                sh 'cat /tmp/results/._MatVoc-Core.ttl.aggregatedTestCaseResult.ttl #Show results'
             }
         }
         stage('Test2') {
