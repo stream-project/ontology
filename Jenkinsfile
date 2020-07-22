@@ -16,10 +16,10 @@ pipeline {
         stage('Test2') {
             agent {
                 docker { image 'tboonx/oops_caller:0.1'
-                    args 'entrypoint=""'}
+                    args '--entrypoint="" -v $pwd/MatVoc-Core.ttl:/builds/root/test/MatVoc-Core.ttl'}
             }
             steps {
-                sh '/bin/sh /script.sh'
+                sh '/bin/sh /script.sh MatVoc-Core'
             }
         }
     }
