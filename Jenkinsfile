@@ -25,7 +25,7 @@ pipeline {
     }
     post {
         always {
-            recipientProviders: [[$class: 'RequesterRecipientProvider']]
+            emailext recipientProviders: [[$class: 'RequesterRecipientProvider']]
         }
     }
 }
