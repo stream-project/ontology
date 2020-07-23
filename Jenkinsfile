@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test2') {
             agent {
-                docker { image 'tboonx/oops_caller:0.1'
+                docker { image 'tboonx/oops_caller:0.2'
                     args '--entrypoint="" -v $pwd/MatVoc-Core.ttl:/builds/root/test/MatVoc-Core.ttl'}
             }
             steps {
