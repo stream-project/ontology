@@ -31,6 +31,7 @@ pipeline {
             steps {
                 sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq . " > RDFUnit_errors.txt'
                 sh './interprete.sh'
+                sh 'echo "$KURT_OOPS"'
             }
         }
     }
