@@ -1,5 +1,7 @@
 pipeline {
-    agent none
+    agent { 
+        label 'Developer30' 
+    }
     stages {
         stage('Test RDFUnit') {
             agent {
