@@ -10,6 +10,7 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -hal'
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o turtle -s owl,rdfs'
+                sh 'ls -hal /tmp/results/'
                 sh 'cp /tmp/results/._MatVoc-Core.ttl.aggregatedTestCaseResult.ttl ./RDFUnit_results.ttl'
             }
         }
