@@ -21,6 +21,7 @@ pipeline {
             steps {
                 sh '/bin/sh /script.sh MatVoc-Core > OOPS_result.xml'
                 sh 'ls -hal'
+                sh 'KURT_OOPS=12; export KURT_OOPS'
             }
         }
         stage('Interprete reports') {
@@ -36,7 +37,7 @@ pipeline {
     post {
         always {
             emailext attachmentsPattern: '*RDFUnit_errors.txt',
-                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}<br> More info at: <a href=\"${env.BUILD_URL}\">${env.BUILD_URL}</a><br><br>${env.getEnvironment()}",
+                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}<br> More info at: <a href=\"${env.BUILD_URL}\">${env.BUILD_URL}</a>",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
         }
