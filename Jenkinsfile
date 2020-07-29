@@ -34,7 +34,7 @@ pipeline {
     post {
         always {
             emailext
-                attachmentsPattern: '**/RDFUnit_errors.txt',
+                attachmentsPattern: **/RDFUnit_errors.txt,
                 body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}<br> More info at: <a href=\"${env.BUILD_URL}\">${env.BUILD_URL}</a>",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
