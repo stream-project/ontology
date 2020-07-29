@@ -1,6 +1,6 @@
 #!/bin/sh
 
-lines='wc -l RDFUnit_errors.txt'
+lines='cat ./RDFUnit_errors.txt | wc -l'
 lines=$(($lines + 1))
 
     if [ $lines -gt 3 ]; then
