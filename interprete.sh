@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-lines='cat ./RDFUnit_errors.txt | wc -l'
-lines=$(($lines + 1))
+lines=$(awk 'END{print NR}' RDFUnit_errors.txt)
+#lines=$(($lines + 1))
 
-    if [ $lines -gt 3 ]; then
+    if [ $lines -gt 0 ]; then
 	cat RDFUnit_errors.txt
-	exit 1;
+	exit 1
     fi
