@@ -10,6 +10,7 @@ pipeline {
             }
             steps {
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o json-ld -s owl,rdfs'
+                sh 'rm -f ./RDFUnit_results.jsonld'
                 sh 'cp /tmp/results/._MatVoc-Core.ttl.aggregatedTestCaseResult.jsonld ./RDFUnit_results.jsonld'
                 sh 'cat ./RDFUnit_results.jsonld'
             }
@@ -20,6 +21,7 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
+                sh 'rm -f ./oops_result.xml ./OOPS_result.xml'
                 sh '/bin/sh /script.sh MatVoc-Core > oops_result.xml'
                 sh 'ls -hal'
             }
