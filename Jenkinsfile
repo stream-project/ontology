@@ -17,13 +17,13 @@ pipeline {
         }
         stage('Test OOPS') {
             agent {
-                docker { image 'tboonx/oops_caller:0.2'
+                docker { image 'tboonx/oops_caller:0.3'
                     args '--entrypoint=""'}
             }
             steps {
-                sh 'rm -f ./oops_result.xml ./OOPS_result.xml'
-                sh '/bin/sh /script.sh MatVoc-Core > oops_result.xml'
-                sh 'ls -hal'
+                sh 'rm -f ./oops_result.xml ./OOPS_result.xml ./result.xml'
+                sh '/bin/sh /script.sh MatVoc-Core'
+                sh 'cp result.xml oops_result.xml && ls -hal'
             }
         }
         stage('Interprete reports') {
