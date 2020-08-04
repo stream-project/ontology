@@ -34,8 +34,6 @@ pipeline {
                 sh 'rm -f reports.txt all_reports.txt && ls -hal'
                 sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq . " > RDFUnit_errors.txt'
                 sh './interprete.sh'
-                sh 'cp reports.txt all_reports.txt'
-                sh 'ls -hal'
             }
         }
     }
