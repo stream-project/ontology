@@ -13,7 +13,6 @@ pipeline {
             steps {
                 sh 'rm -f oops_result.xml OOPS_result.xml result.xml reports.txt all_reports.txt RDFUnit_errors_.txt RDFUnit_errors.txt RDFUnit_results.jsonld'
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o json-ld -s owl,rdfs'
-                sh 'rm -f ./RDFUnit_results.jsonld'
                 sh 'cp /tmp/results/._MatVoc-Core.ttl.aggregatedTestCaseResult.jsonld ./RDFUnit_results.jsonld'
                 sh 'cat ./RDFUnit_results.jsonld'
             }
@@ -25,7 +24,7 @@ pipeline {
             }
             steps {
                 sh '/bin/sh /script.sh MatVoc-Core'
-                sh 'cp result.xml oops_result.xml && ls -hal'
+                sh 'cp result.xml oops_result.xml'
             }
         }
         stage('Interprete reports') {
@@ -33,7 +32,6 @@ pipeline {
                 docker { image 'alpine/xml'}
             }
             steps {
-                sh 'ls -hal'
                 sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq . " > RDFUnit_errors_.txt'
                 sh './interprete.sh'
                 script {
