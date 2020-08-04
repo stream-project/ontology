@@ -9,7 +9,7 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                sh 'git clean -fdx'
+                sh 'apt-get update && apt-get install -y git && git clean -fdx'
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o json-ld -s owl,rdfs'
                 sh 'cp /tmp/results/._MatVoc-Core.ttl.aggregatedTestCaseResult.jsonld ./RDFUnit_results.jsonld'
                 sh 'cat ./RDFUnit_results.jsonld'
