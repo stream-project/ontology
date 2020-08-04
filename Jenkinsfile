@@ -9,8 +9,8 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
+                sh 'git clean -fdx'
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o json-ld -s owl,rdfs'
-                sh 'rm -f ./RDFUnit_results.jsonld'
                 sh 'cp /tmp/results/._MatVoc-Core.ttl.aggregatedTestCaseResult.jsonld ./RDFUnit_results.jsonld'
                 sh 'cat ./RDFUnit_results.jsonld'
             }
@@ -21,7 +21,6 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                sh 'rm -f ./oops_result.xml ./OOPS_result.xml ./result.xml'
                 sh '/bin/sh /script.sh MatVoc-Core'
                 sh 'cp result.xml oops_result.xml && ls -hal'
             }
@@ -31,7 +30,7 @@ pipeline {
                 docker { image 'alpine/xml'}
             }
             steps {
-                sh 'rm -f reports.txt all_reports.txt && ls -hal'
+                sh 'ls -hal'
                 sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq . " > RDFUnit_errors_.txt'
                 sh './interprete.sh'
             }
