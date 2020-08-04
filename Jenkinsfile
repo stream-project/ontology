@@ -41,6 +41,7 @@ pipeline {
                   // FYI, trim removes leading and trailing whitespace from the string
                   myVar = readFile('RDFUnit_errors.txt').trim()
                 }
+                sh './interprete.sh'
             }
         }
     }
