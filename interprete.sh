@@ -8,6 +8,7 @@ sh -c " cat ./oops_result.xml | xq -c '.[\"rdf:RDF\"] | .[\"rdf:Description\"] |
 # Put everything into one file
 echo "OOPS Summary: (always the occurrences amount and then the description) \n Critical: \n " `cat critical.txt` " \n  \n Important: \n " `cat important.txt` " \n  \n Minor: \n " `cat minor.txt` " \n  \n " > reports.txt
 echo "RDFUnit Summary: \n " `cat RDFUnit_errors.txt` >> reports.txt
+ls -hal
 
 # Now read RDFUnit report
 lines=$(awk 'END{print NR}' RDFUnit_errors.txt)
