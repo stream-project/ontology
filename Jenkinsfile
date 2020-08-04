@@ -34,12 +34,13 @@ pipeline {
                 sh 'ls -hal'
                 sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq . " > RDFUnit_errors.txt'
                 sh './interprete.sh'
+                sh 'cp reports.txt all_reports.txt'
             }
         }
     }
     post {
         always {
-            emailext attachmentsPattern: '*.txt',
+            emailext attachmentsPattern: '*all_reports.txt',
                 body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}<br> More info at: <a href=\"${env.BUILD_URL}\">${env.BUILD_URL}</a><br><br>As an attachment you find the summary of RDFUnit and OOPS.<br><br>For more information read the job result",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
