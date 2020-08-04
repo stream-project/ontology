@@ -7,6 +7,6 @@ sh -c " cat ./oops_result.xml | xq -c '.[\"rdf:RDF\"] | .[\"rdf:Description\"] |
 
 # Put everything into one file
 echo "OOPS Summary: (always the occurrences amount and then the description) <br> Critical: <br> " `cat critical.txt` " <br>  <br> Important: <br> " `cat important.txt` " <br>  <br> Minor: <br> " `cat minor.txt` " <br>  <br> " > reports.txt
-echo "RDFUnit Summary: <br> " `cat RDFUnit_errors_.txt` >> RDFUnit_errors.txt
+echo "RDFUnit Summary: <br> " `cat RDFUnit_errors_.txt` >> reports.txt
 #cp reports.txt all_reports.txt
 ls -hal
