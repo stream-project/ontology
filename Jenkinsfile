@@ -40,7 +40,7 @@ pipeline {
     post {
         always {
             emailext attachmentsPattern: '*RDFUnit_errors.txt',
-                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}<br> More info at: <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a><br><br>If your commit failed the job, then the RDFUnit report is attached.<br>Additionally the OOPS summary: (always the occurrences amount and then the description)<br>Critical:<br><pre>${FILE, path='$WORKSPACE/critical.txt'}</pre><br>Important:<br><pre>${FILE, path='$WORKSPACE/important.txt'}</pre><br>Minor:<br><pre>${FILE, path='$WORKSPACE/minor.txt'}</pre><br><br>For more information read the job result.",
+                body: '$currentBuild.currentResult : Job "${env.JOB_NAME}" build ${env.BUILD_NUMBER}<br> More info at: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a><br><br>If your commit failed the job, then the RDFUnit report is attached.<br>Additionally the OOPS summary: (always the occurrences amount and then the description)<br>Critical:<br><pre>${FILE, path="$WORKSPACE/critical.txt"}</pre><br>Important:<br><pre>${FILE, path="$WORKSPACE/important.txt"}</pre><br>Minor:<br><pre>${FILE, path="$WORKSPACE/minor.txt"}</pre><br><br>For more information read the job result.',
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
         }
