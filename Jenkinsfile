@@ -39,7 +39,7 @@ pipeline {
                 script {
                   // OPTION 1: set variable by reading from file.
                   // FYI, trim removes leading and trailing whitespace from the string
-                  myVar = readFile('RDFUnit_errors.txt').trim()
+                  myVar = readFile('RDFUnit_errors.txt')
                 }
                 sh './interprete.sh'
             }
