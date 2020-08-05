@@ -10,6 +10,7 @@ pipeline {
                 script: 'date "+%Y.%m.%d_%H.%M"'
             )}"""
         git_credentials = credentials('github_credentials')
+        git_email = credentials('git_email')
     }
     stages {
         stage('Test RDFUnit') {
@@ -54,6 +55,8 @@ pipeline {
             }
             steps {
                 sh 'git clone https://$git_credentials_USR:$git_credentials_PSW@github.com/TBoonX/ontology.git repo_clon'
+                sh 'git config --global user.name "$git_credentials_USR"'
+                sh 'git config --global user.email "$git_email"'
                 sh 'git tag -a -m "Verified by CI" verified$now'
                 sh 'git push --follow-tags'
             }
