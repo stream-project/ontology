@@ -4,6 +4,13 @@ pipeline {
     agent { 
         label 'Developer30' 
     }
+    environment {
+        now = """${sh(
+                returnStdout: true,
+                script: 'date "+%F_%H:%M"'
+            )}"""
+        git_credentials = credentials('github_credentials')
+    }
     stages {
         stage('Test RDFUnit') {
             agent {
@@ -38,6 +45,16 @@ pipeline {
                   myVar = readFile('reports.txt')
                 }
                 sh './interprete2.sh'
+            }
+        }
+        stage('Add git tag') {
+            agent {
+                docker { image 'tboonx/git:0.1'}
+            }
+            steps {
+                sh 'clone https://$git_credentials_USR:git_credentials_PSW@github.com/TBoonX/ontology.git'
+                sh 'tag -a -m "Verified by CI" verified-$now'
+                sh 'push --follow-tags'
             }
         }
     }
