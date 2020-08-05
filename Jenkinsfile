@@ -7,7 +7,7 @@ pipeline {
     environment {
         now = """${sh(
                 returnStdout: true,
-                script: 'date "+%F_%H:%M"'
+                script: 'date "+%Y.%m.%d_%H.%M"'
             )}"""
         git_credentials = credentials('github_credentials')
     }
@@ -53,8 +53,8 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                sh 'git clone https://$git_credentials_USR:git_credentials_PSW@github.com/TBoonX/ontology.git'
-                sh 'git tag -a -m "Verified by CI" verified-$now'
+                sh 'git clone https://$git_credentials_USR:$git_credentials_PSW@github.com/TBoonX/ontology.git'
+                sh 'git tag -a -m "Verified by CI" verified$now'
                 sh 'git push --follow-tags'
             }
         }
