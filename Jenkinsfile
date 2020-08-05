@@ -49,12 +49,13 @@ pipeline {
         }
         stage('Add git tag') {
             agent {
-                docker { image 'tboonx/git:0.1'}
+                docker { image 'tboonx/git:0.1'
+                    args '--entrypoint=""'}
             }
             steps {
-                sh 'clone https://$git_credentials_USR:git_credentials_PSW@github.com/TBoonX/ontology.git'
-                sh 'tag -a -m "Verified by CI" verified-$now'
-                sh 'push --follow-tags'
+                sh 'git clone https://$git_credentials_USR:git_credentials_PSW@github.com/TBoonX/ontology.git'
+                sh 'git tag -a -m "Verified by CI" verified-$now'
+                sh 'git push --follow-tags'
             }
         }
     }
