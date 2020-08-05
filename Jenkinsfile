@@ -18,7 +18,7 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                sh 'rm -f oops_result.xml OOPS_result.xml result.xml reports.txt all_reports.txt RDFUnit_errors_.txt RDFUnit_errors.txt RDFUnit_results.jsonld'
+                sh 'rm -f oops_result.xml OOPS_result.xml result.xml reports.txt all_reports.txt RDFUnit_errors_.txt RDFUnit_errors.txt RDFUnit_results.jsonld repo_clon'
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o json-ld -s owl,rdfs'
                 sh 'cp /tmp/results/._MatVoc-Core.ttl.aggregatedTestCaseResult.jsonld ./RDFUnit_results.jsonld'
                 sh 'cat ./RDFUnit_results.jsonld'
@@ -53,7 +53,7 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                sh 'git clone https://$git_credentials_USR:$git_credentials_PSW@github.com/TBoonX/ontology.git'
+                sh 'git clone https://$git_credentials_USR:$git_credentials_PSW@github.com/TBoonX/ontology.git repo_clon'
                 sh 'git tag -a -m "Verified by CI" verified$now'
                 sh 'git push --follow-tags'
             }
