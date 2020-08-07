@@ -41,7 +41,7 @@
 
 :Experiment rdf:type owl:Class; 
     rdfs:subClassOf  :Study ;
-    rdfs:comment "A single, unique, and identifiable experiment."@en ;
+    rdfs:comment :Run ;
     rdfs:label "Experiment"@IRI-based; 
     rdfs:label "Experiment"@en .
 

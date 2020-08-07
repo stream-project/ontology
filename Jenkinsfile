@@ -1,4 +1,4 @@
-myVar = 'initial_value'
+myVar = 'An error occurred. Please read the jobs console output.'
 
 pipeline {
     agent { 
@@ -19,8 +19,11 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
+                // Cleanup of files from last job
                 sh 'rm -fr oops_result.xml OOPS_result.xml result.xml reports.txt all_reports.txt RDFUnit_errors_.txt RDFUnit_errors.txt RDFUnit_results.jsonld repo_clon'
+                // Run RDFUnit
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o json-ld -s owl,rdfs'
+                // copy results to workdir and print it out
                 sh 'cp /tmp/results/._MatVoc-Core.ttl.aggregatedTestCaseResult.jsonld ./RDFUnit_results.jsonld'
                 sh 'cat ./RDFUnit_results.jsonld'
             }
@@ -40,11 +43,15 @@ pipeline {
                 docker { image 'alpine/xml'}
             }
             steps {
+                // filter RDFUnit report
                 sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq -c \' (.[\\"rut:resultCount\\"]), (.[\\"description\\"])\'" > RDFUnit_errors_.txt'
+                // filter OOPS report
                 sh './interprete.sh'
+                // prepare email content
                 script {
                   myVar = readFile('reports.txt')
                 }
+                // Chef if RDFUnit reported error, if yes than the job will fail
                 sh './interprete2.sh'
             }
         }
