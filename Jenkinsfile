@@ -54,7 +54,7 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                sh 'git clone https://$git_credentials_USR:$git_credentials_PSW@github.com/TBoonX/ontology.git repo_clon'
+                sh 'git clone https://$git_credentials_USR:$git_credentials_PSW@github.com/TBoonX/ontology.git repo_clon && cd repo_clon'
                 sh 'git tag -a -m "Verified by CI" verified$now'
                 sh 'git push --follow-tags origin HEAD:master'
             }
