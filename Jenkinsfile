@@ -54,12 +54,8 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                sh 'git clone https://$git_credentials_USR:$git_credentials_PSW@github.com/TBoonX/ontology.git repo_clon'
-                sh 'cd repo_clon'
-                sh 'git config user.email'
-                sh 'git config user.name'
                 sh 'git tag -a -m "Verified by CI" verified$now'
-                sh 'git push --follow-tags origin HEAD:master'
+                sh 'git push https://$git_credentials_USR:$git_credentials_PSW@github.com/TBoonX/ontology.git --tags'
             }
         }
     }
