@@ -40,7 +40,7 @@ pipeline {
                 docker { image 'alpine/xml'}
             }
             steps {
-                sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq -c ' (.[\"rut:resultCount\"]), (.[\"description\"])'" > RDFUnit_errors_.txt'
+                sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq -c \' (.[\"rut:resultCount\"]), (.[\"description\"])\'" > RDFUnit_errors_.txt'
                 sh './interprete.sh'
                 script {
                   myVar = readFile('reports.txt')
