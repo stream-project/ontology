@@ -44,7 +44,7 @@ pipeline {
             }
             steps {
                 // filter RDFUnit report
-                sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq -c \' (.[\\"rut:resultCount\\"]), (.[\\"description\\"])\'" > RDFUnit_errors_.txt'
+                sh 'sh -c " cat ./RDFUnit_results.jsonld | jq -c \'.[\\"@graph\\"] | .[] | select(.resultStatus | . and contains (\\"rut:ResultStatusFail\\"))\'  | jq -c \'select(.[\\"description\\"] != \\"http://www.w3.org/2000/01/rdf-schema#label is missing proper range\\") | select(.[\\"description\\"] != \\"http://www.w3.org/2000/01/rdf-schema#comment is missing proper range\\") | (.[\\"rut:resultCount\\"]), (.[\\"description\\"])\'" > RDFUnit_errors_.txt'
                 // filter OOPS report
                 sh './interprete.sh'
                 // prepare email content
