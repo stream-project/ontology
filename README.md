@@ -1,3 +1,4 @@
+[![Build Status](http://54.38.159.42:8080/buildStatus/icon?job=Stream-Ontology-CI&style=plastic)](http://54.38.159.42:8080/job/Stream-Ontology-CI/)
 
 # Ontology
 The official ontology produced in the conext of the STREAM project.
