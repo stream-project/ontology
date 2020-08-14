@@ -32,7 +32,7 @@
 ###                     Class Definitions                     ###
 
 :Study rdf:type owl:Class; 
-    #owl:equivalentClass "Kurt" ; # needs more investigation for possible laternatives, PSL, ...
+    owl:equivalentClass "Kurt" ; # needs more investigation for possible laternatives, PSL, ...
     #owl:equivalentClass bpmn1:FlowNode ; # https://www.researchgate.net/publication/221448529_Towards_a_BPMN_20_ontology/figures
     #owl:equivalentClass bpmn2:Process ; # https://dkm.fbk.eu/bpmn-ontology
     rdfs:comment "An endeavor that adheres to scientific research design to obtain a result or an insight."@en ;
