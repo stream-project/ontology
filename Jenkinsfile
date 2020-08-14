@@ -62,7 +62,7 @@ pipeline {
             }
             steps {
                 sh 'git tag -a -m "Verified by CI" verified$now'
-                sh 'git push https://$git_credentials_USR:$git_credentials_PSW@github.com/TBoonX/ontology.git --tags'
+                sh 'git push https://$git_credentials_USR:$git_credentials_PSW@github.com/stream-project/ontology.git --tags'
             }
         }
     }
