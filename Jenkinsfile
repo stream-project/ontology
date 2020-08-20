@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
                 // Cleanup of files from last job
-                sh 'rm -fr oops_result.xml OOPS_result.xml result.xml reports.txt all_reports.txt RDFUnit_errors_.txt RDFUnit_errors.txt RDFUnit_results.jsonld repo_clon'
+                sh 'rm -fr infered_classes.owl oops_result.xml OOPS_result.xml result.xml reports.txt all_reports.txt RDFUnit_errors_.txt RDFUnit_errors.txt RDFUnit_results.jsonld repo_clon'
                 // Run RDFUnit
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o json-ld -s owl,rdfs'
                 // copy results to workdir and print it out
@@ -55,12 +55,22 @@ pipeline {
                 sh './interprete2.sh'
             }
         }
+        stage('Reasoner') {
+            agent {
+                docker { image 'tboonx/hermit:0.1'
+                    args '--entrypoint=""'}
+            }
+            steps {
+                sh 'java -jar /hermit/HermiT.jar -cO -v2 -o infered_classes.owl ./MatVoc-Core.ttl'
+            }
+        }
         stage('Add git tag') {
             agent {
                 docker { image 'tboonx/git:0.1'
                     args '--entrypoint=""'}
             }
             steps {
+                sh 'git add infered_classes.owl && git commit -m "Update the extracted classes by HermiT"'
                 sh 'git tag -a -m "Verified by CI" verified$now'
                 sh 'git push https://$git_credentials_USR:$git_credentials_PSW@github.com/stream-project/ontology.git --tags'
             }
