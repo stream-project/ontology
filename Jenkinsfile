@@ -13,6 +13,15 @@ pipeline {
         git_email = credentials('git_email')
     }
     stages {
+        stage('Stop on git tag') {
+            agent {
+                docker { image 'tboonx/git:0.1'
+                    args '--entrypoint=""'}
+            }
+            steps {
+                sh './abortWhenTagPresent.sh'
+            }
+        }
         stage('Test RDFUnit') {
             agent {
                 docker { image 'aksw/rdfunit'
@@ -70,8 +79,11 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
+                // Update the classes
                 sh 'git add infered_classes.owl && git commit -m "Update the extracted classes by HermiT"'
+                // Add the tag
                 sh 'git tag -a -m "Verified by CI" verified$now'
+                // Push it to the repository
                 sh 'git push https://$git_credentials_USR:$git_credentials_PSW@github.com/stream-project/ontology.git --tags'
             }
         }
