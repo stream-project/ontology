@@ -79,6 +79,8 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
+                // Set the git branch
+                sh 'git checkout $GIT_BRANCH'
                 // Update the classes
                 sh 'git add infered_classes.owl && git commit -m "Update the extracted classes by HermiT"'
                 // Add the tag
