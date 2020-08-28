@@ -80,7 +80,7 @@ pipeline {
             }
             steps {
                 // clone repository and checkout branch
-                sh 'git clone https://github.com/stream-project/ontology.git temp_ && cd temp_ && git checkout $GIT_BRANCH && git add infered_classes.owl && git commit -m "Update the extracted classes by HermiT" && git tag -a -m "Verified by CI" verified$now && git push https://$git_credentials_USR:$git_credentials_PSW@github.com/stream-project/ontology.git --follow-tags'
+                sh 'git clone https://github.com/stream-project/ontology.git temp_ && cd temp_ && git checkout $GIT_BRANCH && cp ../infered_classes.owl ./ && git add infered_classes.owl && git commit -m "Update the extracted classes by HermiT" && git tag -a -m "Verified by CI" verified$now && git push https://$git_credentials_USR:$git_credentials_PSW@github.com/stream-project/ontology.git --follow-tags'
                 // Update the classes
                 //sh 'git add infered_classes.owl && git commit -m "Update the extracted classes by HermiT"'
                 // Add the tag
