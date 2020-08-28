@@ -1,8 +1,8 @@
 myVar = 'An error occurred. Please read the jobs console output.'
 
 pipeline {
-    agent { 
-        label 'Developer30' 
+    agent {
+        label 'Developer30'
     }
     environment {
         now = """${sh(
@@ -84,7 +84,7 @@ pipeline {
                 // Add the tag
                 sh 'git tag -a -m "Verified by CI" verified$now'
                 // Push it to the repository
-                sh 'git push https://$git_credentials_USR:$git_credentials_PSW@github.com/stream-project/ontology.git --tags'
+                sh 'git push https://$git_credentials_USR:$git_credentials_PSW@github.com/stream-project/ontology.git --follow-tags'
             }
         }
     }
