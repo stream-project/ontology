@@ -19,7 +19,7 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                sh './abortWhenTagPresent.sh'
+                sh 'cp jenkins/* ./ && ./abortWhenTagPresent.sh'
             }
         }
         stage('Test RDFUnit') {
