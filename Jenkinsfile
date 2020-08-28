@@ -29,7 +29,7 @@ pipeline {
             }
             steps {
                 // Cleanup of files from last job
-                sh 'rm -fr infered_classes.owl oops_result.xml OOPS_result.xml result.xml reports.txt all_reports.txt RDFUnit_errors_.txt RDFUnit_errors.txt RDFUnit_results.jsonld repo_clon'
+                sh 'rm -fr  temp_ infered_classes.owl oops_result.xml OOPS_result.xml result.xml reports.txt all_reports.txt RDFUnit_errors_.txt RDFUnit_errors.txt RDFUnit_results.jsonld repo_clon'
                 // Run RDFUnit
                 sh 'java -jar /app/rdfunit-validate.jar -d ./MatVoc-Core.ttl -f /tmp/ -o json-ld -s owl,rdfs'
                 // copy results to workdir and print it out
@@ -79,8 +79,8 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                // Set the git branch
-                sh 'git checkout $GIT_BRANCH'
+                // clone repository and checkout branch
+                sh 'git clone https://github.com/stream-project/ontology.git temp_ && cd temp_ && git checkout $GIT_BRANCH'
                 // Update the classes
                 sh 'git add infered_classes.owl && git commit -m "Update the extracted classes by HermiT"'
                 // Add the tag
