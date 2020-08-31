@@ -19,7 +19,7 @@ pipeline {
                     args '--entrypoint=""'}
             }
             steps {
-                sh 'cp jenkins/* ./ && ./abortWhenTagPresent.sh'
+                sh 'cp -a jenkins/* ./ && ./abortWhenTagPresent.sh'
             }
         }
         stage('Test RDFUnit') {
@@ -80,7 +80,7 @@ pipeline {
             }
             steps {
                 // Update the classes
-                sh 'git add infered_classes.owl && ./try_commit.sh'
+                sh 'git add infered_classes.owl && bash ./try_commit.sh'
                 // Add the tag
                 sh 'git tag -a -m "Verified by CI" verified$now'
                 // Push it to the repository
