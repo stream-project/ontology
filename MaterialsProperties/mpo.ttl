@@ -1,12 +1,3 @@
-################################################################
-### The Materials Properties Ontology introduces materials
-### properties and their relations important in the 
-### computational materials sciences like electronic band 
-### structure or atomic forces, but also more complex ones.
-### Author: Maja-Olivia Lenz
-### Based on: EMMO, Core, Structure
-################################################################
-
 @prefix : <https://nomad-coe.eu/ontology/properties#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -77,12 +68,12 @@ owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
 <http://emmo.info/emmo/top/mereotopology#EMMO_d893d373_b579_4867_841e_1c2b31a8d2c6> rdf:type owl:ObjectProperty .
 
 
-###  http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21
-<http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> rdf:type owl:ObjectProperty .
+###  http://emmo.info/emmo/middle/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21
+<http://emmo.info/emmo/middle/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> rdf:type owl:ObjectProperty .
 
 
-###  http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455
-<http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> rdf:type owl:ObjectProperty .
+###  http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455
+<http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> rdf:type owl:ObjectProperty .
 
 
 ###  https://nomad-coe.eu/ontology/core#hasInput
@@ -185,6 +176,13 @@ owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
            rdfs:range xsd:boolean ;
            rdfs:comment """True: Spin Up
 False: Spin Down""" .
+
+
+###  https://nomad-coe.eu/ontology/properties#isDirectBandGap
+:isDirectBandGap rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :BandGap ;
+                 rdfs:range xsd:boolean .
 
 
 ###  https://nomad-coe.eu/ontology/properties#isMaximum
@@ -457,7 +455,7 @@ False: Spin Down""" .
 :BandEnergy rdf:type owl:Class ;
             rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
+                              owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
                               owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#kPoint>
                             ] .
 
@@ -810,6 +808,11 @@ BandEnergies in a BandStructure having the same BandIndex belong to the same Ene
                         rdfs:subClassOf :Semiconductor .
 
 
+###  https://nomad-coe.eu/ontology/properties#JouleKilogramPerKelvin
+:JouleKilogramPerKelvin rdf:type owl:Class ;
+                        rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> .
+
+
 ###  https://nomad-coe.eu/ontology/properties#JouleMetre6
 :JouleMetre6 rdf:type owl:Class ;
              rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> ,
@@ -834,6 +837,11 @@ BandEnergies in a BandStructure having the same BandIndex belong to the same Ene
                                   owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
                                   owl:hasValue "J/K"
                                 ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#JoulePerKilogram
+:JoulePerKilogram rdf:type owl:Class ;
+                  rdfs:subClassOf <http://emmo.info/emmo/middle/siunits#EMMO_1273eb34_de48_43a9_925f_104110469dd2> .
 
 
 ###  https://nomad-coe.eu/ontology/properties#KineticEnergy
@@ -888,11 +896,11 @@ BandEnergies in a BandStructure having the same BandIndex belong to the same Ene
 :NumberOfStates rdf:type owl:Class ;
                 rdfs:subClassOf <http://emmo.info/emmo/middle/metrology#EMMO_02c0621e_a527_4790_8a0f_2bb51973c819> ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
                                   owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
                                 ] ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
+                                  owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
                                   owl:someValuesFrom :Spin
                                 ] ,
                                 [ rdf:type owl:Restriction ;
@@ -1132,6 +1140,11 @@ BandEnergies in a BandStructure having the same BandIndex belong to the same Ene
                                         owl:onProperty :hasProjection ;
                                         owl:someValuesFrom :ProjectedDensityOfStates
                                       ] .
+
+
+###  https://nomad-coe.eu/ontology/properties#TotalEnergy
+:TotalEnergy rdf:type owl:Class ;
+             rdfs:subClassOf <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2> .
 
 
 ###  https://nomad-coe.eu/ontology/properties#VCBandGap

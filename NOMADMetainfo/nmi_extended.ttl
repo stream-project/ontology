@@ -1,11 +1,3 @@
-#################################################################
-### This file (nmi_extended.ttl) contains extensions to the "pure" 
-### NOMAD Metainfo (nmi_pure.ttl) that introduces more semantics 
-### to the Nomad Metainfo. It connects the concepts to Physical 
-### concepts in the CrystalStructure and MaterialsProperties
-### ontologies (based on EMMO). All developed by Maja-Olivia Lenz.
-#################################################################
-
 @prefix : <https://nomad-coe.eu/ontology/metainfo/extended#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -14,7 +6,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <https://nomad-coe.eu/ontology/metainfo/extended> .
 
-<https://nomad-coe.eu/ontology/metainfo/extended> rdf:type owl:Ontology .
+<https://nomad-coe.eu/ontology/metainfo/extended> rdf:type owl:Ontology ;
+                                                   owl:imports <https://nomad-coe.eu/ontology/core> ,
+                                                               <https://nomad-coe.eu/ontology/properties> ,
+                                                               <https://nomad-coe.eu/ontology/metainfo/pure> .
 
 #################################################################
 #    Object Properties
@@ -36,10 +31,6 @@
 <http://emmo.info/emmo/top/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b> rdf:type owl:ObjectProperty .
 
 
-###  https://nomad-coe.eu/ontology/metainfo/pure#hasAbstractType
-<https://nomad-coe.eu/ontology/metainfo/pure#hasAbstractType> rdf:type owl:ObjectProperty .
-
-
 ###  https://nomad-coe.eu/ontology/metainfo/extended#hasLabel
 :hasLabel rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf <http://emmo.info/emmo/top/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b> .
@@ -50,6 +41,15 @@
            rdfs:subPropertyOf <http://emmo.info/emmo/top/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b> .
 
 
+###  https://nomad-coe.eu/ontology/metainfo/extended#hasSection
+:hasSection rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f> .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#hasAbstractType
+<https://nomad-coe.eu/ontology/metainfo/pure#hasAbstractType> rdf:type owl:ObjectProperty .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -58,13 +58,13 @@
 <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> rdf:type owl:DatatypeProperty .
 
 
-###  https://nomad-coe.eu/ontology/metainfo/pure#hasNumberOfDimensions
-<https://nomad-coe.eu/ontology/metainfo/pure#hasNumberOfDimensions> rdf:type owl:DatatypeProperty .
-
-
 ###  https://nomad-coe.eu/ontology/metainfo/extended#isFinalResult
 :isFinalResult rdf:type owl:DatatypeProperty ;
                rdfs:range xsd:boolean .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#hasNumberOfDimensions
+<https://nomad-coe.eu/ontology/metainfo/pure#hasNumberOfDimensions> rdf:type owl:DatatypeProperty .
 
 
 #################################################################
@@ -115,6 +115,19 @@
 <http://www.daml.org/2003/01/periodictable/PeriodicTable#Element> rdf:type owl:Class .
 
 
+###  https://nomad-coe.eu/ontology/metainfo/extended#NOMADEntry
+:NOMADEntry rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasSection ;
+                              owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#section_entry_info>
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasSection ;
+                              owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#section_run>
+                            ] ;
+            rdfs:label "NOMADEntry" .
+
+
 ###  https://nomad-coe.eu/ontology/metainfo/pure#NMI_concrete
 <https://nomad-coe.eu/ontology/metainfo/pure#NMI_concrete> rdf:type owl:Class .
 
@@ -129,11 +142,11 @@
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#atom_atom_number
 <https://nomad-coe.eu/ontology/metainfo/pure#atom_atom_number> rdf:type owl:Class ;
-                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty [ owl:inverseOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
-                                                                                                 ] ;
-                                                                                  owl:someValuesFrom <http://www.daml.org/2003/01/periodictable/PeriodicTable#Element>
-                                                                                ] .
+                                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty [ owl:inverseOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                                                                                ] ;
+                                                                                 owl:someValuesFrom <http://www.daml.org/2003/01/periodictable/PeriodicTable#Element>
+                                                                               ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#atom_forces_type
@@ -142,126 +155,192 @@
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#band_energies
 <https://nomad-coe.eu/ontology/metainfo/pure#band_energies> rdf:type owl:Class ;
-                                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                               owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#BandEnergy>
-                                                                             ] .
+                                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                              owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#BandEnergy>
+                                                                            ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#band_energies_normalized
 <https://nomad-coe.eu/ontology/metainfo/pure#band_energies_normalized> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                          owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#BandEnergy>
-                                                                                        ] .
+                                                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                         owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#BandEnergy>
+                                                                                       ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#band_k_points
 <https://nomad-coe.eu/ontology/metainfo/pure#band_k_points> rdf:type owl:Class ;
-                                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                               owl:allValuesFrom <https://nomad-coe.eu/ontology/structure#kPoint>
-                                                                             ] .
+                                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                              owl:allValuesFrom <https://nomad-coe.eu/ontology/structure#kPoint>
+                                                                            ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#band_k_points_normalized
 <https://nomad-coe.eu/ontology/metainfo/pure#band_k_points_normalized> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                          owl:allValuesFrom <https://nomad-coe.eu/ontology/structure#kPoint>
-                                                                                        ] .
+                                                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                         owl:allValuesFrom <https://nomad-coe.eu/ontology/structure#kPoint>
+                                                                                       ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#band_occupations
 <https://nomad-coe.eu/ontology/metainfo/pure#band_occupations> rdf:type owl:Class ;
-                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                  owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                  owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#BandOccupation>
-                                                                                ] .
+                                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                 owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#BandOccupation>
+                                                                               ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#band_occupations_normalized
 <https://nomad-coe.eu/ontology/metainfo/pure#band_occupations_normalized> rdf:type owl:Class ;
-                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                             owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                             owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#BandOccupation>
-                                                                                           ] .
+                                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                            owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#BandOccupation>
+                                                                                          ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#bravais_lattice
 <https://nomad-coe.eu/ontology/metainfo/pure#bravais_lattice> rdf:type owl:Class ;
-                                                               owl:equivalentClass <https://nomad-coe.eu/ontology/structure#BravaisLattice> .
+                                                              owl:equivalentClass <https://nomad-coe.eu/ontology/structure#BravaisLattice> .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#chemical_composition
 <https://nomad-coe.eu/ontology/metainfo/pure#chemical_composition> rdf:type owl:Class ;
-                                                                    rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
+                                                                   rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#chemical_composition_bulk_reduced
 <https://nomad-coe.eu/ontology/metainfo/pure#chemical_composition_bulk_reduced> rdf:type owl:Class ;
-                                                                                 rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
+                                                                                rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#chemical_composition_reduced
 <https://nomad-coe.eu/ontology/metainfo/pure#chemical_composition_reduced> rdf:type owl:Class ;
-                                                                            rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
+                                                                           rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#crystal_system
 <https://nomad-coe.eu/ontology/metainfo/pure#crystal_system> rdf:type owl:Class ;
-                                                              owl:equivalentClass <https://nomad-coe.eu/ontology/structure#CrystalSystem> .
+                                                             owl:equivalentClass <https://nomad-coe.eu/ontology/structure#CrystalSystem> .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#dos_energies
+<https://nomad-coe.eu/ontology/metainfo/pure#dos_energies> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                             owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
+                                                                           ] .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#dos_energies_normalized
+<https://nomad-coe.eu/ontology/metainfo/pure#dos_energies_normalized> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                        owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
+                                                                                      ] .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#dos_fermi_energy
+<https://nomad-coe.eu/ontology/metainfo/pure#dos_fermi_energy> rdfs:subClassOf <https://nomad-coe.eu/ontology/properties#FermiEnergy> .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#dos_integrated_values
+<https://nomad-coe.eu/ontology/metainfo/pure#dos_integrated_values> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                      owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#NumberOfStates>
+                                                                                    ] .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#dos_values
+<https://nomad-coe.eu/ontology/metainfo/pure#dos_values> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                           owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#NumberOfStates>
+                                                                         ] .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#dos_values_lm
+<https://nomad-coe.eu/ontology/metainfo/pure#dos_values_lm> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                              owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#NumberOfStates>
+                                                                            ] .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#dos_values_normalized
+<https://nomad-coe.eu/ontology/metainfo/pure#dos_values_normalized> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                      owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#NumberOfStates>
+                                                                                    ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_C
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_C> rdf:type owl:Class ;
-                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :hasMethod ;
-                                                                          owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#XC_functional>
-                                                                        ] .
+                                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasMethod ;
+                                                                         owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#XC_functional>
+                                                                       ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_X
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_X> rdf:type owl:Class ;
+                                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasMethod ;
+                                                                         owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#XC_method>
+                                                                       ] .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#energy_XC
+<https://nomad-coe.eu/ontology/metainfo/pure#energy_XC> rdf:type owl:Class ;
                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasMethod ;
                                                                           owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#XC_method>
                                                                         ] .
 
 
-###  https://nomad-coe.eu/ontology/metainfo/pure#energy_XC
-<https://nomad-coe.eu/ontology/metainfo/pure#energy_XC> rdf:type owl:Class ;
-                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty :hasMethod ;
-                                                                           owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#XC_method>
-                                                                         ] .
-
-
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_fermi
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_fermi> rdf:type owl:Class ;
-                                                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                        owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                        owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#FermiEnergy>
-                                                                                      ] ,
-                                                                                      [ rdf:type owl:Restriction ;
-                                                                                        owl:onProperty :isFinalResult ;
-                                                                                        owl:hasValue "true"^^xsd:boolean
-                                                                                      ] .
+                                                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                       owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#FermiEnergy>
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :isFinalResult ;
+                                                                                       owl:hasValue "true"^^xsd:boolean
+                                                                                     ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_fermi_iteration
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_fermi_iteration> rdf:type owl:Class ;
-                                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                                  owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#FermiEnergy>
-                                                                                                ] .
+                                                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                                 owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#FermiEnergy>
+                                                                                               ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_highest_occupied
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_highest_occupied> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                                  owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#ValenceBandMaximum>
+                                                                                                ] ,
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty :isFinalResult ;
+                                                                                                  owl:hasValue "true"^^xsd:boolean
+                                                                                                ] .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_highest_occupied_iteration
+<https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_highest_occupied_iteration> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                                            owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#ValenceBandMaximum>
+                                                                                                          ] .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_lowest_unoccupied
+<https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_lowest_unoccupied> rdf:type owl:Class ;
                                                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                   owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                                   owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#ValenceBandMaximum>
+                                                                                                   owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                                   owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#ConductionBandMinimum>
                                                                                                  ] ,
                                                                                                  [ rdf:type owl:Restriction ;
                                                                                                    owl:onProperty :isFinalResult ;
@@ -269,48 +348,29 @@
                                                                                                  ] .
 
 
-###  https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_highest_occupied_iteration
-<https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_highest_occupied_iteration> rdf:type owl:Class ;
-                                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                             owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                                             owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#ValenceBandMaximum>
-                                                                                                           ] .
-
-
-###  https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_lowest_unoccupied
-<https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_lowest_unoccupied> rdf:type owl:Class ;
-                                                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                                    owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#ConductionBandMinimum>
-                                                                                                  ] ,
-                                                                                                  [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty :isFinalResult ;
-                                                                                                    owl:hasValue "true"^^xsd:boolean
-                                                                                                  ] .
-
-
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_lowest_unoccupied_iteration
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_reference_lowest_unoccupied_iteration> rdf:type owl:Class ;
-                                                                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                              owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                                                                                                              owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#ConductionBandMinimum>
-                                                                                                            ] .
+                                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                                                             owl:allValuesFrom <https://nomad-coe.eu/ontology/properties#ConductionBandMinimum>
+                                                                                                           ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_total
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_total> rdf:type owl:Class ;
-                                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty :isFinalResult ;
-                                                                              owl:hasValue "true"^^xsd:boolean
-                                                                            ] .
+                                                           rdfs:subClassOf <https://nomad-coe.eu/ontology/properties#TotalEnergy> ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :isFinalResult ;
+                                                                             owl:hasValue "true"^^xsd:boolean
+                                                                           ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_total_T0
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_total_T0> rdf:type owl:Class ;
-                                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :isFinalResult ;
-                                                                                 owl:hasValue "true"^^xsd:boolean
-                                                                               ] .
+                                                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :isFinalResult ;
+                                                                                owl:hasValue "true"^^xsd:boolean
+                                                                              ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_value
@@ -319,10 +379,10 @@
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_van_der_Waals
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_van_der_Waals> rdf:type owl:Class ;
-                                                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                      owl:onProperty :hasMethod ;
-                                                                                      owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#van_der_Waals_method>
-                                                                                    ] .
+                                                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :hasMethod ;
+                                                                                     owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#van_der_Waals_method>
+                                                                                   ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_van_der_Waals_kind
@@ -331,20 +391,27 @@
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#energy_van_der_Waals_value
 <https://nomad-coe.eu/ontology/metainfo/pure#energy_van_der_Waals_value> rdf:type owl:Class ;
-                                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                            owl:onProperty :hasMethod ;
-                                                                                            owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#energy_van_der_Waals_kind>
-                                                                                          ] .
+                                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :hasMethod ;
+                                                                                           owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#energy_van_der_Waals_kind>
+                                                                                         ] .
+
+
+###  https://nomad-coe.eu/ontology/metainfo/pure#k_mesh_points
+<https://nomad-coe.eu/ontology/metainfo/pure#k_mesh_points> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                                                                              owl:allValuesFrom <https://nomad-coe.eu/ontology/structure#kPoint>
+                                                                            ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#point_group
 <https://nomad-coe.eu/ontology/metainfo/pure#point_group> rdf:type owl:Class ;
-                                                           owl:equivalentClass <https://nomad-coe.eu/ontology/structure#CrystalPointGroup> .
+                                                          owl:equivalentClass <https://nomad-coe.eu/ontology/structure#CrystalPointGroup> .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#repository_chemical_formula
 <https://nomad-coe.eu/ontology/metainfo/pure#repository_chemical_formula> rdf:type owl:Class ;
-                                                                           rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
+                                                                          rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#settings_atom_in_molecule
@@ -353,15 +420,15 @@
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#space_group_number
 <https://nomad-coe.eu/ontology/metainfo/pure#space_group_number> rdf:type owl:Class ;
-                                                                  owl:equivalentClass <https://nomad-coe.eu/ontology/structure#SpaceGroup> .
+                                                                 owl:equivalentClass <https://nomad-coe.eu/ontology/structure#SpaceGroup> .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor
 <https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor> rdf:type owl:Class ;
-                                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :hasMethod ;
-                                                                               owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_method>
-                                                                             ] .
+                                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :hasMethod ;
+                                                                              owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_method>
+                                                                            ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_kind
@@ -370,17 +437,17 @@
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_method
 <https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_method> rdf:type owl:Class ;
-                                                                    owl:equivalentClass [ rdf:type owl:Class ;
-                                                                                          owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
-                                                                                                          owl:hasValue "analytic"
-                                                                                                        ]
-                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
-                                                                                                          owl:hasValue "numeric"
-                                                                                                        ]
-                                                                                                      )
-                                                                                        ] .
+                                                                   owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                         owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                                                                                         owl:hasValue "analytic"
+                                                                                                       ]
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty <http://emmo.info/emmo/middle/perceptual#EMMO_23b579e1_8088_45b5_9975_064014026c42> ;
+                                                                                                         owl:hasValue "numeric"
+                                                                                                       ]
+                                                                                                     )
+                                                                                       ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_type
@@ -389,24 +456,24 @@
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_value
 <https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_value> rdf:type owl:Class ;
-                                                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                     owl:onProperty :hasMethod ;
-                                                                                     owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_kind>
-                                                                                   ] .
+                                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :hasMethod ;
+                                                                                    owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#stress_tensor_kind>
+                                                                                  ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#symmorphic
 <https://nomad-coe.eu/ontology/metainfo/pure#symmorphic> rdf:type owl:Class ;
-                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty [ owl:inverseOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
-                                                                                           ] ;
-                                                                            owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#SpaceGroup>
-                                                                          ] .
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty [ owl:inverseOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
+                                                                                          ] ;
+                                                                           owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#SpaceGroup>
+                                                                         ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#system_composition
 <https://nomad-coe.eu/ontology/metainfo/pure#system_composition> rdf:type owl:Class ;
-                                                                  rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
+                                                                 rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#ChemicalComposition> .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#system_to_system_kind
@@ -415,10 +482,10 @@
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#system_to_system_ref
 <https://nomad-coe.eu/ontology/metainfo/pure#system_to_system_ref> rdf:type owl:Class ;
-                                                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                      owl:onProperty :hasMethod ;
-                                                                                      owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#system_to_system_kind>
-                                                                                    ] .
+                                                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :hasMethod ;
+                                                                                     owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#system_to_system_kind>
+                                                                                   ] .
 
 
 ###  https://nomad-coe.eu/ontology/metainfo/pure#van_der_Waals_method
@@ -489,30 +556,8 @@
                      ) ;
   rdf:type owl:Class ;
   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                    owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                    owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef>
-                  ]
-] .
-
-
-[ owl:intersectionOf ( <https://nomad-coe.eu/ontology/metainfo/pure#NMI_concrete>
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty <https://nomad-coe.eu/ontology/metainfo/pure#hasAbstractType> ;
-                         owl:someValuesFrom <https://nomad-coe.eu/ontology/metainfo/pure#atom_forces_type>
-                       ]
-                     ) ;
-  rdf:type owl:Class ;
-  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                    owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
-                    owl:allValuesFrom [ owl:intersectionOf ( <http://emmo.info/emmo/middle/isq#EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef>
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty [ owl:inverseOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204>
-                                                                              ] ;
-                                                               owl:someValuesFrom <http://emmo.info/emmo/middle/materials#EMMO_eb77076b_a104_42ac_a065_798b2d2809ad>
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ]
+                    owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
+                    owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef>
                   ]
 ] .
 
@@ -620,7 +665,7 @@
                      ) ;
   rdf:type owl:Class ;
   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                    owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
+                    owl:onProperty <https://nomad-coe.eu/ontology/core#hasArrayComponent> ;
                     owl:allValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_affe07e4_e9bc_4852_86c6_69e26182a17f>
                   ]
 ] .

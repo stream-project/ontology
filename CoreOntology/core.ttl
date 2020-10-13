@@ -6,7 +6,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <https://nomad-coe.eu/ontology/core> .
 
-<https://nomad-coe.eu/ontology/core> rdf:type owl:Ontology .
+<https://nomad-coe.eu/ontology/core> rdf:type owl:Ontology ;
+                                      owl:imports <http://emmo.info/emmo/1.0.0-alpha2> .
 
 #################################################################
 #    Annotation properties
@@ -40,8 +41,8 @@
 <http://emmo.info/emmo/top/physical#EMMO_7afbed84_7593_4a23_bd88_9d9c6b04e8f6> rdf:type owl:ObjectProperty .
 
 
-###  http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455
-<http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> rdf:type owl:ObjectProperty .
+###  http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455
+<http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> rdf:type owl:ObjectProperty .
 
 
 ###  https://nomad-coe.eu/ontology/core#hasArrayComponent
@@ -56,12 +57,6 @@
 :hasInput rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf <http://emmo.info/emmo/middle/holistic#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a> ;
           rdfs:label "hasInput" .
-
-
-###  https://nomad-coe.eu/ontology/core#hasNumericalIndex
-:hasNumericalIndex rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf <http://emmo.info/emmo/middle/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> ;
-                   rdfs:label "hasNumericalIndex" .
 
 
 ###  https://nomad-coe.eu/ontology/core#hasOutput
@@ -89,8 +84,17 @@
 #    Data properties
 #################################################################
 
+###  https://nomad-coe.eu/ontology/core#hasNumericalIndex
+:hasNumericalIndex rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain :ArrayComponent ;
+                   rdfs:range xsd:integer .
+
+
 ###  https://nomad-coe.eu/ontology/core#hasValue
-:hasValue rdf:type owl:DatatypeProperty ;
+:hasValue rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
           rdfs:label "hasValue" .
 
 
@@ -186,7 +190,7 @@
 :AdditionOperation rdf:type owl:Class ;
                    rdfs:subClassOf :MathematicalOperation ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
+                                     owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
                                      owl:someValuesFrom <http://emmo.info/emmo/top/math#EMMO_8de14a59_660b_454f_aff8_76a07ce185f4>
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -204,10 +208,6 @@
 ###  https://nomad-coe.eu/ontology/core#ArrayComponent
 :ArrayComponent rdf:type owl:Class ;
                 rdfs:subClassOf <http://emmo.info/emmo/middle/math#EMMO_54ee6b5e_5261_44a8_86eb_5717e7fdb9d0> ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasNumericalIndex ;
-                                  owl:someValuesFrom <http://emmo.info/emmo/middle/semiotics#EMMO_0cd58641_824c_4851_907f_f4c3be76630c>
-                                ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :hasValue ;
                                   owl:someValuesFrom rdfs:Literal
@@ -259,7 +259,7 @@ Difference = Minuend - Subtrahend""" ;
 :DivisionOperation rdf:type owl:Class ;
                    rdfs:subClassOf :MathematicalOperation ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
+                                     owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
                                      owl:someValuesFrom <http://emmo.info/emmo/top/math#EMMO_a365b3c1_7bde_41d7_a15b_2820762e85f4>
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -336,8 +336,12 @@ Difference = Minuend - Subtrahend""" ;
 :MultiplicationOperation rdf:type owl:Class ;
                          rdfs:subClassOf :MathematicalOperation ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
+                                           owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
                                            owl:someValuesFrom <http://emmo.info/emmo/top/math#EMMO_2b1303e8_d4c3_453b_9918_76f1d009543f>
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasInput ;
+                                           owl:someValuesFrom :MultiplicationFactor
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty :hasOutput ;
@@ -426,7 +430,7 @@ Quotient = Dividend / Divisor""" ;
 :SubtractionOperation rdf:type owl:Class ;
                       rdfs:subClassOf :MathematicalOperation ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty <http://emmo.info/emmo/top/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
+                                        owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
                                         owl:someValuesFrom <http://emmo.info/emmo/top/math#EMMO_46d5643b_9706_4b67_8bea_ed77d6026539>
                                       ] ,
                                       [ rdf:type owl:Restriction ;
@@ -499,31 +503,19 @@ Sum = Summand + Summand""" ;
 
 ###  https://nomad-coe.eu/ontology/core#xComponent
 :xComponent rdf:type owl:Class ;
-            rdfs:subClassOf :ArrayComponent ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasNumericalIndex ;
-                              owl:hasValue :xIndex
-                            ] ;
+            rdfs:subClassOf :ArrayComponent ;
             rdfs:label "xComponent" .
 
 
 ###  https://nomad-coe.eu/ontology/core#yComponent
 :yComponent rdf:type owl:Class ;
-            rdfs:subClassOf :ArrayComponent ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasNumericalIndex ;
-                              owl:hasValue :yIndex
-                            ] ;
+            rdfs:subClassOf :ArrayComponent ;
             rdfs:label "yComponent" .
 
 
 ###  https://nomad-coe.eu/ontology/core#zComponent
 :zComponent rdf:type owl:Class ;
-            rdfs:subClassOf :ArrayComponent ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasNumericalIndex ;
-                              owl:hasValue :zIndex
-                            ] ;
+            rdfs:subClassOf :ArrayComponent ;
             rdfs:label "zComponent" .
 
 

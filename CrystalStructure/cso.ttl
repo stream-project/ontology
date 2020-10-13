@@ -1,10 +1,3 @@
-###############################################################
-### The crystal structure ontology allows representing crystals
-### in their computational description in an ontology and 
-### includes concepts about cyrstal symmetry.
-### Author: Maja-Olivia Lenz
-###############################################################
-
 @prefix : <https://nomad-coe.eu/ontology/structure#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -49,8 +42,8 @@
 <http://emmo.info/emmo/top/physical#EMMO_f68030be_94b8_4c61_a161_886468558054> rdf:type owl:ObjectProperty .
 
 
-###  http://emmo.info/emmo/top/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b
-<http://emmo.info/emmo/top/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b> rdf:type owl:ObjectProperty .
+###  http://emmo.info/emmo/middle/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b
+<http://emmo.info/emmo/middle/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b> rdf:type owl:ObjectProperty .
 
 
 ###  https://nomad-coe.eu/ontology/structure#hasClassification
@@ -208,11 +201,7 @@
 
 
 ###  http://emmo.info/emmo/middle/materials#EMMO_8303a247_f9d9_4616_bdcd_f5cbd7b298e3
-<http://emmo.info/emmo/middle/materials#EMMO_8303a247_f9d9_4616_bdcd_f5cbd7b298e3> rdf:type owl:Class ;
-                                                                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                     owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
-                                                                                                     owl:someValuesFrom <http://www.daml.org/2003/01/periodictable/PeriodicTable#Element>
-                                                                                                   ] .
+<http://emmo.info/emmo/middle/materials#EMMO_8303a247_f9d9_4616_bdcd_f5cbd7b298e3> rdf:type owl:Class .
 
 
 ###  http://emmo.info/emmo/middle/materials#EMMO_a2b006f2_bbfd_4dba_bcaa_3fca20cd6be1
@@ -316,7 +305,8 @@
 
 
 ###  http://www.daml.org/2003/01/periodictable/PeriodicTable#Element
-<http://www.daml.org/2003/01/periodictable/PeriodicTable#Element> rdf:type owl:Class .
+<http://www.daml.org/2003/01/periodictable/PeriodicTable#Element> rdf:type owl:Class ;
+                                                                  owl:equivalentClass :ChemicalElement .
 
 
 ###  https://nomad-coe.eu/ontology/core#ArrayComponent
