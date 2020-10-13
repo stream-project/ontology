@@ -1,0 +1,149 @@
+@prefix : <http://www.stream-ontology.com#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix core: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos-xl: <http://www.w3.org/2008/05/skos-xl#> .
+@base <http://www.stream-ontology.com> .
+
+<http://www.stream-ontology.com> rdf:type owl:Ontology ;
+                                  owl:versionIRI <http://www.stream-ontology.com_Test> ;
+                                  owl:imports <http://www.w3.org/2004/02/skos/core> ,
+                                              <http://www.w3.org/2008/05/skos-xl> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.stream-ontology.com#containes
+:containes rdf:type owl:ObjectProperty ,
+                    owl:InverseFunctionalProperty ;
+           rdfs:domain [ rdf:type owl:Restriction ;
+                         owl:onProperty :containes ;
+                         owl:someValuesFrom :section
+                       ] .
+
+
+###  http://www.stream-ontology.com#hasMember_C1_S1
+:hasMember_C1_S1 rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf core:member ;
+                 owl:inverseOf :isMemberOf_C1_S1 ;
+                 rdf:type owl:InverseFunctionalProperty .
+
+
+###  http://www.stream-ontology.com#hasMember_C2_S1
+:hasMember_C2_S1 rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf core:member ;
+                 owl:inverseOf :isMemberOf_C2_S1 ;
+                 rdf:type owl:InverseFunctionalProperty .
+
+
+###  http://www.stream-ontology.com#hasMember_C2_S2
+:hasMember_C2_S2 rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf core:member ;
+                 owl:inverseOf :isMemberOf_C2_S2 .
+
+
+###  http://www.stream-ontology.com#has_collection
+:has_collection rdf:type owl:ObjectProperty .
+
+
+###  http://www.stream-ontology.com#has_shape
+:has_shape rdf:type owl:ObjectProperty .
+
+
+###  http://www.stream-ontology.com#isContainedIn
+:isContainedIn rdf:type owl:ObjectProperty ,
+                        owl:InverseFunctionalProperty ;
+               rdfs:domain [ rdf:type owl:Restriction ;
+                             owl:onProperty :containes ;
+                             owl:someValuesFrom :section
+                           ] ;
+               rdfs:range [ rdf:type owl:Restriction ;
+                            owl:onProperty :containes ;
+                            owl:someValuesFrom :section
+                          ] .
+
+
+###  http://www.stream-ontology.com#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.stream-ontology.com#isMemberOf_C1_S1
+:isMemberOf_C1_S1 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :isMemberOf ;
+                  rdf:type owl:InverseFunctionalProperty .
+
+
+###  http://www.stream-ontology.com#isMemberOf_C2_S1
+:isMemberOf_C2_S1 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :isMemberOf ;
+                  rdf:type owl:InverseFunctionalProperty .
+
+
+###  http://www.stream-ontology.com#isMemberOf_C2_S2
+:isMemberOf_C2_S2 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :isMemberOf .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.stream-ontology.com#atom_labels
+:atom_labels rdf:type owl:Class ;
+             rdfs:subClassOf :concrete_value ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isMemberOf_C1_S1 ;
+                               owl:someValuesFrom :section_run
+                             ] ;
+             <http://purl.org/dc/terms/description> "Labels of the atoms. These strings identify the atom kind and conventionally start with the symbol of the atomic species, possibly followed by the atomic number. The same atomic species can be labeled with more than one atom_labels in order to distinguish, e.g., atoms of the same species assigned to different atom-centered basis sets or pseudo-potentials, or simply atoms in different locations in the structure (e.g., bulk and surface). These labels can also be used for particles that do not correspond to physical atoms (e.g., ghost atoms in some codes using atom-centered basis sets). This metadata defines a configuration and is therefore required."@en .
+
+
+###  http://www.stream-ontology.com#concrete_value
+:concrete_value rdf:type owl:Class .
+
+
+###  http://www.stream-ontology.com#local_rotations
+:local_rotations rdf:type owl:Class ;
+                 rdfs:subClassOf :concrete_value ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isMemberOf_C2_S1 ;
+                                   owl:someValuesFrom :section_system
+                                 ] .
+
+
+###  http://www.stream-ontology.com#section
+:section rdf:type owl:Class ;
+         rdfs:subClassOf core:Concept .
+
+
+###  http://www.stream-ontology.com#section_run
+:section_run rdf:type owl:Class ;
+             rdfs:subClassOf :section ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :containes ;
+                               owl:someValuesFrom :section_system
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMember_C1_S1 ;
+                               owl:someValuesFrom :atom_labels
+                             ] .
+
+
+###  http://www.stream-ontology.com#section_system
+:section_system rdf:type owl:Class ;
+                rdfs:subClassOf :section ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMember_C2_S2 ;
+                                  owl:someValuesFrom :local_rotations
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isContainedIn ;
+                                  owl:someValuesFrom :section_run
+                                ] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
