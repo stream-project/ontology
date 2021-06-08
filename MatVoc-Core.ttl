@@ -57,7 +57,7 @@
     rdfs:label "Run"@IRI-based; 
     rdfs:label "Run"@en .
 
-# Add triples to say emmo:Item is a/sub of oboe:Entity to allow observations to apply to the characteristics  of EMMO's items.
+# Add triples to say emmo:Item is a/sub of oboe:Entity to allow observations to apply to the characteristics of EMMO's items.
 emmo:Item owl:equivalentClass oboe:Entity .
 
 :Observer rdf:type owl:Class; 
@@ -68,7 +68,7 @@ emmo:Item owl:equivalentClass oboe:Entity .
 
 :Dataset rdf:type owl:Class; 
     owl:equivalentClass oboe:ObservationCollection ;
-    rdfs:comment "A set of related observations with thier measurements and values, obtained by a single run."@en ;
+    rdfs:comment "A set of related observations with their measurements and values, obtained by a single run."@en ;
     rdfs:label "Dataset"@IRI-based; 
     rdfs:label "Dataset"@en . 
 
@@ -92,11 +92,11 @@ emmo:Item owl:equivalentClass oboe:Entity .
 
 :Method rdf:type owl:Class;
     owl:equivalentClass oboe:Protocol ;
-    rdfs:comment "The method of performing an experienemtn, observation, or measurement."@en ;
+    rdfs:comment "The method of performing an experiment, observation, or measurement."@en ;
     rdfs:label "Method"@IRI-based; 
     rdfs:label "Method"@en . 
 
-# MeasuredValue class has a data type property raw value, which its data type can be determined by xsd types, hence no need to hve a type system here.
+# MeasuredValue class has a data type property raw value, which its data type can be determined by xsd types, hence no need to have a type system here.
 #:DataType rdf:type owl:Class; 
 #    owl:equivalentClass ontodt:OntoDT_487147 ; # datatype from ontoDT
 #    rdfs:comment "System type of the data, e.g., string, float, integer."@en ;
@@ -142,30 +142,30 @@ emmo:Item owl:equivalentClass oboe:Entity .
     rdfs:range :Study . 
 
 :hasProtocol rdf:type owl:ObjectProperty ;
-    rdfs:comment "The hasProtocol property gives the protocol of a an individual in the domain." ;
+    rdfs:comment "The hasProtocol property gives the protocol of an individual in the domain." ;
     rdfs:label "hasProtocol"@IRI-based; 
     rdfs:label "has protocol"@en; 
-    #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a measurement. Hence, I relaxed determining the domain.
+    #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a Measurement. Hence, I relaxed determining the domain.
     rdfs:domain :Run;
     rdfs:domain oboe:Observation;
     rdfs:domain oboe:Measurement;
     rdfs:range oboe:Protocol .         
 
 :hasMethod rdf:type owl:ObjectProperty ;
-    rdfs:comment "The hasMethod property gives the method of a an individual in the domain." ;
+    rdfs:comment "The hasMethod property gives the method of an individual in the domain." ;
     rdfs:label "hasMethod"@IRI-based; 
     rdfs:label "has method"@en; 
-    #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a measurement. Hence, I relaxed determining the domain.
+    #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a Measurement. Hence, I relaxed determining the domain.
     rdfs:domain :Run;
     rdfs:domain oboe:Observation;
     rdfs:domain oboe:Measurement;
     rdfs:range :Method .             
 
 :restrictedBy rdf:type owl:ObjectProperty ;
-    rdfs:comment "The restrictedBy property gives the terms that are applied to a Run, an obervation, or a measurement." ;
+    rdfs:comment "The restrictedBy property gives the terms that are applied to a Run, an Obervation, or a Measurement." ;
     rdfs:label "restrictedBy"@IRI-based; 
     rdfs:label "restricted by"@en; 
-    #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a measurement. Hence, I relaxed determining the domain.
+    #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a Measurement. Hence, I relaxed determining the domain.
     rdfs:domain :Run;
     rdfs:domain oboe:Observation;
     rdfs:domain oboe:Measurement;
@@ -193,7 +193,7 @@ emmo:Item owl:equivalentClass oboe:Entity .
     rdfs:range oboe:Observation . 
 
 :hasTag rdf:type owl:ObjectProperty ;
-    rdfs:comment "The has tag property gives allows the measurements to have classification, grouping, or thematic tags." ;
+    rdfs:comment "The hasTag property gives allows the measurements to have classification, grouping, or thematic tags." ;
     rdfs:label "hasTag"@IRI-based; 
     rdfs:label "has tag"@en; 
     rdfs:domain oboe:measurement;
