@@ -275,6 +275,24 @@
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Tungsten_tip_FE"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#Is_Mounted_By"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Is_Operated_By"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_Dimention"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_Dimention_X"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_Dimention_Y"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Has_Dimention_Z"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Has_Size"/>
     </Declaration>
     <Declaration>
@@ -711,6 +729,18 @@
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Sample_Mass"/>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Sample_Size"/>
     </DisjointClasses>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_Dimention_X"/>
+        <DataProperty IRI="#Has_Dimention"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_Dimention_Y"/>
+        <DataProperty IRI="#Has_Dimention"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Has_Dimention_Z"/>
+        <DataProperty IRI="#Has_Dimention"/>
+    </SubDataPropertyOf>
 </Ontology>
 
 
