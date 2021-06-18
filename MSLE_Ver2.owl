@@ -14,7 +14,6 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
-    <Import>http://www.w3.org/ns/ssn/</Import>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:title"/>
         <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">MSLE</Literal>
@@ -24,8 +23,16 @@
         <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Mehrdad Jalali</Literal>
     </Annotation>
     <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">The current ontology describes materail science lab equipment</Literal>
+    </Annotation>
+    <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">MSLE</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">1.0</Literal>
     </Annotation>
     <Declaration>
         <Class IRI="#E-Beam_LAB6_TE"/>
@@ -40,13 +47,64 @@
         <Class IRI="#E-Beam_Tungsten_filament_TE"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#FIB_SEM_Chamber_size"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_Electrical_lead-through"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_Free-ports_of_chamber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_Load_lock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Additional_equipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Charge_neutralizer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Cold_trap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Detectors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Gas_Injection_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_In-situ-equipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Manipulators"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Multi_GIS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Single_GIS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Type_of_precursor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_OE_Vacuum_transfer_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_Sample_Size"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FIB_SEM_Type_of_stage"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#I-Beam_Emission_sources"/>
     </Declaration>
     <Declaration>
         <Class IRI="#I-Beam_Field_of_view"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#I-Beam_Mixed_Isotope_Ion-Source"/>
+        <Class IRI="#I-Beam_Mixed_Isotope_Ion_Source"/>
     </Declaration>
     <Declaration>
         <Class IRI="#I-Beam_Single_Isotope_Source"/>
@@ -91,16 +149,16 @@
         <Class IRI="#MSpec_coupleable_to_HPLC"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Mass_Spectrometry"/>
+        <Class IRI="#Mass_Spectrometer"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Spectrometry"/>
+        <Class IRI="#Spectrometer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#X-Ray_Detector"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#X-Ray_Diffraction"/>
+        <Class IRI="#X-Ray_Diffractometer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#X-Ray_Geometry"/>
@@ -112,55 +170,7 @@
         <Class IRI="#X-Ray_Sample_Changer"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#FIB/SEM_Chamber_size"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_Electrical_lead-through"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_Free-ports_of_chamber"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_Load_lock"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Additional_equipment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Charge_neutralizer"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Cold_trap"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Detectors"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Gas_Injection_system"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_In-situ-equipment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Manipulators"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Multi_GIS"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Single_GIS"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Type_of_precursor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_OE_Vacuum_transfer_system"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_Sample_Size"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FIB/SEM_Type_of_stage"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB_SEM"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#E-Beam"/>
@@ -178,7 +188,13 @@
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#E-Beam_High_Tension"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Electron_Ion_beam_microscopy"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Electron_Ion_beam_microscope"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_General_instrument_specification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#I-Beam"/>
@@ -187,7 +203,7 @@
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#LAB6_TE"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Microscopy"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Microscope"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#SEM_Beam_current"/>
@@ -257,15 +273,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Tungsten_tip_FE"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB/SEM"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB/SEM_General_instrument_specification"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Has_Size"/>
@@ -296,6 +303,74 @@
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#E-Beam_Emission_Sources"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#FIB_SEM_Chamber_size"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_General_instrument_specification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_Electrical_lead-through"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_General_instrument_specification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_Free-ports_of_chamber"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_General_instrument_specification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_Load_lock"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_General_instrument_specification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Additional_equipment"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Charge_neutralizer"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Cold_trap"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Detectors"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Gas_Injection_system"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_In-situ-equipment"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Manipulators"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Multi_GIS"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Single_GIS"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Type_of_precursor"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_OE_Vacuum_transfer_system"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_Sample_Size"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_General_instrument_specification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FIB_SEM_Type_of_stage"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_General_instrument_specification"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#I-Beam_Emission_sources"/>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#I-Beam"/>
     </SubClassOf>
@@ -304,7 +379,7 @@
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#I-Beam"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#I-Beam_Mixed_Isotope_Ion-Source"/>
+        <Class IRI="#I-Beam_Mixed_Isotope_Ion_Source"/>
         <Class IRI="#I-Beam_Emission_sources"/>
     </SubClassOf>
     <SubClassOf>
@@ -332,10 +407,6 @@
         <Class IRI="#Liquid_Chromatography"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LC_Detector"/>
-        <Class IRI="http://www.w3.org/ns/sosa/Sensor"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#LC_Eluents"/>
         <Class IRI="#Liquid_Chromatography"/>
     </SubClassOf>
@@ -349,115 +420,51 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MSpec_Analysator"/>
-        <Class IRI="#Mass_Spectrometry"/>
+        <Class IRI="#Mass_Spectrometer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MSpec_Detector"/>
-        <Class IRI="#Mass_Spectrometry"/>
+        <Class IRI="#Mass_Spectrometer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MSpec_Ionisation"/>
-        <Class IRI="#Mass_Spectrometry"/>
+        <Class IRI="#Mass_Spectrometer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MSpec_coupleable_to_HPLC"/>
-        <Class IRI="#Mass_Spectrometry"/>
+        <Class IRI="#Mass_Spectrometer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Mass_Spectrometry"/>
-        <Class IRI="#Spectrometry"/>
+        <Class IRI="#Mass_Spectrometer"/>
+        <Class IRI="#Spectrometer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#X-Ray_Detector"/>
-        <Class IRI="#X-Ray_Diffraction"/>
+        <Class IRI="#X-Ray_Diffractometer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#X-Ray_Diffraction"/>
-        <Class IRI="#Spectrometry"/>
+        <Class IRI="#X-Ray_Diffractometer"/>
+        <Class IRI="#Spectrometer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#X-Ray_Geometry"/>
-        <Class IRI="#X-Ray_Diffraction"/>
+        <Class IRI="#X-Ray_Diffractometer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#X-Ray_Radiation"/>
-        <Class IRI="#X-Ray_Diffraction"/>
+        <Class IRI="#X-Ray_Diffractometer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#X-Ray_Sample_Changer"/>
-        <Class IRI="#X-Ray_Diffraction"/>
+        <Class IRI="#X-Ray_Diffractometer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#FIB/SEM_Chamber_size"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB/SEM_General_instrument_specification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_Electrical_lead-through"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB/SEM_General_instrument_specification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_Free-ports_of_chamber"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB/SEM_General_instrument_specification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_Load_lock"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB/SEM_General_instrument_specification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Additional_equipment"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Charge_neutralizer"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Cold_trap"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Detectors"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Gas_Injection_system"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_In-situ-equipment"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Manipulators"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Multi_GIS"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Single_GIS"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Type_of_precursor"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_OE_Vacuum_transfer_system"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_Sample_Size"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB/SEM_General_instrument_specification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FIB/SEM_Type_of_stage"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB/SEM_General_instrument_specification"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB_SEM"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Electron_Ion_beam_microscope"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#E-Beam"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB/SEM"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB_SEM"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#E-Beam_Beam_Current"/>
@@ -476,12 +483,20 @@
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#E-Beam"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Electron_Ion_beam_microscopy"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Microscopy"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Electron_Ion_beam_microscope"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Microscope"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_General_instrument_specification"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB_SEM"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB_SEM"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#I-Beam"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB/SEM"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB_SEM"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#LAB6_TE"/>
@@ -546,10 +561,6 @@
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#SEM_Sample"/>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Scanning_electron_microscope"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#SEM_Sample"/>
-        <Class IRI="http://www.w3.org/ns/sosa/Sample"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#SEM_Stage"/>
@@ -569,7 +580,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Scanning_electron_microscope"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Electron_Ion_beam_microscopy"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Electron_Ion_beam_microscope"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Schottky_FE"/>
@@ -583,23 +594,32 @@
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Tungsten_tip_FE"/>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#SEM_Emission_Source"/>
     </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB/SEM"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Electron_Ion_beam_microscopy"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB/SEM_General_instrument_specification"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB/SEM"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB/SEM"/>
-    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#E-Beam_LAB6_TE"/>
         <Class IRI="#E-Beam_Schottky_FE"/>
         <Class IRI="#E-Beam_Tungsten_Tip_FE"/>
         <Class IRI="#E-Beam_Tungsten_filament_TE"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FIB_SEM_Chamber_size"/>
+        <Class IRI="#FIB_SEM_Electrical_lead-through"/>
+        <Class IRI="#FIB_SEM_Free-ports_of_chamber"/>
+        <Class IRI="#FIB_SEM_Load_lock"/>
+        <Class IRI="#FIB_SEM_Sample_Size"/>
+        <Class IRI="#FIB_SEM_Type_of_stage"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FIB_SEM_OE_Additional_equipment"/>
+        <Class IRI="#FIB_SEM_OE_Charge_neutralizer"/>
+        <Class IRI="#FIB_SEM_OE_Cold_trap"/>
+        <Class IRI="#FIB_SEM_OE_Detectors"/>
+        <Class IRI="#FIB_SEM_OE_Gas_Injection_system"/>
+        <Class IRI="#FIB_SEM_OE_In-situ-equipment"/>
+        <Class IRI="#FIB_SEM_OE_Manipulators"/>
+        <Class IRI="#FIB_SEM_OE_Multi_GIS"/>
+        <Class IRI="#FIB_SEM_OE_Single_GIS"/>
+        <Class IRI="#FIB_SEM_OE_Type_of_precursor"/>
+        <Class IRI="#FIB_SEM_OE_Vacuum_transfer_system"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#I-Beam_Emission_sources"/>
@@ -608,7 +628,7 @@
         <Class IRI="#I-Beam_high_tension"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#I-Beam_Mixed_Isotope_Ion-Source"/>
+        <Class IRI="#I-Beam_Mixed_Isotope_Ion_Source"/>
         <Class IRI="#I-Beam_Single_Isotope_Source"/>
         <Class IRI="#I-Beam_Xe-Plasma-Source"/>
     </DisjointClasses>
@@ -621,8 +641,8 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Liquid_Chromatography"/>
-        <Class IRI="#Spectrometry"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Microscopy"/>
+        <Class IRI="#Spectrometer"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Microscope"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#MSpec_Analysator"/>
@@ -631,8 +651,8 @@
         <Class IRI="#MSpec_coupleable_to_HPLC"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Spectrometry"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Microscopy"/>
+        <Class IRI="#Spectrometer"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Microscope"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#X-Ray_Detector"/>
@@ -641,31 +661,15 @@
         <Class IRI="#X-Ray_Sample_Changer"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#FIB/SEM_Chamber_size"/>
-        <Class IRI="#FIB/SEM_Electrical_lead-through"/>
-        <Class IRI="#FIB/SEM_Free-ports_of_chamber"/>
-        <Class IRI="#FIB/SEM_Load_lock"/>
-        <Class IRI="#FIB/SEM_Sample_Size"/>
-        <Class IRI="#FIB/SEM_Type_of_stage"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#FIB/SEM_OE_Additional_equipment"/>
-        <Class IRI="#FIB/SEM_OE_Charge_neutralizer"/>
-        <Class IRI="#FIB/SEM_OE_Cold_trap"/>
-        <Class IRI="#FIB/SEM_OE_Detectors"/>
-        <Class IRI="#FIB/SEM_OE_Gas_Injection_system"/>
-        <Class IRI="#FIB/SEM_OE_In-situ-equipment"/>
-        <Class IRI="#FIB/SEM_OE_Manipulators"/>
-        <Class IRI="#FIB/SEM_OE_Multi_GIS"/>
-        <Class IRI="#FIB/SEM_OE_Single_GIS"/>
-        <Class IRI="#FIB/SEM_OE_Type_of_precursor"/>
-        <Class IRI="#FIB/SEM_OE_Vacuum_transfer_system"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB_SEM"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#SEM_Optional_Equipment"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Scanning_electron_microscope"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#E-Beam"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_General_instrument_specification"/>
+        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB_SEM_Optional_Equipment"/>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#I-Beam"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIB/SEM_General_instrument_specification"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#FIb/SEM_Optional_Equipment"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#E-Beam_Beam_Current"/>
@@ -702,11 +706,6 @@
     <DisjointClasses>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#SEM_Optional_Equipment"/>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Scanning_electron_microscope"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#SEM_Optional_Equipment"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Scanning_electron_microscope"/>
-        <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Cross-Beam_FIB/SEM"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.semanticweb.org/mehrdad/ontologies/2021/5/untitled-ontology-39#Sample_Mass"/>
