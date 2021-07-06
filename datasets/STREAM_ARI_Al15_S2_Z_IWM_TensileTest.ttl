@@ -1,0 +1,136 @@
+
+@prefix nomad:      <http://https://nomad-coe.eu/ontology#> .
+@prefix matvoc:     <http://stream-ontology.com/matvoc#> .
+@prefix mvc: 		<http://stream-ontology.com/matvoc-core/> .
+
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 	    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix wot: 		<http://xmlns.com/wot/0.1/> .
+@prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix oboe:       <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#> .
+@prefix dul:        <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix data:       <https://nomad-coe.eu/data/> .
+@prefix metadata:   <https://nomad-coe.eu/metadata/> .
+@base 		        <https://nomad-coe.eu/> . 
+
+
+_:exp1 a mvc:Experiment ;
+    mvc:hasRun _:run1 .
+
+_:run1 a mvc:Run ;
+    #mvc:defines _:observation1 ;
+    # configurations come here
+    mvc:startedAt "2019-10-13T14:50:00"^^xsd:dateTime ;
+    mvc:fisnishedAt "2019-10-13T15:42:11"^^xsd:dateTime ;
+    mvc:resultsIn data:STREAM_ARI_Al15_S2_Z_IWM_TensileTest1 .
+
+data:STREAM_ARI_Al15_S2_Z_IWM_TensileTest1 a mvc:Dataset ;
+    mvc:hasMetadata metadata:STREAM_ARI_Al15_S2_Z_IWM_TensileTest_Metadata1 ;
+    oboe:hasMember _:o001, _:o002 .
+
+_:material1 a mvc:Entity ; # specification of the material,better to come from an independent, published, and wellknown repo
+    rdfs:label "AlSi10Mg" . 
+
+#CylindricalTensileTestSpecimen__1_eb869195-f0d5-42ce-aa80-572475b8bd75
+_:sample1 a mvc:Sample ;
+    rdfs:label "ARI_Al15_S2_Z" ;
+    mvc:isSampleOf _:material1 . # better to be an IRI coming from a valid source
+
+_:offset a oboe:MeasuredCharacteristic, oboe:Time ;
+    rdfs:label "Time Offset" ;
+    oboe:characteristicFor _:sample1 .
+
+_:force a oboe:MeasuredCharacteristic, oboe:Force ;
+    rdfs:label "Force In Loading Direction" ;
+    oboe:characteristicFor _:sample1 .
+
+_:displacemnt a oboe:MeasuredCharacteristic, oboe:Length ;
+    rdfs:label "Optical Displacement" ;
+    oboe:characteristicFor _:sample1 ;
+    mvc:isObservedBy _:aramis .
+
+_:tension a oboe:MeasuredCharacteristic ;
+    rdfs:label "Stress (Tension?) In Loading Direction" ;
+    oboe:characteristicFor _:sample1 ;
+    mvc:isObservedBy _:szm500 . # better to be the IRI of the sensor defined in the KIT's sensor database/triple store
+
+_:szm500 a mvc:Observer ;
+    rdfs:label "SZM 500" ;
+    mvc:observers _:tension .
+
+_:sensor2 a mvc:Observer ;
+    mvc:observers _:force .
+
+_:aramis a mvc:Observer ;
+    rdfs:label "Aramis (HG-Kamera)"@en ;
+    mvc:observers _:displacement .
+
+
+
+########################### Obervation 1 ###################################
+_:o001 a oboe:Obervation ;
+    oboe:ofEntity _:sample1 ;
+    oboe:hasMeasurement _:o001_of ;
+    oboe:hasMeasurement _:o001_st ;
+    oboe:hasMeasurement _:o001_fo ;
+    oboe:hasMeasurement _:o001_od .
+
+_:o001_offset a oboe:Measurement ;
+    oboe:ofCharacteristic _:offsetTime ;
+    oboe:usesStandard oboe:second ;
+    oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.0000000000000000"^^xsd:float  ] .
+
+_:o001_force a oboe:Measurement ;
+    oboe:ofCharacteristic _:force ;
+    oboe:usesStandard oboe:kiloNioton ;
+    oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.113833333333333"^^xsd:float  ] .
+
+_:o001_displacement a oboe:Measurement ;
+    oboe:ofCharacteristic _:displacement ;
+    oboe:usesStandard oboe:milimeter ;
+    oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.00156905322910955"^^xsd:float  ] .
+
+_:o001_tension a oboe:Measurement ;
+    oboe:ofCharacteristic _:tension ;
+    oboe:usesStandard oboe:MPa ;
+    oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "8.94638950713441"^^xsd:float  ] .
+
+########################### Obervation 2 ###################################
+_:o002 a oboe:Obervation ;
+    oboe:ofEntity _:sample1 ;
+    oboe:hasMeasurement _:o002_of ;
+    oboe:hasMeasurement _:o002_st ;
+    oboe:hasMeasurement _:o002_fo ;
+    oboe:hasMeasurement _:o002_od .
+
+_:o002_offset a oboe:Measurement ;
+    oboe:ofCharacteristic _:offsetTime ;
+    oboe:usesStandard oboe:second ;
+    oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.0500000000000043"^^xsd:float  ] .
+
+_:o002_force a oboe:Measurement ;
+    oboe:ofCharacteristic _:force ;
+    oboe:usesStandard oboe:kiloNioton ;
+    oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.119700000000000"^^xsd:float  ] .
+
+_:o002_displacement a oboe:Measurement ;
+    oboe:ofCharacteristic _:displacement ;
+    oboe:usesStandard oboe:milimeter ;
+    oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.0016036087846651"^^xsd:float  ] .
+
+_:o002_tension a oboe:Measurement ;
+    oboe:ofCharacteristic _:tension ;
+    oboe:usesStandard oboe:MPa ;
+    oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "9.40746258275832"^^xsd:float  ] .
+
+
+metadata:STREAM_ARI_Al15_S2_Z_IWM_TensileTest_Metadata1  a dcat:Dataset .
+

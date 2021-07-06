@@ -10,6 +10,8 @@
 @prefix dc: 		<http://purl.org/dc/elements/1.1/> .
 @prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
 @prefix oboe: 	    <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#> .
+@prefix sosa:       <http://www.w3.org/ns/sosa/> .
+@prefix ssn:        <http://www.w3.org/ns/ssn/> .
 @prefix wot: 		<http://xmlns.com/wot/0.1/> .
 @prefix swrlb: 	    <http://www.w3.org/2003/11/swrlb#> .
 @prefix swrl: 	    <http://www.w3.org/2003/11/swrl#> .
@@ -58,10 +60,18 @@
     rdfs:label "Run"@en .
 
 # Add triples to say emmo:Item is a/sub of oboe:Entity to allow observations to apply to the characteristics of EMMO's items.
-emmo:Item owl:equivalentClass oboe:Entity .
+:Entity rdf:type owl:Class; 
+    owl:equivalentClass oboe:Entity ;
+    owl:equivalentClass emmo:Item ;
+    owl:equivalentClass sosa:FeatureOfInterest .
 
+:Sample rdf:type owl:Class; 
+    #owl:equivalentClass oboe:Entity ;
+    owl:equivalentClass sosa:Sample .
+    
 :Observer rdf:type owl:Class; 
     rdfs:subClassOf foaf:Agent ;
+    #owl:equivalentClass ssn:System ;
     rdfs:comment "An agent that can observe an observation. It can be a human, device, sensor, or software."@en ;
     rdfs:label "Observer"@IRI-based; 
     rdfs:label "Observer"@en .
@@ -80,6 +90,7 @@ emmo:Item owl:equivalentClass oboe:Entity .
 
 :Enumeration rdf:type owl:Class; 
     rdfs:subClassOf :Term ;
+    owl:equivalentClass skos:Concept ;
     rdfs:comment "A terminology, e.g., a closed list of vocabularies that can be used to limit the valid values of a measurement."@en ;
     rdfs:label "Enumeration"@IRI-based; 
     rdfs:label "Enumeration"@en .            
@@ -178,6 +189,7 @@ emmo:Item owl:equivalentClass oboe:Entity .
     rdfs:domain :Run;
     rdfs:range  :Dataset .     
 
+# can be removed or repurposed, as one run may have more than one observation, and they are captured via the resultsIn property.
 :defines rdf:type owl:ObjectProperty ;
     rdfs:comment "The defines property gives the observations defined by a run." ;
     rdfs:label "defines"@IRI-based; 
@@ -186,11 +198,19 @@ emmo:Item owl:equivalentClass oboe:Entity .
     rdfs:range oboe:Observation .     
 
 :observes rdf:type owl:ObjectProperty ;
-    rdfs:comment "The observes property gives the observations that have been observed by an observer." ;
+    rdfs:comment "The observes property gives the characteristic that has been observed by an observer." ;
     rdfs:label "observes"@IRI-based; 
     rdfs:label "observes"@en; 
     rdfs:domain :Observer;
-    rdfs:range oboe:Observation . 
+    rdfs:range oboe:Characteristic . 
+
+:isObservedBy rdf:type owl:ObjectProperty ;
+    owl:inverseOf :observes ;
+    rdfs:comment "The isObservedBy property gives the observer of a characteristic." ;
+    rdfs:label "isObservedBy"@IRI-based; 
+    rdfs:label "is observed by"@en; 
+    rdfs:domain oboe:Characteristic;
+    rdfs:range :Observer . 
 
 :hasTag rdf:type owl:ObjectProperty ;
     rdfs:comment "The hasTag property gives allows the measurements to have classification, grouping, or thematic tags." ;
@@ -205,6 +225,13 @@ emmo:Item owl:equivalentClass oboe:Entity .
     rdfs:label "has metadata"@en; 
     rdfs:domain :Dataset;
     rdfs:range dcat:Dataset. 
+
+:isSampleOf rdf:type owl:ObjectProperty ;
+    rdfs:comment "The isSampleOf property indicated the feature of interest that the sample is taken from" ;
+    rdfs:label "isSampleOf"@IRI-based; 
+    rdfs:label "is sample of"@en; 
+    rdfs:domain :Sample;
+    rdfs:range :Entity . 
 
 #:hasDataType rdf:type owl:ObjectProperty ;
 #    rdfs:comment "The hasDataType property give the data type of a measurement value." ;
@@ -222,6 +249,14 @@ emmo:Item owl:equivalentClass oboe:Entity .
 :hasRawValue rdf:type owl:DataTypeProperty; 
     owl:equivalentProperty oboe:hasCode ;
     rdfs:domain oboe:MeasuredValue .
+
+:startedAt rdf:type owl:DataTypeProperty; 
+    rdfs:domain :Run ;
+    rdfs:range xsd:dateTime .    
+
+:fisnishedAt rdf:type owl:DataTypeProperty; 
+    rdfs:domain :Run ;
+    rdfs:range xsd:dateTime .    
 
 ###            End of Data Property Definitions               ###
 #################################################################        
