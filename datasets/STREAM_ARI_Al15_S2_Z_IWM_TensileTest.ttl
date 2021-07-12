@@ -107,26 +107,26 @@ _:o001_tension a oboe:Measurement ;
 _:o002 a oboe:Obervation ;
     oboe:ofEntity _:sample1 ;
     oboe:hasMeasurement _:o002_of ;
-    oboe:hasMeasurement _:o002_st ;
     oboe:hasMeasurement _:o002_fo ;
-    oboe:hasMeasurement _:o002_od .
-
-_:o002_offset a oboe:Measurement ;
+    oboe:hasMeasurement _:o002_od ;
+    oboe:hasMeasurement _:o002_st .
+    
+_:o002_of a oboe:Measurement ;
     oboe:ofCharacteristic _:offsetTime ;
     oboe:usesStandard oboe:second ;
     oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.0500000000000043"^^xsd:float  ] .
 
-_:o002_force a oboe:Measurement ;
+_:o002_fo a oboe:Measurement ;
     oboe:ofCharacteristic _:force ;
     oboe:usesStandard oboe:kiloNioton ;
     oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.119700000000000"^^xsd:float  ] .
 
-_:o002_displacement a oboe:Measurement ;
+_:o002_od a oboe:Measurement ;
     oboe:ofCharacteristic _:displacement ;
     oboe:usesStandard oboe:milimeter ;
     oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.0016036087846651"^^xsd:float  ] .
 
-_:o002_tension a oboe:Measurement ;
+_:o002_st a oboe:Measurement ;
     oboe:ofCharacteristic _:tension ;
     oboe:usesStandard oboe:MPa ;
     oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "9.40746258275832"^^xsd:float  ] .
