@@ -17,6 +17,10 @@
 <http://emmo.info/emmo/top/annotations#EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b> rdf:type owl:AnnotationProperty .
 
 
+###  https://nomad-coe.eu/ontology/core#hasSimilarityMethod
+:hasSimilarityMethod rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -41,66 +45,214 @@
 <http://emmo.info/emmo/top/physical#EMMO_7afbed84_7593_4a23_bd88_9d9c6b04e8f6> rdf:type owl:ObjectProperty .
 
 
-###  http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455
-<http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> rdf:type owl:ObjectProperty .
+###  https://nomad-coe.eu/ontology/core#characterizes
+:characterizes rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasOutput ;
+               rdfs:domain <https://nomad-coe.eu/ontology/catalysis#CatalystCharacterization> ;
+               rdfs:range <https://nomad-coe.eu/ontology/catalysis#CatalystSnapshot> .
+
+
+###  https://nomad-coe.eu/ontology/core#dependsOn
+:dependsOn rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+###  https://nomad-coe.eu/ontology/core#determines
+:determines rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasOutput ;
+            rdf:type owl:TransitiveProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#givesProperty
+:givesProperty rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasOutput ;
+               rdfs:domain <https://nomad-coe.eu/ontology/catalysis#CatalystCharacterization> ;
+               rdfs:range <https://nomad-coe.eu/ontology/catalysis#Property> .
 
 
 ###  https://nomad-coe.eu/ontology/core#hasArrayComponent
 :hasArrayComponent rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
                    rdfs:domain <http://emmo.info/emmo/middle/math#EMMO_28fbea28_2204_4613_87ff_6d877b855fcd%20> ;
-                   rdfs:range :ArrayComponent ;
-                   rdfs:label "hasArrayComponent" .
+                   rdfs:range :ArrayComponent .
+
+
+###  https://nomad-coe.eu/ontology/core#hasClassification
+:hasClassification rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> .
+
+
+###  https://nomad-coe.eu/ontology/core#hasImaginaryPart
+:hasImaginaryPart rdf:type owl:ObjectProperty .
 
 
 ###  https://nomad-coe.eu/ontology/core#hasInput
 :hasInput rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf <http://emmo.info/emmo/middle/holistic#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a> ;
-          rdfs:label "hasInput" .
+          rdfs:subPropertyOf <http://emmo.info/emmo/middle/holistic#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a> .
+
+
+###  https://nomad-coe.eu/ontology/core#hasInverse
+:hasInverse rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://emmo.info/emmo/middle/models#EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c> .
+
+
+###  https://nomad-coe.eu/ontology/core#hasLabel
+:hasLabel rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#hasMeanValue
+:hasMeanValue rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasStatistics .
+
+
+###  https://nomad-coe.eu/ontology/core#hasMeasure
+:hasMeasure rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+            rdfs:comment "in the sense of the inverse of \"is a measure of\"" .
+
+
+###  https://nomad-coe.eu/ontology/core#hasMethod
+:hasMethod rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#hasNumericalIndex
+:hasNumericalIndex rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://emmo.info/emmo/middle/semiotics#EMMO_297999d6_c9e4_4262_9536_bd524d1c6e21> .
 
 
 ###  https://nomad-coe.eu/ontology/core#hasOutput
 :hasOutput rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf <http://emmo.info/emmo/middle/holistic#EMMO_ae2d1a96_bfa1_409a_a7d2_03d69e8a125a> ;
-           rdfs:domain :Operation ;
-           rdfs:label "hasOutput" .
+           rdfs:domain :Operation .
+
+
+###  https://nomad-coe.eu/ontology/core#hasProjection
+:hasProjection rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_8c898653_1118_4682_9bbf_6cc334d16a99> .
+
+
+###  https://nomad-coe.eu/ontology/core#hasRealPart
+:hasRealPart rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#hasRepresentation
+:hasRepresentation rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://emmo.info/emmo/middle/models#EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c> .
+
+
+###  https://nomad-coe.eu/ontology/core#hasState
+:hasState rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#hasStatistics
+:hasStatistics rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> .
+
+
+###  https://nomad-coe.eu/ontology/core#investigates
+:investigates rdf:type owl:ObjectProperty ;
+              rdfs:domain <https://nomad-coe.eu/ontology/catalysis#Study> .
+
+
+###  https://nomad-coe.eu/ontology/core#isDerivedFrom
+:isDerivedFrom rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+###  https://nomad-coe.eu/ontology/core#isFunctionOf
+:isFunctionOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+###  https://nomad-coe.eu/ontology/core#isInverseProportionalTo
+:isInverseProportionalTo rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+###  https://nomad-coe.eu/ontology/core#isProportionalTo
+:isProportionalTo rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
+
+
+###  https://nomad-coe.eu/ontology/core#isQuantitativeSimilarTo
+:isQuantitativeSimilarTo rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf <http://emmo.info/emmo/middle/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b> ;
+                         rdf:type owl:SymmetricProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#isSpannedBy
+:isSpannedBy rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#measures
+:measures rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasOutput .
+
+
+###  https://nomad-coe.eu/ontology/core#performedBy
+:performedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#refersTo
+:refersTo rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:comment "is used here to connect a property of an object with another entity that it \"refers\" to. Like the property \"selectivity\" of a \"catalyst\" refers to a \"reaction product\"" .
 
 
 ###  https://nomad-coe.eu/ontology/core#resultsFrom
 :resultsFrom rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://emmo.info/emmo/top/physical#EMMO_7afbed84_7593_4a23_bd88_9d9c6b04e8f6> ;
-             rdfs:label "resultsFrom" .
+             rdfs:subPropertyOf <http://emmo.info/emmo/top/physical#EMMO_7afbed84_7593_4a23_bd88_9d9c6b04e8f6> .
 
 
-###  https://nomad-coe.eu/ontology/properties#hasImaginaryPart
-<https://nomad-coe.eu/ontology/properties#hasImaginaryPart> rdf:type owl:ObjectProperty .
+###  https://nomad-coe.eu/ontology/core#usesModel
+:usesModel rdf:type owl:ObjectProperty ;
+           rdfs:domain <https://nomad-coe.eu/ontology/catalysis#MachineLearningStudy> ;
+           rdfs:range <https://nomad-coe.eu/ontology/catalysis#MachineLearningModel> .
 
 
-###  https://nomad-coe.eu/ontology/properties#hasRealPart
-<https://nomad-coe.eu/ontology/properties#hasRealPart> rdf:type owl:ObjectProperty .
+###  https://nomad-coe.eu/ontology/core#usesTechnique
+:usesTechnique rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasInput ;
+               rdfs:domain <https://nomad-coe.eu/ontology/catalysis#CatalystCharacterization> ;
+               rdfs:range <https://nomad-coe.eu/ontology/catalysis#ExperimentalTechnique> .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  https://nomad-coe.eu/ontology/core#hasNumericalIndex
-:hasNumericalIndex rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf owl:topDataProperty ;
-                   rdf:type owl:FunctionalProperty ;
-                   rdfs:domain :ArrayComponent ;
-                   rdfs:range xsd:integer .
+###  https://nomad-coe.eu/ontology/core#hasSimilarityValue
+:hasSimilarityValue rdf:type owl:DatatypeProperty .
 
 
 ###  https://nomad-coe.eu/ontology/core#hasValue
-:hasValue rdf:type owl:DatatypeProperty ,
-                   owl:FunctionalProperty ;
-          rdfs:label "hasValue" .
+:hasValue rdf:type owl:DatatypeProperty .
 
 
 #################################################################
 #    Classes
 #################################################################
+
+###  http://cll.niimm.ksu.ru/ontologies/mathematics#E1315
+<http://cll.niimm.ksu.ru/ontologies/mathematics#E1315> rdf:type owl:Class .
+
+
+###  http://cll.niimm.ksu.ru/ontologies/mathematics#E1318
+<http://cll.niimm.ksu.ru/ontologies/mathematics#E1318> rdf:type owl:Class .
+
+
+###  http://cll.niimm.ksu.ru/ontologies/mathematics#E3132
+<http://cll.niimm.ksu.ru/ontologies/mathematics#E3132> rdf:type owl:Class .
+
+
+###  http://cll.niimm.ksu.ru/ontologies/mathematics#E3251
+<http://cll.niimm.ksu.ru/ontologies/mathematics#E3251> rdf:type owl:Class .
+
+
+###  http://cll.niimm.ksu.ru/ontologies/mathematics#E3338
+<http://cll.niimm.ksu.ru/ontologies/mathematics#E3338> rdf:type owl:Class .
+
 
 ###  http://emmo.info/emmo/middle/holistic#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce
 <http://emmo.info/emmo/middle/holistic#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce> rdf:type owl:Class .
@@ -170,28 +322,41 @@
                                                                                                    ] .
 
 
-###  http://emmo.info/emmo/top/math#EMMO_2b1303e8_d4c3_453b_9918_76f1d009543f
-<http://emmo.info/emmo/top/math#EMMO_2b1303e8_d4c3_453b_9918_76f1d009543f> rdf:type owl:Class .
+###  https://nomad-coe.eu/ontology/catalysis#CatalystCharacterization
+<https://nomad-coe.eu/ontology/catalysis#CatalystCharacterization> rdf:type owl:Class .
 
 
-###  http://emmo.info/emmo/top/math#EMMO_46d5643b_9706_4b67_8bea_ed77d6026539
-<http://emmo.info/emmo/top/math#EMMO_46d5643b_9706_4b67_8bea_ed77d6026539> rdf:type owl:Class .
+###  https://nomad-coe.eu/ontology/catalysis#CatalystSnapshot
+<https://nomad-coe.eu/ontology/catalysis#CatalystSnapshot> rdf:type owl:Class .
 
 
-###  http://emmo.info/emmo/top/math#EMMO_8de14a59_660b_454f_aff8_76a07ce185f4
-<http://emmo.info/emmo/top/math#EMMO_8de14a59_660b_454f_aff8_76a07ce185f4> rdf:type owl:Class .
+###  https://nomad-coe.eu/ontology/catalysis#ExperimentalTechnique
+<https://nomad-coe.eu/ontology/catalysis#ExperimentalTechnique> rdf:type owl:Class .
 
 
-###  http://emmo.info/emmo/top/math#EMMO_a365b3c1_7bde_41d7_a15b_2820762e85f4
-<http://emmo.info/emmo/top/math#EMMO_a365b3c1_7bde_41d7_a15b_2820762e85f4> rdf:type owl:Class .
+###  https://nomad-coe.eu/ontology/catalysis#MachineLearningModel
+<https://nomad-coe.eu/ontology/catalysis#MachineLearningModel> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#MachineLearningStudy
+<https://nomad-coe.eu/ontology/catalysis#MachineLearningStudy> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Property
+<https://nomad-coe.eu/ontology/catalysis#Property> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Study
+<https://nomad-coe.eu/ontology/catalysis#Study> rdf:type owl:Class .
 
 
 ###  https://nomad-coe.eu/ontology/core#AdditionOperation
 :AdditionOperation rdf:type owl:Class ;
-                   rdfs:subClassOf :MathematicalOperation ,
+                   rdfs:subClassOf <http://cll.niimm.ksu.ru/ontologies/mathematics#E1315> ,
+                                   :MathematicalOperation ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
-                                     owl:someValuesFrom <http://emmo.info/emmo/top/math#EMMO_8de14a59_660b_454f_aff8_76a07ce185f4>
+                                     owl:someValuesFrom <http://emmo.info/emmo/middle/math#EMMO_8de14a59_660b_454f_aff8_76a07ce185f4>
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :hasOutput ;
@@ -201,18 +366,20 @@
                                      owl:onProperty :hasInput ;
                                      owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                                      owl:onClass :Summand
-                                   ] ;
-                   rdfs:label "AdditionOperation" .
+                                   ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#ArrayComponent
 :ArrayComponent rdf:type owl:Class ;
                 rdfs:subClassOf <http://emmo.info/emmo/middle/math#EMMO_54ee6b5e_5261_44a8_86eb_5717e7fdb9d0> ,
                                 [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasNumericalIndex ;
+                                  owl:someValuesFrom <http://emmo.info/emmo/middle/semiotics#EMMO_0cd58641_824c_4851_907f_f4c3be76630c>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
                                   owl:onProperty :hasValue ;
                                   owl:someValuesFrom rdfs:Literal
-                                ] ;
-                rdfs:label "ArrayComponent" .
+                                ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#ComplexNumber
@@ -223,20 +390,18 @@
                                  owl:someValuesFrom :ImaginaryNumber
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty <https://nomad-coe.eu/ontology/properties#hasImaginaryPart> ;
+                                 owl:onProperty :hasImaginaryPart ;
                                  owl:someValuesFrom :ImaginaryPart
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty <https://nomad-coe.eu/ontology/properties#hasRealPart> ;
+                                 owl:onProperty :hasRealPart ;
                                  owl:someValuesFrom :RealPart
-                               ] ;
-               rdfs:label "ComplexNumber" .
+                               ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#Derivation
 :Derivation rdf:type owl:Class ;
-            rdfs:subClassOf :MathematicalOperation ;
-            rdfs:label "Derivation" .
+            rdfs:subClassOf :MathematicalOperation .
 
 
 ###  https://nomad-coe.eu/ontology/core#Difference
@@ -244,8 +409,7 @@
             rdfs:subClassOf :MathematicalParticipant ;
             rdfs:comment """The difference is the output of the SubstractionOperation that has a Minuend and a Subtrahend as Inputs.
 
-Difference = Minuend - Subtrahend""" ;
-            rdfs:label "Difference" .
+Difference = Minuend - Subtrahend""" .
 
 
 ###  https://nomad-coe.eu/ontology/core#Dividend
@@ -260,7 +424,7 @@ Difference = Minuend - Subtrahend""" ;
                    rdfs:subClassOf :MathematicalOperation ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
-                                     owl:someValuesFrom <http://emmo.info/emmo/top/math#EMMO_a365b3c1_7bde_41d7_a15b_2820762e85f4>
+                                     owl:someValuesFrom <http://emmo.info/emmo/middle/math#EMMO_a365b3c1_7bde_41d7_a15b_2820762e85f4>
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :hasInput ;
@@ -273,21 +437,20 @@ Difference = Minuend - Subtrahend""" ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :hasOutput ;
                                      owl:someValuesFrom :Quotient
-                                   ] ;
-                   rdfs:label "DivisionOperation" .
+                                   ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#Divisor
 :Divisor rdf:type owl:Class ;
-         rdfs:subClassOf :MathematicalParticipant ;
+         rdfs:subClassOf <http://cll.niimm.ksu.ru/ontologies/mathematics#E3132> ,
+                         :MathematicalParticipant ;
          <http://emmo.info/emmo/top/annotations#EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b> "Denominator" ;
          rdfs:label "Divisor" .
 
 
 ###  https://nomad-coe.eu/ontology/core#FourierTransform
 :FourierTransform rdf:type owl:Class ;
-                  rdfs:subClassOf :MathematicalOperation ;
-                  rdfs:label "FourierTransform" .
+                  rdfs:subClassOf :MathematicalOperation .
 
 
 ###  https://nomad-coe.eu/ontology/core#ImaginaryNumber
@@ -300,14 +463,12 @@ Difference = Minuend - Subtrahend""" ;
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
                                  owl:someValuesFrom <http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486>
-                               ] ;
-               rdfs:label "ImaginaryPart" .
+                               ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#MathematicalOperation
 :MathematicalOperation rdf:type owl:Class ;
-                       rdfs:subClassOf :Operation ;
-                       rdfs:label "MathematicalOperation" .
+                       rdfs:subClassOf :Operation .
 
 
 ###  https://nomad-coe.eu/ontology/core#MathematicalParticipant
@@ -316,32 +477,26 @@ Difference = Minuend - Subtrahend""" ;
                                                                 <http://emmo.info/emmo/middle/math#EMMO_54ee6b5e_5261_44a8_86eb_5717e7fdb9d0>
                                                               ) ;
                                            rdf:type owl:Class
-                                         ] ;
-                         rdfs:label "MathematicalParticipant" .
+                                         ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#Minuend
 :Minuend rdf:type owl:Class ;
-         rdfs:subClassOf :MathematicalParticipant ;
-         rdfs:label "Minuend" .
+         rdfs:subClassOf :MathematicalParticipant .
 
 
 ###  https://nomad-coe.eu/ontology/core#MultiplicationFactor
 :MultiplicationFactor rdf:type owl:Class ;
-                      rdfs:subClassOf :MathematicalParticipant ;
-                      rdfs:label "MultiplicationFactor" .
+                      rdfs:subClassOf :MathematicalParticipant .
 
 
 ###  https://nomad-coe.eu/ontology/core#MultiplicationOperation
 :MultiplicationOperation rdf:type owl:Class ;
-                         rdfs:subClassOf :MathematicalOperation ,
+                         rdfs:subClassOf <http://cll.niimm.ksu.ru/ontologies/mathematics#E1318> ,
+                                         :MathematicalOperation ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
-                                           owl:someValuesFrom <http://emmo.info/emmo/top/math#EMMO_2b1303e8_d4c3_453b_9918_76f1d009543f>
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :hasInput ;
-                                           owl:someValuesFrom :MultiplicationFactor
+                                           owl:someValuesFrom <http://emmo.info/emmo/middle/math#EMMO_2b1303e8_d4c3_453b_9918_76f1d009543f>
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty :hasOutput ;
@@ -351,8 +506,7 @@ Difference = Minuend - Subtrahend""" ;
                                            owl:onProperty :hasInput ;
                                            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                                            owl:onClass :MultiplicationFactor
-                                         ] ;
-                         rdfs:label "MultiplicationOperation" .
+                                         ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#MultiplicationProduct
@@ -365,8 +519,7 @@ Difference = Minuend - Subtrahend""" ;
                                        ] ;
                        rdfs:comment """The MultiplicationProduct is the output of the MultiplicationOperation which has two MultiplicationFactors as Input.
 
-MultiplicationProduct = MultiplicationFactor * MultiplicationFactor""" ;
-                       rdfs:label "MultiplicationProduct" .
+MultiplicationProduct = MultiplicationFactor * MultiplicationFactor""" .
 
 
 ###  https://nomad-coe.eu/ontology/core#Operation
@@ -379,17 +532,16 @@ MultiplicationProduct = MultiplicationFactor * MultiplicationFactor""" ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasOutput ;
                              owl:someValuesFrom <http://emmo.info/emmo/middle/holistic#EMMO_49804605_c0fe_4538_abda_f70ba1dc8a5d>
-                           ] ;
-           rdfs:label "Operation" .
+                           ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#Quotient
 :Quotient rdf:type owl:Class ;
-          rdfs:subClassOf :MathematicalParticipant ;
+          rdfs:subClassOf <http://cll.niimm.ksu.ru/ontologies/mathematics#E3338> ,
+                          :MathematicalParticipant ;
           rdfs:comment """The Quotient is the output of the DivisionOperation which has the Dividend and the Divisor as Inputs.
 
-Quotient = Dividend / Divisor""" ;
-          rdfs:label "Quotient" .
+Quotient = Dividend / Divisor""" .
 
 
 ###  https://nomad-coe.eu/ontology/core#RealPart
@@ -398,32 +550,27 @@ Quotient = Dividend / Divisor""" ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
                             owl:someValuesFrom <http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486>
-                          ] ;
-          rdfs:label "RealPart" .
+                          ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#RealSpace
 :RealSpace rdf:type owl:Class ;
-           rdfs:subClassOf <http://emmo.info/emmo/middle/perceptual#EMMO_5f278af9_8593_4e27_a717_ccc9e07a0ddf> ;
-           rdfs:label "RealSpace" .
+           rdfs:subClassOf <http://emmo.info/emmo/middle/perceptual#EMMO_5f278af9_8593_4e27_a717_ccc9e07a0ddf> .
 
 
 ###  https://nomad-coe.eu/ontology/core#RealSpaceVector
 :RealSpaceVector rdf:type owl:Class ;
-                 rdfs:subClassOf <https://nomad-coe.eu/ontology/core#3DVector> ;
-                 rdfs:label "RealSpaceVector" .
+                 rdfs:subClassOf <https://nomad-coe.eu/ontology/core#3DVector> .
 
 
 ###  https://nomad-coe.eu/ontology/core#ReciprocalSpace
 :ReciprocalSpace rdf:type owl:Class ;
-                 rdfs:subClassOf <http://emmo.info/emmo/middle/perceptual#EMMO_5f278af9_8593_4e27_a717_ccc9e07a0ddf> ;
-                 rdfs:label "ReciprocalSpace" .
+                 rdfs:subClassOf <http://emmo.info/emmo/middle/perceptual#EMMO_5f278af9_8593_4e27_a717_ccc9e07a0ddf> .
 
 
 ###  https://nomad-coe.eu/ontology/core#SchroedingerEquation
 :SchroedingerEquation rdf:type owl:Class ;
-                      rdfs:subClassOf <http://emmo.info/emmo/middle/models#EMMO_27c5d8c6_8af7_4d63_beb1_ec37cd8b3fa3> ;
-                      rdfs:label "SchroedingerEquation" .
+                      rdfs:subClassOf <http://emmo.info/emmo/middle/models#EMMO_27c5d8c6_8af7_4d63_beb1_ec37cd8b3fa3> .
 
 
 ###  https://nomad-coe.eu/ontology/core#SubtractionOperation
@@ -431,7 +578,7 @@ Quotient = Dividend / Divisor""" ;
                       rdfs:subClassOf :MathematicalOperation ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://emmo.info/emmo/middle/semiotics#EMMO_39c3815d_8cae_4c8f_b2ff_eeba24bec455> ;
-                                        owl:someValuesFrom <http://emmo.info/emmo/top/math#EMMO_46d5643b_9706_4b67_8bea_ed77d6026539>
+                                        owl:someValuesFrom <http://emmo.info/emmo/middle/math#EMMO_46d5643b_9706_4b67_8bea_ed77d6026539>
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty :hasInput ;
@@ -444,14 +591,12 @@ Quotient = Dividend / Divisor""" ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty :hasOutput ;
                                         owl:someValuesFrom :Difference
-                                      ] ;
-                      rdfs:label "SubtractionOperation" .
+                                      ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#Subtrahend
 :Subtrahend rdf:type owl:Class ;
-            rdfs:subClassOf :MathematicalParticipant ;
-            rdfs:label "Subtrahend" .
+            rdfs:subClassOf :MathematicalParticipant .
 
 
 ###  https://nomad-coe.eu/ontology/core#Sum
@@ -464,21 +609,20 @@ Quotient = Dividend / Divisor""" ;
                      ] ;
      rdfs:comment """The sum is the output of the AdditionOperation which has at least two Summands as Inputs.
 
-Sum = Summand + Summand""" ;
-     rdfs:label "Sum" .
+Sum = Summand + Summand""" .
 
 
 ###  https://nomad-coe.eu/ontology/core#Summand
 :Summand rdf:type owl:Class ;
-         rdfs:subClassOf :MathematicalParticipant ;
+         rdfs:subClassOf <http://cll.niimm.ksu.ru/ontologies/mathematics#E3251> ,
+                         :MathematicalParticipant ;
          <http://emmo.info/emmo/top/annotations#EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b> "Addend" ;
          rdfs:label "Summand" .
 
 
 ###  https://nomad-coe.eu/ontology/core#TimeDependentSchroedingerEquation
 :TimeDependentSchroedingerEquation rdf:type owl:Class ;
-                                   rdfs:subClassOf :SchroedingerEquation ;
-                                   rdfs:label "TimeDependentSchroedingerEquation" .
+                                   rdfs:subClassOf :SchroedingerEquation .
 
 
 ###  https://nomad-coe.eu/ontology/core#TimeDerivation
@@ -487,8 +631,7 @@ Sum = Summand + Summand""" ;
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :hasInput ;
                                   owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_d4f7d378_5e3b_468a_baa1_a7e98358cda7>
-                                ] ;
-                rdfs:label "TimeDerivation" .
+                                ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#TimeIndependentSchroedingerEquation
@@ -497,26 +640,34 @@ Sum = Summand + Summand""" ;
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty <http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
                                                        owl:someValuesFrom <http://emmo.info/emmo/middle/isq#EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2>
-                                                     ] ;
-                                     rdfs:label "TimeIndependentSchroedingerEquation" .
+                                                     ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#xComponent
 :xComponent rdf:type owl:Class ;
-            rdfs:subClassOf :ArrayComponent ;
-            rdfs:label "xComponent" .
+            rdfs:subClassOf :ArrayComponent ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasNumericalIndex ;
+                              owl:hasValue :xIndex
+                            ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#yComponent
 :yComponent rdf:type owl:Class ;
-            rdfs:subClassOf :ArrayComponent ;
-            rdfs:label "yComponent" .
+            rdfs:subClassOf :ArrayComponent ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasNumericalIndex ;
+                              owl:hasValue :yIndex
+                            ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#zComponent
 :zComponent rdf:type owl:Class ;
-            rdfs:subClassOf :ArrayComponent ;
-            rdfs:label "zComponent" .
+            rdfs:subClassOf :ArrayComponent ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasNumericalIndex ;
+                              owl:hasValue :zIndex
+                            ] .
 
 
 ###  https://nomad-coe.eu/ontology/core#3DVector
@@ -536,8 +687,7 @@ Sum = Summand + Summand""" ;
                                                                 owl:onProperty :hasArrayComponent ;
                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                 owl:onClass :zComponent
-                                                              ] ;
-                                              rdfs:label "3DVector" .
+                                                              ] .
 
 
 #################################################################
@@ -547,22 +697,19 @@ Sum = Summand + Summand""" ;
 ###  https://nomad-coe.eu/ontology/core#xIndex
 :xIndex rdf:type owl:NamedIndividual ,
                  <http://emmo.info/emmo/middle/semiotics#EMMO_0cd58641_824c_4851_907f_f4c3be76630c> ;
-        :hasValue 1 ;
-        rdfs:label "xIndex" .
+        :hasValue 1 .
 
 
 ###  https://nomad-coe.eu/ontology/core#yIndex
 :yIndex rdf:type owl:NamedIndividual ,
                  <http://emmo.info/emmo/middle/semiotics#EMMO_0cd58641_824c_4851_907f_f4c3be76630c> ;
-        :hasValue 2 ;
-        rdfs:label "yIndex" .
+        :hasValue 2 .
 
 
 ###  https://nomad-coe.eu/ontology/core#zIndex
 :zIndex rdf:type owl:NamedIndividual ,
                  <http://emmo.info/emmo/middle/semiotics#EMMO_0cd58641_824c_4851_907f_f4c3be76630c> ;
-        :hasValue 3 ;
-        rdfs:label "zIndex" .
+        :hasValue 3 .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
