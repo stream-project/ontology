@@ -1,0 +1,1844 @@
+@prefix : <https://nomad-coe.eu/ontology/catalysis#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix wikidata: <https://www.wikidata.org/wiki/> .
+@base <https://nomad-coe.eu/ontology/catalysis> .
+
+<https://nomad-coe.eu/ontology/catalysis> rdf:type owl:Ontology ;
+                                           rdfs:label "Heterogeneous Catalysis Ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://emmo.info/emmo/top/annotations#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9
+<http://emmo.info/emmo/top/annotations#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/top/annotations#EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a
+<http://emmo.info/emmo/top/annotations#EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204
+<http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:subPropertyOf <http://emmo.info/emmo/middle/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b> ;
+                                                                                    rdfs:domain <http://emmo.info/emmo/middle/semiotics#EMMO_6f5af708_f825_4feb_a0d1_a8d813d3022b> ;
+                                                                                    rdfs:range <http://emmo.info/emmo/middle/properties#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> ;
+                                                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "hasProperty"@en .
+
+
+###  http://emmo.info/emmo/middle/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b
+<http://emmo.info/emmo/middle/semiotics#EMMO_eb3518bf_f799_4f9e_8c3e_ce59af11453b> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/top/mereotopology#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f
+<http://emmo.info/emmo/top/mereotopology#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_8c898653_1118_4682_9bbf_6cc334d16a99> ,
+                                                                                                       <http://emmo.info/emmo/top/mereotopology#EMMO_d893d373_b579_4867_841e_1c2b31a8d2c6> ;
+                                                                                    rdf:type owl:TransitiveProperty ;
+                                                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "hasPart"@en .
+
+
+###  http://emmo.info/emmo/top/mereotopology#EMMO_8c898653_1118_4682_9bbf_6cc334d16a99
+<http://emmo.info/emmo/top/mereotopology#EMMO_8c898653_1118_4682_9bbf_6cc334d16a99> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/top/mereotopology#EMMO_9380ab64_0363_4804_b13f_3a8a94119a76
+<http://emmo.info/emmo/top/mereotopology#EMMO_9380ab64_0363_4804_b13f_3a8a94119a76> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/top/mereotopology#EMMO_d893d373_b579_4867_841e_1c2b31a8d2c6
+<http://emmo.info/emmo/top/mereotopology#EMMO_d893d373_b579_4867_841e_1c2b31a8d2c6> rdf:type owl:ObjectProperty .
+
+
+###  http://emmo.info/emmo/top/physical#EMMO_7afbed84_7593_4a23_bd88_9d9c6b04e8f6
+<http://emmo.info/emmo/top/physical#EMMO_7afbed84_7593_4a23_bd88_9d9c6b04e8f6> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_9380ab64_0363_4804_b13f_3a8a94119a76> ;
+                                                                               rdf:type owl:TransitiveProperty ;
+                                                                               rdfs:domain <http://emmo.info/emmo/top/mereotopology#EMMO_eb3a768e_d53e_4be9_a23b_0714833c36de> ;
+                                                                               rdfs:range <http://emmo.info/emmo/top/mereotopology#EMMO_eb3a768e_d53e_4be9_a23b_0714833c36de> ;
+                                                                               <http://emmo.info/emmo/top/annotations#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "A relation that isolate a proper part that covers the total spatial extension of a whole within a time interval." ;
+                                                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "hasTemporalPart"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0000087
+obo:RO_0000087 rdf:type owl:ObjectProperty ;
+               rdfs:label "has role"^^xsd:string .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#flowsThrough
+:flowsThrough rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasByProduct
+:hasByProduct rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasProduct ;
+              rdfs:range :ChemicalReaction .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasCatalyst
+:hasCatalyst rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasExperiment
+:hasExperiment rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasFinalPart
+:hasFinalPart rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://emmo.info/emmo/top/physical#EMMO_7afbed84_7593_4a23_bd88_9d9c6b04e8f6> ;
+              rdfs:comment "hasFinalPart means something hasPart only in the end and the parthood has changed" .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasInitialPart
+:hasInitialPart rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://emmo.info/emmo/top/physical#EMMO_7afbed84_7593_4a23_bd88_9d9c6b04e8f6> ;
+                rdfs:comment "hasInitialPart means something hasPart only in the beginning and the parthood may change" .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasMeasurementType
+:hasMeasurementType rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                    rdfs:domain :ExperimentalTechnique ;
+                    rdfs:range :MeasurementType .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasPrimaryFeature
+:hasPrimaryFeature rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <https://nomad-coe.eu/ontology/core#hasInput> ;
+                   rdfs:domain :SISSO .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasProduct
+:hasProduct rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <https://nomad-coe.eu/ontology/core#hasOutput> ;
+            rdfs:domain :ReactionProduct .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasReactant
+:hasReactant rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <https://nomad-coe.eu/ontology/core#hasInput> ;
+             rdfs:domain :Reactant .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasTargetProperty
+:hasTargetProperty rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <https://nomad-coe.eu/ontology/core#hasInput> ;
+                   rdfs:domain :SISSO .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#identifiesDescriptor
+:identifiesDescriptor rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf <https://nomad-coe.eu/ontology/core#hasOutput> ;
+                      rdfs:domain :SISSO .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#usesAlternativeTechnique
+:usesAlternativeTechnique rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf <https://nomad-coe.eu/ontology/core#usesTechnique> .
+
+
+###  https://nomad-coe.eu/ontology/core#characterizes
+<https://nomad-coe.eu/ontology/core#characterizes> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#determines
+<https://nomad-coe.eu/ontology/core#determines> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#hasInput
+<https://nomad-coe.eu/ontology/core#hasInput> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#hasMeasure
+<https://nomad-coe.eu/ontology/core#hasMeasure> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#hasOutput
+<https://nomad-coe.eu/ontology/core#hasOutput> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#measures
+<https://nomad-coe.eu/ontology/core#measures> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#performedBy
+<https://nomad-coe.eu/ontology/core#performedBy> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#refersTo
+<https://nomad-coe.eu/ontology/core#refersTo> rdf:type owl:ObjectProperty .
+
+
+###  https://nomad-coe.eu/ontology/core#usesTechnique
+<https://nomad-coe.eu/ontology/core#usesTechnique> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://nomad-coe.eu/ontology/catalysis#hasAbbreviation
+:hasAbbreviation rdf:type owl:DatatypeProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasCharacter
+:hasCharacter rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:comment "This datatype property can be used to give a subject a string characterization." .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasNecessity
+:hasNecessity rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:comment "hasNecessity relates to a string \"Basic\", \"Mandatory\", \"Advanced\" assigning whether an exp. technique is really mandatory or a rather advanced technique that is not neccesarily needed." ;
+              rdfs:label "hasNecessity" .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#hasReactionEnthalpy_kJPerMol
+:hasReactionEnthalpy_kJPerMol rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emmo.info/emmo/middle/holistic#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce
+<http://emmo.info/emmo/middle/holistic#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce> rdf:type owl:Class ;
+                                                                                  rdfs:label "Process" .
+
+
+###  http://emmo.info/emmo/middle/materials#EMMO_668fbd5b_6f1b_405c_9c6b_d6067bd0595a
+<http://emmo.info/emmo/middle/materials#EMMO_668fbd5b_6f1b_405c_9c6b_d6067bd0595a> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://emmo.info/emmo/middle/physicalistic#EMMO_5b2222df_4da6_442f_8244_96e9e45887d1> ;
+                                                                                   <http://emmo.info/emmo/top/annotations#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "A matter object throughout which all physical properties of a material are essentially uniform."@en ;
+                                                                                   rdfs:comment """In the physical sciences, a phase is a region of space (a thermodynamic system), throughout which all physical properties of a material are essentially uniform. Examples of physical properties include density, index of refraction, magnetization and chemical composition. A simple description is that a phase is a region of material that is chemically uniform, physically distinct, and (often) mechanically separable. In a system consisting of ice and water in a glass jar, the ice cubes are one phase, the water is a second phase, and the humid air is a third phase over the ice and water. The glass of the jar is another separate phase.
+
+The term phase is sometimes used as a synonym for state of matter, but there can be several immiscible phases of the same state of matter. Also, the term phase is sometimes used to refer to a set of equilibrium states demarcated in terms of state variables such as pressure and temperature by a phase boundary on a phase diagram. Because phase boundaries relate to changes in the organization of matter, such as a change from liquid to solid or a more subtle change from one crystal structure to another, this latter usage is similar to the use of \"phase\" as a synonym for state of matter. However, the state of matter and phase diagram usages are not commensurate with the formal definition given above and the intended meaning must be determined in part from the context in which the term is used.
+
+[https://en.wikipedia.org/wiki/Phase_(matter)]"""@en ;
+                                                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "PhaseOfMatter"@en .
+
+
+###  http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94
+<http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://emmo.info/emmo/middle/physicalistic#EMMO_5b2222df_4da6_442f_8244_96e9e45887d1> ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                                                                                         owl:someValuesFrom <https://nomad-coe.eu/ontology/structure#ChemicalComposition>
+                                                                                                       ] ;
+                                                                                       <http://emmo.info/emmo/top/annotations#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9> "A matter individual that stands for a real world object representing an amount of a physical substance (or mixture of substances) in different states of matter or phases."@en ;
+                                                                                       rdfs:comment "A instance of a material (e.g. nitrogen) can represent different states of matter. The fact that the individual also belongs to other classes (e.g. Gas) would reveal the actual form in which the material is found."@en ,
+                                                                                                    "Material usually means some definite kind, quality, or quantity of matter, especially as intended for use."@en ;
+                                                                                       rdfs:label "Material" ;
+                                                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Material"@en .
+
+
+###  http://emmo.info/emmo/middle/physicalistic#EMMO_5b2222df_4da6_442f_8244_96e9e45887d1
+<http://emmo.info/emmo/middle/physicalistic#EMMO_5b2222df_4da6_442f_8244_96e9e45887d1> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/properties#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba
+<http://emmo.info/emmo/middle/properties#EMMO_b7bcff25_ffc3_474e_9ab5_01b1664bd4ba> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/middle/semiotics#EMMO_6f5af708_f825_4feb_a0d1_a8d813d3022b
+<http://emmo.info/emmo/middle/semiotics#EMMO_6f5af708_f825_4feb_a0d1_a8d813d3022b> rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo/top/mereotopology#EMMO_eb3a768e_d53e_4be9_a23b_0714833c36de
+<http://emmo.info/emmo/top/mereotopology#EMMO_eb3a768e_d53e_4be9_a23b_0714833c36de> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_15377
+obo:CHEBI_15377 rdf:type owl:Class ;
+                rdfs:label "water"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_15379
+obo:CHEBI_15379 rdf:type owl:Class ;
+                rdfs:label "dioxygen"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_16052
+obo:CHEBI_16052 rdf:type owl:Class ;
+                rdfs:label "propene"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_16526
+obo:CHEBI_16526 rdf:type owl:Class ;
+                rdfs:label "carbon dioxide"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_17245
+obo:CHEBI_17245 rdf:type owl:Class ;
+                rdfs:label "carbon monoxide"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_18308
+obo:CHEBI_18308 rdf:type owl:Class ;
+                rdfs:label "acrylic acid"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_24431
+obo:CHEBI_24431 rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_25585
+obo:CHEBI_25585 rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_25805
+obo:CHEBI_25805 rdf:type owl:Class ;
+                rdfs:subClassOf obo:CHEBI_25585 ,
+                                obo:CHEBI_33303 ;
+                rdfs:label "oxygen atom"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_27594
+obo:CHEBI_27594 rdf:type owl:Class ;
+                rdfs:subClassOf obo:CHEBI_25585 ,
+                                obo:CHEBI_33306 ;
+                rdfs:label "carbon atom"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_27698
+obo:CHEBI_27698 rdf:type owl:Class ;
+                rdfs:subClassOf obo:CHEBI_33347 ;
+                rdfs:label "vanadium atom"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_32879
+obo:CHEBI_32879 rdf:type owl:Class ;
+                rdfs:label "propane"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_33250
+obo:CHEBI_33250 rdf:type owl:Class ;
+                rdfs:subClassOf obo:CHEBI_24431 ;
+                rdfs:label "atom"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_33303
+obo:CHEBI_33303 rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_33306
+obo:CHEBI_33306 rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_33347
+obo:CHEBI_33347 rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_35223
+obo:CHEBI_35223 rdf:type owl:Class ;
+                rdfs:label "catalyst"^^xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_63247
+obo:CHEBI_63247 rdf:type owl:Class ;
+                rdfs:label "reducing agent" .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_63248
+obo:CHEBI_63248 rdf:type owl:Class ;
+                rdfs:label "oxidising agent" .
+
+
+###  http://www.a2rd.net.br/mlo#Algorithms
+<http://www.a2rd.net.br/mlo#Algorithms> rdf:type owl:Class ;
+                                        rdfs:subClassOf :MachineLearningModel .
+
+
+###  http://www.a2rd.net.br/mlo#Regression
+<http://www.a2rd.net.br/mlo#Regression> rdf:type owl:Class ;
+                                        rdfs:subClassOf :MachineLearningModel .
+
+
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AC_Bulk
+:AC_Bulk rdf:type owl:Class ;
+         rdfs:subClassOf :ActivatedCatalystCharacterization ,
+                         :BasicCharacterization ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                           owl:someValuesFrom :XRayDiffraction
+                         ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AC_ChemComp
+:AC_ChemComp rdf:type owl:Class ;
+             rdfs:subClassOf :ActivatedCatalystCharacterization ,
+                             :BasicCharacterization ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                    owl:unionOf ( :InductivelyCoupledPlasmaOpticalEmissionSpectrometry
+                                                                  :XRayFluorescence
+                                                                )
+                                                  ]
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AC_ES
+:AC_ES rdf:type owl:Class ;
+       rdfs:subClassOf :ActivatedCatalystCharacterization ,
+                       :AdvancedCharacterization ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                         owl:someValuesFrom :ResonantPhotoemissionSpectroscopy
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                         owl:someValuesFrom :XRayAbsorptionSpectroscopy
+                       ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AC_NearSurf
+:AC_NearSurf rdf:type owl:Class ;
+             rdfs:subClassOf :ActivatedCatalystCharacterization ,
+                             :BasicCharacterization ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                               owl:someValuesFrom :LaboratoryXPS
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AC_OxEx
+:AC_OxEx rdf:type owl:Class ;
+         rdfs:subClassOf :ActivatedCatalystCharacterization ,
+                         :AdvancedCharacterization ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                           owl:someValuesFrom :RamanSpectroscopy
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                           owl:someValuesFrom :ThemalGravimetricMassSpectrometry
+                         ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AC_Surf
+:AC_Surf rdf:type owl:Class ;
+         rdfs:subClassOf :ActivatedCatalystCharacterization ,
+                         :BasicCharacterization ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                           owl:someValuesFrom :NitrogenAdsorption
+                         ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AC_conduc
+:AC_conduc rdf:type owl:Class ;
+           rdfs:subClassOf :ActivatedCatalystCharacterization ,
+                           :AdvancedCharacterization ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                             owl:someValuesFrom :OperandoMCPT
+                           ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ActivatedCatalyst
+:ActivatedCatalyst rdf:type owl:Class ;
+                   rdfs:subClassOf :CatalystSnapshot .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ActivatedCatalystCharacterization
+:ActivatedCatalystCharacterization rdf:type owl:Class ;
+                                   rdfs:subClassOf :CatalystCharacterization ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <https://nomad-coe.eu/ontology/core#characterizes> ;
+                                                     owl:someValuesFrom :ActivatedCatalyst
+                                                   ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ActivationEnergyOfConductivity
+:ActivationEnergyOfConductivity rdf:type owl:Class ;
+                                rdfs:subClassOf :DielectricProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:subClassOf :CatalyticPerformance ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://nomad-coe.eu/ontology/core#hasMeasure> ;
+                            owl:someValuesFrom :Conversion
+                          ] ;
+          rdfs:comment """A catalyst should have a high activity, i.e. reactivity towards the desired reaction.
+
+E.g. measure of reaction product conversion (reaction rate)"""@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AdvancedCharacterization
+:AdvancedCharacterization rdf:type owl:Class ;
+                          rdfs:subClassOf :CatalystCharacterization ;
+                          owl:disjointWith :BasicCharacterization .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AtomPositions
+:AtomPositions rdf:type owl:Class ;
+               rdfs:subClassOf :BulkStructure .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AtomicPercentageAtSurface
+:AtomicPercentageAtSurface rdf:type owl:Class ;
+                           rdfs:subClassOf :NearSurfaceChemicalComposition ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <https://nomad-coe.eu/ontology/core#refersTo> ;
+                                             owl:someValuesFrom obo:CHEBI_33250
+                                           ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#AtomicPercentageInBulk
+:AtomicPercentageInBulk rdf:type owl:Class ;
+                        rdfs:subClassOf :BulkChemicalComposition ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://nomad-coe.eu/ontology/core#refersTo> ;
+                                          owl:someValuesFrom obo:CHEBI_33250
+                                        ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#BasicCharacterization
+:BasicCharacterization rdf:type owl:Class ;
+                       rdfs:subClassOf :CatalystCharacterization .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#BulkChemicalComposition
+:BulkChemicalComposition rdf:type owl:Class ;
+                         rdfs:subClassOf :ChemicalComposition ,
+                                         :StructuralProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#BulkProperty
+:BulkProperty rdf:type owl:Class ;
+              rdfs:subClassOf :Property ;
+              owl:disjointWith :SurfaceProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#BulkStructure
+:BulkStructure rdf:type owl:Class ;
+               rdfs:subClassOf :BulkProperty ,
+                               :StructuralProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CO_Oxidation
+:CO_Oxidation rdf:type owl:Class ;
+              rdfs:subClassOf :ExperimentalTechnique ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                owl:someValuesFrom :OxygenActivity
+                              ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Calorimetry
+:Calorimetry rdf:type owl:Class ;
+             rdfs:subClassOf :ExperimentalTechnique ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                               owl:someValuesFrom :HeatOfAdsorption
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CatalystActivation
+:CatalystActivation rdf:type owl:Class ;
+                    rdfs:subClassOf <http://emmo.info/emmo/middle/holistic#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce> ,
+                                    <http://www.w3.org/ns/prov#Activity> ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                      owl:someValuesFrom :FreshCatalyst
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://nomad-coe.eu/ontology/core#hasOutput> ;
+                                      owl:someValuesFrom :ActivatedCatalyst
+                                    ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CatalystCharacterization
+:CatalystCharacterization rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ,
+                                          :Experiment .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CatalystSnapshot
+:CatalystSnapshot rdf:type owl:Class ;
+                  rdfs:subClassOf <https://nomad-coe.eu/ontology/structure#MaterialSnapshot> .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CatalystSynthesis
+:CatalystSynthesis rdf:type owl:Class ;
+                   rdfs:subClassOf <http://emmo.info/emmo/middle/holistic#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce> ,
+                                   <http://www.w3.org/ns/prov#Activity> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                     owl:someValuesFrom :RawCatalyticMaterial
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://nomad-coe.eu/ontology/core#hasOutput> ;
+                                     owl:someValuesFrom :GreenCatalystPrecursor
+                                   ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CatalyticMaterial
+:CatalyticMaterial rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty obo:RO_0000087 ;
+                                         owl:someValuesFrom obo:CHEBI_35223
+                                       ] ;
+                   rdfs:subClassOf <http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                     owl:someValuesFrom :Activity
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                     owl:someValuesFrom :Selectivity
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                     owl:someValuesFrom :Stability
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://emmo.info/emmo/top/physical#EMMO_7afbed84_7593_4a23_bd88_9d9c6b04e8f6> ;
+                                     owl:someValuesFrom :CatalystSnapshot
+                                   ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CatalyticPerformance
+:CatalyticPerformance rdf:type owl:Class ;
+                      rdfs:subClassOf :Property ;
+                      rdfs:comment "Catalytic performance refers to the performance of a material which acts as a catalyst for a specific reaction. It is here therefore defined as property of the Catalytic reaction and this way connected to the catalyst."@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CatalyticReaction
+:CatalyticReaction rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasCatalyst ;
+                                         owl:someValuesFrom :CatalyticMaterial
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasProduct ;
+                                         owl:someValuesFrom :SpentCatalyst
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasReactant ;
+                                         owl:someValuesFrom :ActivatedCatalyst
+                                       ] ;
+                   rdfs:subClassOf :ChemicalReaction .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CatalyticReactionExperiment
+:CatalyticReactionExperiment rdf:type owl:Class ;
+                             rdfs:subClassOf :Experiment ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <https://nomad-coe.eu/ontology/core#hasOutput> ;
+                                               owl:someValuesFrom :CatalyticPerformance
+                                             ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ChemicalBonds
+:ChemicalBonds rdf:type owl:Class ;
+               rdfs:subClassOf :BulkStructure .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ChemicalComposition
+:ChemicalComposition rdf:type owl:Class ;
+                     rdfs:subClassOf :StructuralProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ChemicalReaction
+:ChemicalReaction rdf:type owl:Class ;
+                  owl:equivalentClass wikidata:Q36534 ;
+                  rdfs:subClassOf <http://emmo.info/emmo/middle/holistic#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce> ,
+                                  <http://www.w3.org/ns/prov#Activity> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasProduct ;
+                                    owl:allValuesFrom :ReactionProduct
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasReactant ;
+                                    owl:allValuesFrom :Reactant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasReactionEnthalpy_kJPerMol ;
+                                    owl:someValuesFrom xsd:double
+                                  ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ChemicalReactor
+:ChemicalReactor rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ComplexPermittivity
+:ComplexPermittivity rdf:type owl:Class ;
+                     rdfs:subClassOf :DielectricProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#CompressedSensing
+:CompressedSensing rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.a2rd.net.br/mlo#Algorithms> .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ComputationalStudy
+:ComputationalStudy rdf:type owl:Class ;
+                    rdfs:subClassOf :Study .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ConductivityChanges
+:ConductivityChanges rdf:type owl:Class ;
+                     rdfs:subClassOf :ElectricalConductivity .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ConductivityStoichiometryDependence
+:ConductivityStoichiometryDependence rdf:type owl:Class ;
+                                     rdfs:subClassOf :ConductivityChanges .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ConductivityTemperatureDependence
+:ConductivityTemperatureDependence rdf:type owl:Class ;
+                                   rdfs:subClassOf :ConductivityChanges .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Conversion
+:Conversion rdf:type owl:Class ;
+            rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#DecompositionOfCarbonates
+:DecompositionOfCarbonates rdf:type owl:Class ;
+                           rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Dehydroxylation
+:Dehydroxylation rdf:type owl:Class ;
+                 rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#DielectricProperty
+:DielectricProperty rdf:type owl:Class ;
+                    rdfs:subClassOf :Property ;
+                    owl:disjointWith :StructuralProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ElectricalConductivity
+:ElectricalConductivity rdf:type owl:Class ;
+                        rdfs:subClassOf :DielectricProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ElectronDensity
+:ElectronDensity rdf:type owl:Class ;
+                 rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ElectronicEnergySpectrum
+:ElectronicEnergySpectrum rdf:type owl:Class ;
+                          rdfs:subClassOf :ElectronicStructureProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ElectronicStructureOfSurface
+:ElectronicStructureOfSurface rdf:type owl:Class ;
+                              rdfs:subClassOf :ElectronicStructureProperty ,
+                                              :SurfaceProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ElectronicStructureProperty
+:ElectronicStructureProperty rdf:type owl:Class ;
+                             rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#EnergyDispersiveXRaySpectroscopy
+:EnergyDispersiveXRaySpectroscopy rdf:type owl:Class ;
+                                  rdfs:subClassOf :Spectroscopy ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                    owl:someValuesFrom :ChemicalComposition
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasAbbreviation ;
+                                                    owl:hasValue "EDS"
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasAbbreviation ;
+                                                    owl:hasValue "EDX"
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasAbbreviation ;
+                                                    owl:hasValue "EDXS"
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasAbbreviation ;
+                                                    owl:hasValue "XEDS"
+                                                  ] ;
+                                  rdfs:comment "Only to be used for used catalyst when too little of the catalyst is left" ;
+                                  rdfs:label "EDX"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ExSitu
+:ExSitu rdf:type owl:Class ;
+        rdfs:subClassOf :MeasurementType ;
+        rdfs:comment "in vacuum, UHV, synthetic air, inert gas etc."@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Experiment
+:Experiment rdf:type owl:Class ;
+            rdfs:subClassOf <http://emmo.info/emmo/middle/holistic#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <https://nomad-coe.eu/ontology/core#hasOutput> ;
+                              owl:someValuesFrom :Property
+                            ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ExperimentalStudy
+:ExperimentalStudy rdf:type owl:Class ;
+                   rdfs:subClassOf :Study ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasExperiment ;
+                                     owl:someValuesFrom :Experiment
+                                   ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ExperimentalTechnique
+:ExperimentalTechnique rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FRCatChar
+:FRCatChar rdf:type owl:Class ;
+           rdfs:subClassOf :CatalystCharacterization ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <https://nomad-coe.eu/ontology/core#characterizes> ;
+                             owl:someValuesFrom :FreshCatalyst
+                           ] ;
+           rdfs:label "FreshCatalystCharacterization"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_Bulk
+:FR_Bulk rdf:type owl:Class ;
+         rdfs:subClassOf :BasicCharacterization ,
+                         :FRCatChar ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                           owl:someValuesFrom :XRayDiffraction
+                         ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_ChemComp
+:FR_ChemComp rdf:type owl:Class ;
+             rdfs:subClassOf :BasicCharacterization ,
+                             :FRCatChar ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                    owl:unionOf ( :InductivelyCoupledPlasmaOpticalEmissionSpectrometry
+                                                                  :XRayFluorescence
+                                                                )
+                                                  ]
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_NearSurf
+:FR_NearSurf rdf:type owl:Class ;
+             rdfs:subClassOf :BasicCharacterization ,
+                             :FRCatChar ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                               owl:someValuesFrom :LaboratoryXPS
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_O
+:FR_O rdf:type owl:Class ;
+      rdfs:subClassOf :BasicCharacterization ,
+                      :FRCatChar ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                        owl:someValuesFrom :CO_Oxidation
+                      ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_OxRed
+:FR_OxRed rdf:type owl:Class ;
+          rdfs:subClassOf :BasicCharacterization ,
+                          :FRCatChar ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                            owl:someValuesFrom :TemperatureProgrammedReductionOxidation
+                          ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_Surf
+:FR_Surf rdf:type owl:Class ;
+         rdfs:subClassOf :BasicCharacterization ,
+                         :FRCatChar ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                           owl:someValuesFrom :NitrogenAdsorption
+                         ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_Valence
+:FR_Valence rdf:type owl:Class ;
+            rdfs:subClassOf :BasicCharacterization ,
+                            :FRCatChar ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                              owl:someValuesFrom :LaboratoryUPS
+                            ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_funct
+:FR_funct rdf:type owl:Class ;
+          rdfs:subClassOf :BasicCharacterization ,
+                          :FRCatChar ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                            owl:someValuesFrom :FourierTransformInfraredSpectroscopy
+                          ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_heatAds
+:FR_heatAds rdf:type owl:Class ;
+            rdfs:subClassOf :AdvancedCharacterization ,
+                            :FRCatChar ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                              owl:someValuesFrom :LowTemperatureMicrocalorimetry
+                            ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_minority
+:FR_minority rdf:type owl:Class ;
+             rdfs:subClassOf :BasicCharacterization ,
+                             :FRCatChar ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                               owl:someValuesFrom :RamanSpectroscopy
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_optical
+:FR_optical rdf:type owl:Class ;
+            rdfs:subClassOf :BasicCharacterization ,
+                            :FRCatChar ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                              owl:someValuesFrom :UV_VIS_Spectroscopy
+                            ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FR_therm
+:FR_therm rdf:type owl:Class ;
+          rdfs:subClassOf :BasicCharacterization ,
+                          :FRCatChar ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                            owl:someValuesFrom :ThermalAnalysisInSyntheticAir
+                          ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FourierTransformInfraredSpectroscopy
+:FourierTransformInfraredSpectroscopy rdf:type owl:Class ;
+                                      rdfs:subClassOf :Spectroscopy ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                        owl:someValuesFrom :SurfaceFunctionalGroups
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasAbbreviation ;
+                                                        owl:hasValue "FTIR"
+                                                      ] ;
+                                      rdfs:label "FTIR"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FractionOfC1sComponent_CC_double
+:FractionOfC1sComponent_CC_double rdf:type owl:Class ;
+                                  rdfs:subClassOf :NearSurfaceChemicalComposition .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FractionOfC1sComponent_CC_single
+:FractionOfC1sComponent_CC_single rdf:type owl:Class ;
+                                  rdfs:subClassOf :NearSurfaceChemicalComposition .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FractionOfC1sComponent_CO_double
+:FractionOfC1sComponent_CO_double rdf:type owl:Class ;
+                                  rdfs:subClassOf :NearSurfaceChemicalComposition .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#FreshCatalyst
+:FreshCatalyst rdf:type owl:Class ;
+               rdfs:subClassOf :CatalystSnapshot .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#GasFeed
+:GasFeed rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :flowsThrough ;
+                           owl:someValuesFrom :ChemicalReactor
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasFinalPart ;
+                           owl:someValuesFrom :ReactionProduct
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasInitialPart ;
+                           owl:someValuesFrom :Reactant
+                         ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#GreenCatalystPrecursor
+:GreenCatalystPrecursor rdf:type owl:Class ;
+                        rdfs:subClassOf :CatalystSnapshot .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#HeatOfAdsorption
+:HeatOfAdsorption rdf:type owl:Class ;
+                  rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#InSitu
+:InSitu rdf:type owl:Class ;
+        rdfs:subClassOf :MeasurementType ;
+        rdfs:comment "under condition of reaction, e.g. pressure, temp"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#InductivelyCoupledPlasmaOpticalEmissionSpectrometry
+:InductivelyCoupledPlasmaOpticalEmissionSpectrometry rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Spectroscopy ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                                       owl:someValuesFrom :ChemicalComposition
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :hasAbbreviation ;
+                                                                       owl:hasValue "ICP-AES"
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :hasAbbreviation ;
+                                                                       owl:hasValue "ICP-OES"
+                                                                     ] ;
+                                                     rdfs:label "ICP_OES"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#InelasticMeanFreePath
+:InelasticMeanFreePath rdf:type owl:Class ;
+                       rdfs:subClassOf :ElectronicStructureOfSurface ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <https://nomad-coe.eu/ontology/core#refersTo> ;
+                                         owl:someValuesFrom obo:CHEBI_33250
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasAbbreviation ;
+                                         owl:hasValue "IMFP"
+                                       ] ;
+                       rdfs:comment "The inelastic mean free path, or IMFP (λ), is defined as the average distance that an electron with a given energy travels between successive inelastic collisions. One sigma (σ) (or 68 %) of all photoelectrons will come from within one λ of depth, while the majority (3σ or 99.7 %) of photoelectrons will come from 3λ." .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#LaboratoryUPS
+:LaboratoryUPS rdf:type owl:Class ;
+               rdfs:subClassOf :UltravioletPhotoelectronSpectroscopy ;
+               rdfs:label "LabUPS"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#LaboratoryXPS
+:LaboratoryXPS rdf:type owl:Class ;
+               rdfs:subClassOf :XRayPhotoelectronSpectroscopy ;
+               rdfs:label "LabXPS"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#LowTemperatureMicrocalorimetry
+:LowTemperatureMicrocalorimetry rdf:type owl:Class ;
+                                rdfs:subClassOf :Microcalorimetry .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#MachineLearningModel
+:MachineLearningModel rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#MachineLearningStudy
+:MachineLearningStudy rdf:type owl:Class ;
+                      rdfs:subClassOf :ComputationalStudy .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#MeasurementType
+:MeasurementType rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Microcalorimetry
+:Microcalorimetry rdf:type owl:Class ;
+                  rdfs:subClassOf :Calorimetry .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#MicrowaveCavityPerturbationTechnique
+:MicrowaveCavityPerturbationTechnique rdf:type owl:Class ;
+                                      rdfs:subClassOf :ExperimentalTechnique ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                        owl:someValuesFrom :ComplexPermittivity
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                        owl:someValuesFrom :ElectricalConductivity
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasAbbreviation ;
+                                                        owl:hasValue "MCPT"
+                                                      ] ;
+                                      rdfs:label "MCPT"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#MinorityPhases
+:MinorityPhases rdf:type owl:Class ;
+                rdfs:subClassOf :StructuralProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#MoVTeNbOx
+:MoVTeNbOx rdf:type owl:Class ;
+           rdfs:subClassOf :GreenCatalystPrecursor .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#NearAmbientPressureXPS
+:NearAmbientPressureXPS rdf:type owl:Class ;
+                        rdfs:subClassOf :XRayPhotoelectronSpectroscopy ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                          owl:someValuesFrom :ElectronicStructureOfSurface
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasAbbreviation ;
+                                          owl:hasValue "NAP-XPS"
+                                        ] ;
+                        rdfs:label "NAP_XPS"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#NearEdgeXRayAbsorptionFineStructure
+:NearEdgeXRayAbsorptionFineStructure rdf:type owl:Class ;
+                                     rdfs:subClassOf :XRayAbsorptionSpectroscopy ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasAbbreviation ;
+                                                       owl:hasValue "NEXAFS"
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasAbbreviation ;
+                                                       owl:hasValue "XANES"
+                                                     ] ;
+                                     rdfs:comment "X-ray absorption near edge structure also known as near edge X-ray absorption fine structure" ;
+                                     rdfs:label "NEXAFS"@en ,
+                                                "NearEdgeXRayAbsorptionFineStructure" ,
+                                                "XRayAbsorptionNearEdgeStructure" .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#NearSurfaceChemicalComposition
+:NearSurfaceChemicalComposition rdf:type owl:Class ;
+                                rdfs:subClassOf :ChemicalComposition ,
+                                                :SurfaceProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#NitrogenAdsorption
+:NitrogenAdsorption rdf:type owl:Class ;
+                    rdfs:subClassOf :ExperimentalTechnique ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                      owl:someValuesFrom :PoreSizeDistribution
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                      owl:someValuesFrom :PoreVolume
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                      owl:someValuesFrom :SurfaceArea
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbbreviation ;
+                                      owl:hasValue "N2-ads."
+                                    ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#NormUnitCellVolume
+:NormUnitCellVolume rdf:type owl:Class ;
+                    rdfs:subClassOf :BulkStructure ;
+                    rdfs:label "NormalizedUnitCellVolume"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#NormalizedConductivityStoichiometryDependence
+:NormalizedConductivityStoichiometryDependence rdf:type owl:Class ;
+                                               rdfs:subClassOf :ConductivityChanges .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#NormalizedConductivityTemperatureDependence
+:NormalizedConductivityTemperatureDependence rdf:type owl:Class ;
+                                             rdfs:subClassOf :ConductivityChanges .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#NormalizedUnitCellVolume
+:NormalizedUnitCellVolume rdf:type owl:Class ;
+                          rdfs:subClassOf :StructuralProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#O2ReversibleUptakePerMass
+:O2ReversibleUptakePerMass rdf:type owl:Class ;
+                           rdfs:subClassOf :OxidationReductionEquivalents .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#O2ReversibleUptakePerSurfaceArea
+:O2ReversibleUptakePerSurfaceArea rdf:type owl:Class ;
+                                  rdfs:subClassOf :OxidationReductionEquivalents .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Operando
+:Operando rdf:type owl:Class ;
+          rdfs:subClassOf :InSitu ;
+          rdfs:comment "Catalyst is in contact with reactant"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#OperandoMCPT
+:OperandoMCPT rdf:type owl:Class ;
+              rdfs:subClassOf :MicrowaveCavityPerturbationTechnique ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                owl:someValuesFrom :ActivationEnergyOfConductivity
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                owl:someValuesFrom :ConductivityChanges
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMeasurementType ;
+                                owl:hasValue :operando
+                              ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#OpticalBandGap
+:OpticalBandGap rdf:type owl:Class ;
+                rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#OxidationReaction
+:OxidationReaction rdf:type owl:Class ;
+                   owl:equivalentClass wikidata:Q1786087 ;
+                   rdfs:subClassOf :ChemicalReaction .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#OxidationReductionEquivalents
+:OxidationReductionEquivalents rdf:type owl:Class ;
+                               rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#OxidationState
+:OxidationState rdf:type owl:Class ;
+                rdfs:subClassOf :ElectronicStructureOfSurface ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://nomad-coe.eu/ontology/core#refersTo> ;
+                                  owl:someValuesFrom obo:CHEBI_33250
+                                ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#OxidationStatesNearSurface
+:OxidationStatesNearSurface rdf:type owl:Class ;
+                            rdfs:subClassOf :SurfaceProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#OxygenActivity
+:OxygenActivity rdf:type owl:Class ;
+                rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#OxygenExchange
+:OxygenExchange rdf:type owl:Class ;
+                rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#PO1
+:PO1 rdf:type owl:Class ;
+     rdfs:subClassOf :PropaneOxidation ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasProduct ;
+                       owl:someValuesFrom obo:CHEBI_16052
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasReactionEnthalpy_kJPerMol ;
+                       owl:hasValue -117.0
+                     ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#PO2
+:PO2 rdf:type owl:Class ;
+     rdfs:subClassOf :PropaneOxidation ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasProduct ;
+                       owl:someValuesFrom obo:CHEBI_18308
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasReactionEnthalpy_kJPerMol ;
+                       owl:hasValue -716.0
+                     ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#PO3
+:PO3 rdf:type owl:Class ;
+     rdfs:subClassOf :PropaneOxidation ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasProduct ;
+                       owl:someValuesFrom obo:CHEBI_16526
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasReactionEnthalpy_kJPerMol ;
+                       owl:hasValue -2220.0
+                     ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#PoreSizeDistribution
+:PoreSizeDistribution rdf:type owl:Class ;
+                      rdfs:subClassOf :StructuralProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#PoreVolume
+:PoreVolume rdf:type owl:Class ;
+            rdfs:subClassOf :StructuralProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#PropaneConversion
+:PropaneConversion rdf:type owl:Class ;
+                   rdfs:subClassOf :Conversion .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#PropaneOxidation
+:PropaneOxidation rdf:type owl:Class ;
+                  rdfs:subClassOf :OxidationReaction ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasByProduct ;
+                                    owl:someValuesFrom obo:CHEBI_17245
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasProduct ;
+                                    owl:someValuesFrom obo:CHEBI_15377
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasReactant ;
+                                    owl:someValuesFrom [ owl:intersectionOf ( obo:CHEBI_15379
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty obo:RO_0000087 ;
+                                                                                owl:someValuesFrom obo:CHEBI_63248
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ]
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasReactant ;
+                                    owl:someValuesFrom [ owl:intersectionOf ( obo:CHEBI_32879
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty obo:RO_0000087 ;
+                                                                                owl:someValuesFrom obo:CHEBI_63247
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ]
+                                  ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Property
+:Property rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#RamanSpectroscopy
+:RamanSpectroscopy rdf:type owl:Class ;
+                   rdfs:subClassOf :Spectroscopy ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                     owl:someValuesFrom :MinorityPhases
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                     owl:someValuesFrom :OxygenExchange
+                                   ] ;
+                   rdfs:label "Raman"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#RawCatalyticMaterial
+:RawCatalyticMaterial rdf:type owl:Class ;
+                      rdfs:subClassOf :CatalystSnapshot .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Reactant
+:Reactant rdf:type owl:Class ;
+          rdfs:subClassOf <http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                            owl:someValuesFrom :Conversion
+                          ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ReactionProduct
+:ReactionProduct rdf:type owl:Class ;
+                 rdfs:subClassOf <http://emmo.info/emmo/middle/physicalistic#EMMO_4207e895_8b83_4318_996a_72cfb32acd94> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204> ;
+                                   owl:someValuesFrom :Yield
+                                 ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#RedoxState
+:RedoxState rdf:type owl:Class ;
+            rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ReferenceConductivity
+:ReferenceConductivity rdf:type owl:Class ;
+                       rdfs:subClassOf :ElectricalConductivity .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ResonantPhotoemissionSpectroscopy
+:ResonantPhotoemissionSpectroscopy rdf:type owl:Class ;
+                                   rdfs:subClassOf :Spectroscopy ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                     owl:someValuesFrom :ElectronicStructureOfSurface
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasAbbreviation ;
+                                                     owl:hasValue "ResPES"
+                                                   ] ;
+                                   rdfs:label "ResPES"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SISSO
+:SISSO rdf:type owl:Class ;
+       rdfs:subClassOf :CompressedSensing ,
+                       :SymbolicRegression ;
+       rdfs:comment "Sure independence screening and sparsifying operator"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SPCatChar
+:SPCatChar rdf:type owl:Class ;
+           rdfs:subClassOf :CatalystCharacterization ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <https://nomad-coe.eu/ontology/core#characterizes> ;
+                             owl:someValuesFrom :SpentCatalyst
+                           ] ;
+           rdfs:label "SpentCatalystCharacterization"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SP_Bulk
+:SP_Bulk rdf:type owl:Class ;
+         rdfs:subClassOf :BasicCharacterization ,
+                         :SPCatChar ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                           owl:someValuesFrom :XRayDiffraction
+                         ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SP_ChemComp
+:SP_ChemComp rdf:type owl:Class ;
+             rdfs:subClassOf :BasicCharacterization ,
+                             :SPCatChar ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                    owl:unionOf ( :EnergyDispersiveXRaySpectroscopy
+                                                                  :InductivelyCoupledPlasmaOpticalEmissionSpectrometry
+                                                                  :XRayFluorescence
+                                                                )
+                                                  ]
+                             ] ;
+             rdfs:comment "EDX only to be used in case of spent catalyst when too little catalyst mass is available"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SP_NearSurf
+:SP_NearSurf rdf:type owl:Class ;
+             rdfs:subClassOf :BasicCharacterization ,
+                             :SPCatChar ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                               owl:someValuesFrom :LaboratoryXPS
+                             ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SP_OxRed
+:SP_OxRed rdf:type owl:Class ;
+          rdfs:subClassOf :BasicCharacterization ,
+                          :SPCatChar ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                            owl:someValuesFrom :TemperatureProgrammedReductionOxidation
+                          ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SP_Surf
+:SP_Surf rdf:type owl:Class ;
+         rdfs:subClassOf :BasicCharacterization ,
+                         :SPCatChar ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                           owl:someValuesFrom :NitrogenAdsorption
+                         ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SP_Valence
+:SP_Valence rdf:type owl:Class ;
+            rdfs:subClassOf :BasicCharacterization ,
+                            :SPCatChar ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <https://nomad-coe.eu/ontology/core#usesTechnique> ;
+                              owl:someValuesFrom :LaboratoryUPS
+                            ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Selectivity
+:Selectivity rdf:type owl:Class ;
+             rdfs:subClassOf :CatalyticPerformance ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://nomad-coe.eu/ontology/core#refersTo> ;
+                               owl:someValuesFrom :ReactionProduct
+                             ] ;
+             rdfs:comment """A catalyst is preferrably selective towards the desired reaction product.
+
+Selectivity of \"p\" is yield of \"p\" divided by conversion of \"k\""""@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Spectroscopy
+:Spectroscopy rdf:type owl:Class ;
+              rdfs:subClassOf :ExperimentalTechnique .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SpentCatalyst
+:SpentCatalyst rdf:type owl:Class ;
+               rdfs:subClassOf :CatalystSnapshot ;
+               rdfs:label "SpentCatalyst" ,
+                          "UsedCatalyst" .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Stability
+:Stability rdf:type owl:Class ;
+           rdfs:subClassOf :CatalyticPerformance ;
+           rdfs:comment """A catalyst is desired to have a long lifetime, hence to be stable.
+
+(E.g. ration of various product formation rates) ???"""@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#StructuralProperty
+:StructuralProperty rdf:type owl:Class ;
+                    rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Study
+:Study rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty <https://nomad-coe.eu/ontology/core#performedBy> ;
+                         owl:someValuesFrom <http://xmlns.com/foaf/0.1/Agent>
+                       ] ;
+       rdfs:comment "Can be made equivalent with http://stream-ontology.com/matvoc-core/Study"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SurfaceArea
+:SurfaceArea rdf:type owl:Class ;
+             rdfs:subClassOf :StructuralProperty ,
+                             :SurfaceProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SurfaceFunctionalGroups
+:SurfaceFunctionalGroups rdf:type owl:Class ;
+                         rdfs:subClassOf :SurfaceProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SurfaceProperty
+:SurfaceProperty rdf:type owl:Class ;
+                 rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SymbolicRegression
+:SymbolicRegression rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.a2rd.net.br/mlo#Regression> .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#SynchrotronXPS
+:SynchrotronXPS rdf:type owl:Class ;
+                rdfs:subClassOf :XRayPhotoelectronSpectroscopy ;
+                rdfs:label "SynXPS"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#TemperatureProgrammedReductionOxidation
+:TemperatureProgrammedReductionOxidation rdf:type owl:Class ;
+                                         rdfs:subClassOf :ExperimentalTechnique ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                           owl:someValuesFrom :OxidationReductionEquivalents
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasAbbreviation ;
+                                                           owl:hasValue "TPR-TPO"
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasAbbreviation ;
+                                                           owl:hasValue "TPR/O"
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasAbbreviation ;
+                                                           owl:hasValue "TPR/TPO"
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasAbbreviation ;
+                                                           owl:hasValue "TPRO"
+                                                         ] ;
+                                         rdfs:label "TPR_TPO"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ThemalGravimetricMassSpectrometry
+:ThemalGravimetricMassSpectrometry rdf:type owl:Class ;
+                                   rdfs:subClassOf :ThermoGravimetricAnalysis ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                     owl:someValuesFrom :OxygenExchange
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasAbbreviation ;
+                                                     owl:hasValue "TG-MS"
+                                                   ] ;
+                                   rdfs:comment "What is the relation to Temperature Programmed Oxidation?"@en ;
+                                   rdfs:label "TG_MS"@en ,
+                                              "ThermalGravimetricMassSpectrometry"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ThermalAnalysisInSyntheticAir
+:ThermalAnalysisInSyntheticAir rdf:type owl:Class ;
+                               rdfs:subClassOf :ExperimentalTechnique ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                 owl:someValuesFrom :DecompositionOfCarbonates
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                 owl:someValuesFrom :Dehydroxylation
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                 owl:someValuesFrom :WaterDesorption
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasMeasurementType ;
+                                                 owl:hasValue :exsitu
+                                               ] .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ThermalTreatmentInSyntheticAir
+:ThermalTreatmentInSyntheticAir rdf:type owl:Class ;
+                                rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <https://nomad-coe.eu/ontology/core#hasInput> ;
+                                                  owl:someValuesFrom :GreenCatalystPrecursor
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <https://nomad-coe.eu/ontology/core#hasOutput> ;
+                                                  owl:someValuesFrom :FreshCatalyst
+                                                ] ;
+                                rdfs:comment """Thermal treatment in synthetic air, intert gas or another gas atmosphere (gas  composition,  flow  rate,  heating  rate,  holding  time, etc.depend on the chemistry of the catalyst)
+
+This is also called Calcination, a process of removing impurities.""" ;
+                                rdfs:label "ThermalTreatmentInSyntheticAir" .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ThermoGravimetricAnalysis
+:ThermoGravimetricAnalysis rdf:type owl:Class ;
+                           rdfs:subClassOf :ThermalAnalysisInSyntheticAir ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasAbbreviation ;
+                                             owl:hasValue "TGA"
+                                           ] ;
+                           rdfs:label "TGA"@en ,
+                                      "ThermalGravimetricAnalysis"@en ,
+                                      "ThermogravimetricAnalysis" .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#UV_VIS_Spectroscopy
+:UV_VIS_Spectroscopy rdf:type owl:Class ;
+                     rdfs:subClassOf :Spectroscopy ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                       owl:someValuesFrom :OpticalBandGap
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                       owl:someValuesFrom :RedoxState
+                                     ] ;
+                     rdfs:label "UV/VIS"@en ,
+                                "Ultraviolet–visible spectroscopy"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#UltravioletPhotoelectronSpectroscopy
+:UltravioletPhotoelectronSpectroscopy rdf:type owl:Class ;
+                                      rdfs:subClassOf :Spectroscopy ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                        owl:someValuesFrom :ValenceBandSpectrum
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasAbbreviation ;
+                                                        owl:hasValue "UPS"
+                                                      ] ;
+                                      rdfs:label "UPS"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ValenceBandOnset
+:ValenceBandOnset rdf:type owl:Class ;
+                  rdfs:subClassOf :ElectronicStructureOfSurface .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#ValenceBandSpectrum
+:ValenceBandSpectrum rdf:type owl:Class ;
+                     rdfs:subClassOf :ElectronicStructureProperty .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#WaterDesorption
+:WaterDesorption rdf:type owl:Class ;
+                 rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#WorkFunction
+:WorkFunction rdf:type owl:Class ;
+              rdfs:subClassOf :ElectronicStructureOfSurface .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#XRayAbsorptionSpectroscopy
+:XRayAbsorptionSpectroscopy rdf:type owl:Class ;
+                            rdfs:subClassOf :Spectroscopy ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                              owl:someValuesFrom :ElectronicStructureProperty
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasAbbreviation ;
+                                              owl:hasValue "XAS"
+                                            ] ;
+                            rdfs:label "XAS"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#XRayDiffraction
+:XRayDiffraction rdf:type owl:Class ;
+                 rdfs:subClassOf :ExperimentalTechnique ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                   owl:someValuesFrom :BulkStructure
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <https://nomad-coe.eu/ontology/core#measures> ;
+                                   owl:someValuesFrom :ElectronDensity
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbbreviation ;
+                                   owl:hasValue "XRD"
+                                 ] ;
+                 rdfs:label "XRD"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#XRayFluorescence
+:XRayFluorescence rdf:type owl:Class ;
+                  rdfs:subClassOf :ExperimentalTechnique ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                    owl:someValuesFrom :ChemicalComposition
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://nomad-coe.eu/ontology/core#measures> ;
+                                    owl:someValuesFrom :ElectronicEnergySpectrum
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbbreviation ;
+                                    owl:hasValue "XRF"
+                                  ] ;
+                  rdfs:label "XRF"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#XRayPhotoelectronSpectroscopy
+:XRayPhotoelectronSpectroscopy rdf:type owl:Class ;
+                               rdfs:subClassOf :Spectroscopy ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                 owl:someValuesFrom :NearSurfaceChemicalComposition
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <https://nomad-coe.eu/ontology/core#determines> ;
+                                                 owl:someValuesFrom :OxidationStatesNearSurface
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasAbbreviation ;
+                                                 owl:hasValue "XPS"
+                                               ] ;
+                               rdfs:label "XPS"@en ,
+                                          "XRayPhotoelectronSpectroscopy"@en .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#Yield
+:Yield rdf:type owl:Class ;
+       rdfs:subClassOf :Property .
+
+
+###  https://nomad-coe.eu/ontology/structure#ChemicalComposition
+<https://nomad-coe.eu/ontology/structure#ChemicalComposition> rdf:type owl:Class .
+
+
+###  https://nomad-coe.eu/ontology/structure#CrystalPhase
+<https://nomad-coe.eu/ontology/structure#CrystalPhase> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://emmo.info/emmo/middle/materials#EMMO_668fbd5b_6f1b_405c_9c6b_d6067bd0595a> .
+
+
+###  https://nomad-coe.eu/ontology/structure#MaterialSnapshot
+<https://nomad-coe.eu/ontology/structure#MaterialSnapshot> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://emmo.info/emmo/middle/physicalistic#EMMO_5b2222df_4da6_442f_8244_96e9e45887d1> ;
+                                                           <http://emmo.info/emmo/top/annotations#EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a> "individual snapshots in a molecular dynamics simulation or a geometry relaxation" ;
+                                                           rdfs:comment """refers to a temporal snapshot of a material.
+A material might have different phases.
+Each phase of the material still allows different atomic configurations / system geometries within a tolerance range. Each single configuration of that we call material snapshot.""" ;
+                                                           rdfs:label "MaterialSnapshot" .
+
+
+###  https://www.wikidata.org/wiki/Q1786087
+wikidata:Q1786087 rdf:type owl:Class ;
+                  rdfs:label "oxidation" .
+
+
+###  https://www.wikidata.org/wiki/Q36534
+wikidata:Q36534 rdf:type owl:Class ;
+                rdfs:label "chemical reaction" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://nomad-coe.eu/ontology/catalysis#exsitu
+:exsitu rdf:type owl:NamedIndividual ,
+                 :MeasurementType .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#insitu
+:insitu rdf:type owl:NamedIndividual ,
+                 :MeasurementType .
+
+
+###  https://nomad-coe.eu/ontology/catalysis#operando
+:operando rdf:type owl:NamedIndividual ,
+                   :MeasurementType .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
