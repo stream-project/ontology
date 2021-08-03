@@ -90,7 +90,7 @@ _:o001_offset a oboe:Measurement ;
 
 _:o001_force a oboe:Measurement ;
     oboe:ofCharacteristic _:force ;
-    oboe:usesStandard oboe:kiloNioton ;
+    oboe:usesStandard oboe:kiloNewton ;
     oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.113833333333333"^^xsd:float  ] .
 
 _:o001_displacement a oboe:Measurement ;
@@ -118,7 +118,7 @@ _:o002_of a oboe:Measurement ;
 
 _:o002_fo a oboe:Measurement ;
     oboe:ofCharacteristic _:force ;
-    oboe:usesStandard oboe:kiloNioton ;
+    oboe:usesStandard oboe:kiloNewton ;
     oboe:hasValue [ a oboe:MeasuredValue ; mvc:hasRawValue "0.119700000000000"^^xsd:float  ] .
 
 _:o002_od a oboe:Measurement ;
