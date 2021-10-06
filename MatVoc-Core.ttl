@@ -250,11 +250,11 @@
     owl:equivalentProperty oboe:hasCode ;
     rdfs:domain oboe:MeasuredValue .
 
-:startedAt rdf:type owl:DataTypeProperty; 
+:startedAt rdf:type owl:DatatypeProperty; 
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
 
-:fisnishedAt rdf:type owl:DataTypeProperty; 
+:fisnishedAt rdf:type owl:DatatypeProperty; 
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
 
