@@ -246,7 +246,7 @@
 #################################################################
 ###                Data Property Definitions                  ###
 
-:hasRawValue rdf:type owl:DataTypeProperty; 
+:hasRawValue rdf:type owl:DatatypeProperty; 
     owl:equivalentProperty oboe:hasCode ;
     rdfs:domain oboe:MeasuredValue .
 
@@ -254,7 +254,7 @@
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
 
-:fisnishedAt rdf:type owl:DatatypeProperty; 
+:finishedAt rdf:type owl:DatatypeProperty; 
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
 
