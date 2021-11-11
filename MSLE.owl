@@ -3,6 +3,7 @@
      xml:base="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ssn="http://www.w3.org/ns/ssn#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:MSLE="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE"
@@ -105,6 +106,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://stream-ontology.com/matvoc-core/Observer -->
+
+    <owl:Class rdf:about="http://stream-ontology.com/matvoc-core/Observer">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:Class>
     
 
 
@@ -270,6 +279,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Detector">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Optional_Equipment"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/sampler"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Dual_Beam"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Energy_dispersive_X-ray"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Environment"/>
@@ -645,6 +655,7 @@
     <!-- http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Equipment -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Equipment">
+        <rdfs:subClassOf rdf:resource="http://stream-ontology.com/matvoc-core/Observer"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Gas_Injection_System"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Gun_Vacuum"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Light_Source"/>
@@ -2447,6 +2458,47 @@
             </owl:Restriction>
         </rdfs:subClassOf>
     </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/sampler -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/sampler"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#Auriga_60 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#Auriga_60">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Dual_Beam"/>
+        <schema:image rdf:resource="https://www.int.kit.edu/img/RG_Kuebel/Auriga.jpg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#FEI_Strata_400s -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#FEI_Strata_400s">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#Dual_Beam"/>
+        <schema:image rdf:resource="https://www.int.kit.edu/img/RG_Kuebel/Strata_rdax_1200x798.jpg"/>
+    </owl:NamedIndividual>
     
 
 
