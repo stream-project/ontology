@@ -65,6 +65,9 @@
     owl:equivalentClass emmo:Item ;
     owl:equivalentClass sosa:FeatureOfInterest .
 
+:Material rdf:type owl:Class; 
+    rdfs:subClassOf :Entity .
+
 :Sample rdf:type owl:Class; 
     #owl:equivalentClass oboe:Entity ;
     owl:equivalentClass sosa:Sample .
@@ -106,6 +109,11 @@
     rdfs:comment "The method of performing an experiment, observation, or measurement."@en ;
     rdfs:label "Method"@IRI-based; 
     rdfs:label "Method"@en . 
+	
+:Formula rdf:type owl:Class;
+    rdfs:comment "define formula's associated with the material."@en ;
+    rdfs:label "Formula"@IRI-based; 
+    rdfs:label "Formula"@en .
 
 # MeasuredValue class has a data type property raw value, which its data type can be determined by xsd types, hence no need to have a type system here.
 #:DataType rdf:type owl:Class; 
@@ -131,6 +139,9 @@
 #    rdfs:comment "String date type."@en ;
 #    rdfs:label "String"@IRI-based; 
 #    rdfs:label "String"@en .
+
+
+
 
 ###                 End of Class Definitions                  ###
 #################################################################
@@ -259,4 +270,4 @@
     rdfs:range xsd:dateTime .    
 
 ###            End of Data Property Definitions               ###
-#################################################################        
+#################################################################      
