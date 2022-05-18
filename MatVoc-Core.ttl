@@ -61,14 +61,17 @@
 
 # Add triples to say emmo:Item is a/sub of oboe:Entity to allow observations to apply to the characteristics of EMMO's items.
 :Entity rdf:type owl:Class; 
+    rdfs:comment "Entity class is an abstract entity which is being processed within an experiment or simulated."@en ;    
     owl:equivalentClass oboe:Entity ;
     owl:equivalentClass emmo:Item ;
     owl:equivalentClass sosa:FeatureOfInterest .
 
 :Material rdf:type owl:Class; 
+    rdfs:comment "Material class is a representative of a feature of interest on which an experiment or a simulation is made."@en ;  
     rdfs:subClassOf :Entity .
 
 :Sample rdf:type owl:Class; 
+    rdfs:comment "Sample is a class representing a subset of a material that is the object of an experiment or a simulation."@en ;      
     #owl:equivalentClass oboe:Entity ;
     owl:equivalentClass sosa:Sample .
     
@@ -149,7 +152,7 @@
 #################################################################
 ###               Object Property Definitions                 ###
 :hasRun rdf:type owl:ObjectProperty ;
-    rdfs:comment "The hasRun property gives the runs of a simulation." ;
+    rdfs:comment "The hasRun property gives the runs of a simulation."@en ;
     rdfs:label "hasRun"@IRI-based; 
     rdfs:label "has run"@en; 
     rdfs:domain :Study;
@@ -157,14 +160,14 @@
 
 :isRunOf rdf:type owl:ObjectProperty ;
     owl:inverseOf :hasRun ;
-    rdfs:comment "The isRunOf property gives the simulation of a run." ;
+    rdfs:comment "The isRunOf property gives the simulation of a run."@en ;
     rdfs:label "isRunOf"@IRI-based; 
     rdfs:label "is run of"@en; 
     rdfs:domain :Run;
     rdfs:range :Study . 
 
 :hasProtocol rdf:type owl:ObjectProperty ;
-    rdfs:comment "The hasProtocol property gives the protocol of an individual in the domain." ;
+    rdfs:comment "The hasProtocol property gives the protocol of an individual in the domain."@en ;
     rdfs:label "hasProtocol"@IRI-based; 
     rdfs:label "has protocol"@en; 
     #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a Measurement. Hence, I relaxed determining the domain.
@@ -174,7 +177,7 @@
     rdfs:range oboe:Protocol .         
 
 :hasMethod rdf:type owl:ObjectProperty ;
-    rdfs:comment "The hasMethod property gives the method of an individual in the domain." ;
+    rdfs:comment "The hasMethod property gives the method of an individual in the domain."@en ;
     rdfs:label "hasMethod"@IRI-based; 
     rdfs:label "has method"@en; 
     #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a Measurement. Hence, I relaxed determining the domain.
@@ -258,14 +261,17 @@
 ###                Data Property Definitions                  ###
 
 :hasRawValue rdf:type owl:DataTypeProperty; 
+    rdfs:comment "The hasRawValue property is the coded representation of the measured value."@en ;
     owl:equivalentProperty oboe:hasCode ;
     rdfs:domain oboe:MeasuredValue .
 
 :startedAt rdf:type owl:DataTypeProperty; 
+    rdfs:comment "The date and time when the ran started."@en ;
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
 
 :fisnishedAt rdf:type owl:DataTypeProperty; 
+    rdfs:comment "The date and time when the ran is finished."@en ;
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
 
