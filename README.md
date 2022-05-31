@@ -1,8 +1,8 @@
-[![Build Status](http://54.38.159.42:8080/buildStatus/icon?job=Stream-Ontology-CI&style=plastic)](http://54.38.159.42:8080/job/Stream-Ontology-CI/)
+[![Build Status](http://54.38.159.42:8080/buildStatus/icon?job=MatVoc%20Ontology&style=plastic)](http://54.38.159.42:8080/job/MatVoc%20Ontology/)
 
 # Ontology
-The official ontology produced in the conext of the STREAM project.
-# Installation
+The official ontology produced in the context of the STREAM project.
+## (Outdated) Installation
 In order to publish the ontology on the official website of the STREAM project, the following steps should be taken:
 1. Log in to the server
    1. SSH to `stream-ontology.com` using proper credentials.
