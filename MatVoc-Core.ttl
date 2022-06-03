@@ -23,12 +23,22 @@
 @prefix emmo:       <http://stream-ontology.com/matvoc-emmo> .
 @prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
-@prefix mvc: 		<http://stream-ontology.com/matvoc-core/> .
+@prefix vann:		<http://purl.org/vocab/vann/> .
+@prefix bibo:		<http://purl.org/ontology/bibo/> .
+@prefix schema:	<http://schema.org/> .
+@prefix dcterms:	<http://purl.org/dc/terms/> .
 @base 			    <http://stream-ontology.com/matvoc-core/> .
 
 <http://stream-ontology.com/matvoc-core/> rdf:type owl:Ontology ;
-    dc:title "Materials Vocabulary: MatVoc-Core"@en; 
-    dc:description "The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."@en . 
+    dc:title "Materials Vocabulary: MatVoc-Core"@en;
+    dc:description "The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."@en ;
+    vann:preferredNamespaceUri "http://stream-ontology.com/" ;
+    vann:preferredNamespacePrefix "mvc"@en ;
+    bibo:status "Draft"@en ;
+    schema:schemaVersion "1.0.0" ;
+    dc:creator <https://aksw.org/KurtJunghanns> ;
+    dcterms:license "MIT License"@en ;
+    rdfs:seeAlso <https://stream-projekt.net> .
 
 #################################################################
 ###                     Class Definitions                     ###
@@ -270,7 +280,7 @@
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
 
-:fisnishedAt rdf:type owl:DataTypeProperty; 
+:finishedAt rdf:type owl:DataTypeProperty;
     rdfs:comment "The date and time when the ran is finished."@en ;
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
