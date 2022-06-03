@@ -36,7 +36,8 @@
     vann:preferredNamespacePrefix "mvc"@en ;
     bibo:status "Draft"@en ;
     schema:schemaVersion "1.0.0" ;
-    dc:creator <https://aksw.org/KurtJunghanns> ;
+    dc:creator "Javad Chamanara", "Tatyana Sheveleva" ;
+    dcterms:contributor <https://aksw.org/KurtJunghanns> ;
     dcterms:license "MIT License"@en ;
     rdfs:seeAlso <https://stream-projekt.net> .
 
