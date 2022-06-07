@@ -1,9 +1,9 @@
 #!/bin/bash
 
-currentTag=`git tag --points-at HEAD | wc -l`
-currentTag=$(($currentTag + 1))
+verifiedTag=`git tag --points-at HEAD | grep verified | wc -l`
+verifiedTag=$(($verifiedTag + 1))
 
-if [ $currentTag -gt 1 ]; then
-    echo "There is one current tag thus this pipeline gets aborted."
+if [ $verifiedTag -gt 1 ]; then
+    echo "The verified tag is present, thus stop pipeline here and deploy the vocabulary and documentation on Github."
     exit 1
 fi
