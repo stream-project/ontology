@@ -21,10 +21,23 @@ pipeline {
                 }
             }
             steps {
-                sh 'cp -a jenkins/* ./ && ./abortWhenTagPresent.sh'
+                script {
+                    env.PROCEED_TO_DEPLOY = 1
+                    try {
+                        '''cp -a "jenkins/*" ./
+                        ./abortWhenTagPresent.sh'''
+                    } catch (err) {
+                        env.PROCEED_TO_DEPLOY = 0
+                    }
+                }
             }
         }
         stage('Test RDFUnit') {
+            when {
+                expression {
+                    env.PROCEED_TO_DEPLOY == 1
+                }
+            }
             agent {
                 docker { image 'aksw/rdfunit'
                     args '--entrypoint=""'
@@ -42,6 +55,11 @@ pipeline {
             }
         }
         stage('Test OOPS') {
+            when {
+                expression {
+                    env.PROCEED_TO_DEPLOY == 1
+                }
+            }
             agent {
                 docker { image 'tboonx/oops_caller:0.3'
                     args '--entrypoint=""'
@@ -56,6 +74,11 @@ pipeline {
             }
         }
         stage('Interprete reports') {
+            when {
+                expression {
+                    env.PROCEED_TO_DEPLOY == 1
+                }
+            }
             agent {
                 docker { image 'alpine/xml:2019'
                     reuseNode true
@@ -76,6 +99,11 @@ pipeline {
             }
         }
         stage('Reasoner') {
+            when {
+                expression {
+                    env.PROCEED_TO_DEPLOY == 1
+                }
+            }
             agent {
                 docker { image 'tboonx/hermit:0.1'
                     args '--entrypoint=""'
@@ -88,6 +116,11 @@ pipeline {
             }
         }
         stage('Add git tag') {
+            when {
+                expression {
+                    env.PROCEED_TO_DEPLOY == 1
+                }
+            }
             agent {
                 docker { image 'tboonx/git:0.1'
                     args '--entrypoint=""'
@@ -108,7 +141,7 @@ pipeline {
     }
     post {
         always {
-            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}<br> More info at: <a href=\"${env.BUILD_URL}\">${env.BUILD_URL}</a><br><br>At the end you find the summary of RDFUnit and OOPS.<br><br>For more information read the job result.<br><br><pre>${myVar}</pre>",
+            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}<br> More info at: <a href=\"${env.BUILD_URL}\">${env.BUILD_URL}</a><br><br>At the end you find the summary of RDFUnit and OOPS.<br><br>For more information read the job result.<br>If there is no text, then the pipeline did not run and this email could be ignored.<br><br><pre>${myVar}</pre>",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
         }
