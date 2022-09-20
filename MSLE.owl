@@ -39,6 +39,10 @@
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#atLocation
+:atLocation rdf:type owl:ObjectProperty .
+
+
 ###  http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#has-unit
 :has-unit rdf:type owl:ObjectProperty .
 
@@ -152,6 +156,10 @@
 ###  http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#In-Lens_Detector
 :In-Lens_Detector rdf:type owl:Class ;
                   rdfs:subClassOf :Detectors .
+
+
+###  http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#Location
+:Location rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#Magnification
@@ -613,10 +621,6 @@
                                                                                               <http://www.w3.org/2004/02/skos/core#definition> "X-ray photoelectron spectroscopy (XPS) is a surface-sensitive quantitative spectroscopic technique based on the photoelectric effect that can identify the elements that exist within a material (elemental composition) or are covering its surface, as well as their chemical state, and the overall electronic structure and density of the electronic states in the material."^^rdfs:Literal .
 
 
-###  http://www.w3.org/ns/sosa/Sensor
-<http://www.w3.org/ns/sosa/Sensor> rdf:type owl:Class .
-
-
 #################################################################
 #    Individuals
 #################################################################
@@ -629,6 +633,11 @@
                             owl:someValuesFrom :STEM_Detector
                           ] ;
                  <http://schema.org/image> <https://www.int.kit.edu/img/RG_Kuebel/Strata_rdax_1200x798.jpg> .
+
+
+###  http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#INTLab1
+:INTLab1 rdf:type owl:NamedIndividual ,
+                  :Location .
 
 
 ###  http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#Zeiss_Auriga_60
@@ -652,6 +661,7 @@
                             owl:onProperty :hasParameter ;
                             owl:someValuesFrom :Magnification
                           ] ;
+                 :atLocation :INTLab1 ;
                  :hasFIBmagnification "300 X - 500 kx" ;
                  :hasHighTension 10 ;
                  :hasSEMmagnification "12 X - 1000 Kx" ;
