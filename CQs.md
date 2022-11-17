@@ -22,3 +22,13 @@ SELECT ?Detectors
 WHERE {?Detectors rdfs:subClassOf SSN:Sampler }
 
 ```
+CQ10. Which Equipment(Observer in MatVoc ontology) has gas injection system?
+```
+PREFIX MSLE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#>
+PREFIX MSLEE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#>
+PREFIX SSN: <http://www.w3.org/ns/sosa/>
+SELECT ?Equipment
+WHERE {?Equipment MSLEE:hasInjection ?X.
+?X rdf:type MSLEE:Gas_Injection_System .
+    }
+```
