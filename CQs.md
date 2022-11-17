@@ -9,6 +9,7 @@
 8. Which instrument is equipped with a STEM detector?
 9. List of Detectors(Samplers in SSN ontology).
 10. Which Equipment(Observer in MatVoc ontology) has gas injection system?
+11. What are the types of FEI ‎Strata 400S gas injection ‎system (GIS)?‎
 
 
 
@@ -31,4 +32,14 @@ SELECT ?Equipment
 WHERE {?Equipment MSLEE:hasInjection ?X.
 ?X rdf:type MSLEE:Gas_Injection_System .
     }
+```
+CQ11. What are the types of FEI ‎Strata 400S gas injection ‎system (GIS)?‎
+```
+PREFIX MSLE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#>
+PREFIX MSLEE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#>
+PREFIX SSN: <http://www.w3.org/ns/sosa/>
+SELECT ?X
+WHERE {MSLEE:FEI_Strata_400s MSLEE:hasInjection ?X.
+   }
+
 ```
