@@ -1,11 +1,17 @@
-## MSLE Competency Questions
-CQ1: List of Single Beam Electron Microscopes.
-CQ2: What is the maximum high tension of the electron beam for Zeiss Auriga 60 ?
-CQ3: What is a Dual Beam Microscope?
-CQ4: What types of detectors are available?
-CQ5: What is the range of SEM and FIB magnification for Zeiss Auriga 60?
-CQ6: What types of the dual-beam microscope are available?
-CQ7: In which dual beam system is the maximum high tension of the ion beam 30 kV?
-CQ8: Which instrument is equipped with a STEM detector?
-CQ9: List of Detectors(Samplers in SSN ontology).
-CQ10: Which Equipment(Observer in MatVoc ontology) has gas injection system?
+## Institution
+1. Which Laboratories are hosted by the Institution?
+2. Which Equipment is available at the Institution?
+3. Which Instruments are available at the Institution?
+4. Which Measurement Techniques are available at the Institution?
+5. Which Experiments have been performed at the Institution?
+6. Which Measurements have been performed at the Institution?
+7. Which Raw Data have been produced at the Institution?
+
+## Laboratory
+8. By which Institution is the Laboratory hosted?
+9. Which Equipment is available in the Laboratory?
+10. Which Instruments are available in the Laboratory?
+11. Which Measurement Techniques are available in the Laboratory?
+12. Which Experiments have been performed in the Laboratory?
+13. Which Measurements have been performed in the Laboratory?
+14. Which Raw Data have been produced in the Laboratory?
