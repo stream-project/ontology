@@ -20,6 +20,5 @@ PREFIX MSLEE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#>
 PREFIX SSN: <http://www.w3.org/ns/sosa/>
 SELECT ?Detectors
 WHERE {?Detectors rdfs:subClassOf SSN:Sampler }
-}
 
 ```
