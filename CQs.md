@@ -9,3 +9,17 @@
 8. Which instrument is equipped with a STEM detector?
 9. List of Detectors(Samplers in SSN ontology).
 10. Which Equipment(Observer in MatVoc ontology) has gas injection system?
+
+
+
+## Answer to CQs via SPARQL
+CQ9. List of Detectors(Samplers in SSN ontology)
+```
+PREFIX MSLE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#>
+PREFIX MSLEE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#>
+PREFIX SSN: <http://www.w3.org/ns/sosa/>
+SELECT ?Detectors
+WHERE {?Detectors rdfs:subClassOf SSN:Sampler }
+}
+
+```
