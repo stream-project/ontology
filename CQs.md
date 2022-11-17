@@ -1,9 +1,6 @@
 ## MSLE Competency Questions
-'''
 CQ1: List of Single Beam Electron Microscopes.
-'''
 CQ2: What is the maximum high tension of the electron beam for Zeiss Auriga 60 ?
-'''
 CQ3: What is a Dual Beam Microscope?
 CQ4: What types of detectors are available?
 CQ5: What is the range of SEM and FIB magnification for Zeiss Auriga 60?
