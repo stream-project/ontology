@@ -31,15 +31,22 @@ SELECT ?High_Tension
 ```
 CQ3. What is a Dual Beam Microscope?
 ```
+SELECT ?X
+	WHERE { MSLE:Dual_Beam ‎owl:equivalentClass ?X}‎
 
 ```
 CQ4. What types of detectors are available?
 ```
+SELECT ?Detectors
+	WHERE { ?Detectors rdfs:subClassOf  MSLE:Detectors}
 
 ```
 
 CQ5. What is the range of SEM and FIB magnification for Zeiss Auriga 60?
 ```
+SELECT ?SEM_Magnification  ? FIB_Magnification
+	WHERE { MSLEE:Zeiss_Auriga_60   MSLE:hasSEMmagnification  ?SEM_Magnification ;
+                MSLE:hasFIBmagnification  ?FIB_Magnification }
 
 ```
 CQ6. What types of the dual-beam microscope are available?
@@ -53,10 +60,18 @@ WHERE {?X a MSLEE:Dual_Beam.
 ```
 CQ7. In which dual beam system is the maximum high tension of the ion beam 30 kV?
 ```
+SELECT ?x
+	WHERE { ?x rdf:type MSLE:Dual_Beam  ; ‎
+‎                                            MSLE:hasHighTension ‎‎35 }‎
 
 ```
 CQ8. Which instrument is equipped with a STEM detector??
 ```
+Select ?device
+WHERE { ?Device  rdf:type ?x .‎
+‎                   ?x rdf:type  owl:Restriction .‎
+‎                   ?x  owl:onProperty MSLE:hasDetector .                    ‎
+‎                   ?x  owl:someValuesFrom ‎MSLE:STEM_Detector  }‎
 
 ```
 
