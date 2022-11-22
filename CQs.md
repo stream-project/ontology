@@ -14,6 +14,12 @@
 
 
 ## Answer to CQs via SPARQL
+
+CQ1. List of Single Beam Electron Microscopes.
+```
+SELECT ?SingleBeam
+WHERE {?SingleBeam rdfs:subClassOf MSLE:Single_Beam }
+```
 CQ9. List of Detectors(Samplers in SSN ontology)
 ```
 PREFIX MSLE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#>
