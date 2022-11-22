@@ -28,8 +28,39 @@ PREFIX MSLE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#>
 PREFIX MSLEE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#>
 SELECT ?High_Tension
 	WHERE { MSLE:Zeiss_Auriga_60   MSLE:hasHighTension  ?High_Tension}
+```
+CQ3. What is a Dual Beam Microscope?
+```
 
 ```
+CQ4. What types of detectors are available?
+```
+
+```
+
+CQ5. What is the range of SEM and FIB magnification for Zeiss Auriga 60?
+```
+
+```
+CQ6. What types of the dual-beam microscope are available?
+```
+PREFIX MSLE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#>
+PREFIX MSLEE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLE#>
+PREFIX SSN: <http://www.w3.org/ns/sosa/>
+SELECT ?X
+WHERE {?X a MSLEE:Dual_Beam.
+   }
+```
+CQ7. In which dual beam system is the maximum high tension of the ion beam 30 kV?
+```
+
+```
+CQ8. Which instrument is equipped with a STEM detector??
+```
+
+```
+
+
 CQ9. List of Detectors(Samplers in SSN ontology)
 ```
 PREFIX MSLE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#>
