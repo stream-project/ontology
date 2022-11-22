@@ -20,6 +20,12 @@ CQ1. List of Single Beam Electron Microscopes.
 SELECT ?SingleBeam
 WHERE {?SingleBeam rdfs:subClassOf MSLE:Single_Beam }
 ```
+CQ2. What is the maximum high tension of the electron beam for Zeiss Auriga 60 ?
+```
+SELECT ?High_Tension
+	WHERE { MSLE:Zeiss_Auriga_60   MSLE:hasHighTension  ?High_Tension}
+
+```
 CQ9. List of Detectors(Samplers in SSN ontology)
 ```
 PREFIX MSLE: <http://www.semanticweb.org/hr7456/ontologies/2021/8/MSLEWL#>
