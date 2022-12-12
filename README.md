@@ -3,7 +3,32 @@
 # Ontology
 
 The official ontology produced in the context of the STREAM project.
-The documentation of the concepts could be found under [stream-project.github.io](https://stream-project.github.io/).
+The documentation of the MatVoc concepts could be found under [stream-project.github.io](https://stream-project.github.io/).
+There exists also a link from [w3id.org/STREAM/MatVoc](w3id.org/STREAM/MatVoc) to the documentation and the RDF files.
+
+This repository does contain:
+* turtle file of the MatVoc vocabulary
+* owl files of the MSLE vocabulary
+* a set of competency questions used in the project
+* a Jenkinsfile for detecting basic problems in the MatVoc.ttl file
+* scripts in the Jenkins folder for the Jenkins CI execution
+* (old) a datasets folder
+* basic inferred classification in the infered_classes.owl file
+
+
+## Jenkins CI
+
+This pipeline is also an artifact of the STREAM project but the server used will not be available after the project.
+For future development we propose to switch to another CI like Github Actions.
+The Ci has the following steps:
+* Stop if the current commit was already verified
+* Execute RDFUnit to detect basic errors in the owl and rdfs use
+* Call the OOPS common pitfall scanner
+* Create an email out of the two reports
+* Start HermiT to generate a basic classification
+* If all of the above steps didn't create an error, the commit gets a verified tag and the tag plus the classification is pushed to this repository
+* sending an email to the author of the commit
+
 
 ## (Outdated) Vocol Installation
 In order to publish the ontology on the official website of the STREAM project, the following steps should be taken:
