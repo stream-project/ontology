@@ -34,11 +34,13 @@
     dc:description "The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."@en ;
     vann:preferredNamespaceUri "http://stream-ontology.com/" ;
     vann:preferredNamespacePrefix "mvc"@en ;
-    bibo:status "Draft"@en ;
+    bibo:status "STREAM project result, founding tag: 16QK11"@en ;
     schema:schemaVersion "1.0.0" ;
+    owl:versionInfo "1.0.0" ;
     dc:creator "Javad Chamanara", "Tatyana Sheveleva" ;
     dcterms:contributor <https://aksw.org/KurtJunghanns> ;
     dcterms:license "MIT License"@en ;
+    dcterms:modified "2022-12-12" ;
     rdfs:seeAlso <https://stream-projekt.net> .
 
 #################################################################
