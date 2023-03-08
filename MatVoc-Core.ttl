@@ -260,6 +260,11 @@
     rdfs:domain :Sample;
     rdfs:range :Entity . 
 
+:has_canonical_form rdf:type owl:ObjectProperty;
+    rdfs:comment "The has_canonical_form property is used as a standard way of presenting an object or element with a mathematical expression."@en ;
+    rdfs:label "has_canonical_form"@IRI-based; 
+    rdfs:label "has_canonical_form"@en .
+
 #:hasDataType rdf:type owl:ObjectProperty ;
 #    rdfs:comment "The hasDataType property give the data type of a measurement value." ;
 #    rdfs:label "hasDataType"@IRI-based ; 
