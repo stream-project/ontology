@@ -23,12 +23,25 @@
 @prefix emmo:       <http://stream-ontology.com/matvoc-emmo> .
 @prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
-@prefix mvc: 		<http://stream-ontology.com/matvoc-core/> .
+@prefix vann:		<http://purl.org/vocab/vann/> .
+@prefix bibo:		<http://purl.org/ontology/bibo/> .
+@prefix schema:	<http://schema.org/> .
+@prefix dcterms:	<http://purl.org/dc/terms/> .
 @base 			    <http://stream-ontology.com/matvoc-core/> .
 
 <http://stream-ontology.com/matvoc-core/> rdf:type owl:Ontology ;
-    dc:title "Materials Vocabulary: MatVoc-Core"@en; 
-    dc:description "The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."@en . 
+    dc:title "Materials Vocabulary: MatVoc-Core"@en;
+    dc:description "The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."@en ;
+    vann:preferredNamespaceUri "http://stream-ontology.com/" ;
+    vann:preferredNamespacePrefix "mvc"@en ;
+    bibo:status "STREAM project result, founding tag: 16QK11"@en ;
+    schema:schemaVersion "1.0.0" ;
+    owl:versionInfo "1.0.0" ;
+    dc:creator "Javad Chamanara", "Tatyana Sheveleva" ;
+    dcterms:contributor <https://aksw.org/KurtJunghanns> ;
+    dcterms:license "MIT License"@en ;
+    dcterms:modified "2022-12-12" ;
+    rdfs:seeAlso <https://stream-projekt.net> .
 
 #################################################################
 ###                     Class Definitions                     ###
@@ -61,11 +74,17 @@
 
 # Add triples to say emmo:Item is a/sub of oboe:Entity to allow observations to apply to the characteristics of EMMO's items.
 :Entity rdf:type owl:Class; 
+    rdfs:comment "Entity class is an abstract entity which is being processed within an experiment or simulated."@en ;    
     owl:equivalentClass oboe:Entity ;
     owl:equivalentClass emmo:Item ;
     owl:equivalentClass sosa:FeatureOfInterest .
 
+:Material rdf:type owl:Class; 
+    rdfs:comment "Material class is a representative of a feature of interest on which an experiment or a simulation is made."@en ;  
+    rdfs:subClassOf :Entity .
+
 :Sample rdf:type owl:Class; 
+    rdfs:comment "Sample is a class representing a subset of a material that is the object of an experiment or a simulation."@en ;      
     #owl:equivalentClass oboe:Entity ;
     owl:equivalentClass sosa:Sample .
     
@@ -106,6 +125,11 @@
     rdfs:comment "The method of performing an experiment, observation, or measurement."@en ;
     rdfs:label "Method"@IRI-based; 
     rdfs:label "Method"@en . 
+	
+:Formula rdf:type owl:Class;
+    rdfs:comment "define formula's associated with the material."@en ;
+    rdfs:label "Formula"@IRI-based; 
+    rdfs:label "Formula"@en .
 
 # MeasuredValue class has a data type property raw value, which its data type can be determined by xsd types, hence no need to have a type system here.
 #:DataType rdf:type owl:Class; 
@@ -132,13 +156,16 @@
 #    rdfs:label "String"@IRI-based; 
 #    rdfs:label "String"@en .
 
+
+
+
 ###                 End of Class Definitions                  ###
 #################################################################
 
 #################################################################
 ###               Object Property Definitions                 ###
 :hasRun rdf:type owl:ObjectProperty ;
-    rdfs:comment "The hasRun property gives the runs of a simulation." ;
+    rdfs:comment "The hasRun property gives the runs of a simulation."@en ;
     rdfs:label "hasRun"@IRI-based; 
     rdfs:label "has run"@en; 
     rdfs:domain :Study;
@@ -146,14 +173,14 @@
 
 :isRunOf rdf:type owl:ObjectProperty ;
     owl:inverseOf :hasRun ;
-    rdfs:comment "The isRunOf property gives the simulation of a run." ;
+    rdfs:comment "The isRunOf property gives the simulation of a run."@en ;
     rdfs:label "isRunOf"@IRI-based; 
     rdfs:label "is run of"@en; 
     rdfs:domain :Run;
     rdfs:range :Study . 
 
 :hasProtocol rdf:type owl:ObjectProperty ;
-    rdfs:comment "The hasProtocol property gives the protocol of an individual in the domain." ;
+    rdfs:comment "The hasProtocol property gives the protocol of an individual in the domain."@en ;
     rdfs:label "hasProtocol"@IRI-based; 
     rdfs:label "has protocol"@en; 
     #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a Measurement. Hence, I relaxed determining the domain.
@@ -163,7 +190,7 @@
     rdfs:range oboe:Protocol .         
 
 :hasMethod rdf:type owl:ObjectProperty ;
-    rdfs:comment "The hasMethod property gives the method of an individual in the domain." ;
+    rdfs:comment "The hasMethod property gives the method of an individual in the domain."@en ;
     rdfs:label "hasMethod"@IRI-based; 
     rdfs:label "has method"@en; 
     #rdfs:domain :Run;  # The domain class can be a Run, an Observation, or a Measurement. Hence, I relaxed determining the domain.
@@ -246,17 +273,20 @@
 #################################################################
 ###                Data Property Definitions                  ###
 
-:hasRawValue rdf:type owl:DatatypeProperty; 
+:hasRawValue rdf:type owl:DatatypeProperty;
+    rdfs:comment "The hasRawValue property is the coded representation of the measured value."@en ;
     owl:equivalentProperty oboe:hasCode ;
     rdfs:domain oboe:MeasuredValue .
 
-:startedAt rdf:type owl:DatatypeProperty; 
+:startedAt rdf:type owl:DatatypeProperty;
+    rdfs:comment "The date and time when the ran started."@en ;
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
 
-:finishedAt rdf:type owl:DatatypeProperty; 
+:finishedAt rdf:type owl:DatatypeProperty;
+    rdfs:comment "The date and time when the ran is finished."@en ;
     rdfs:domain :Run ;
     rdfs:range xsd:dateTime .    
 
 ###            End of Data Property Definitions               ###
-#################################################################        
+#################################################################      
